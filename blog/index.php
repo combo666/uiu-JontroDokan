@@ -1,5 +1,5 @@
-<?php include "../homepage/includes/html_header.php"; ?>
+<?php include "../homepage/includes/header_html.php"; ?>
 
-<?php include "../homepage/includes/body_header.php"; ?>
+<?php include "../homepage/includes/header_body.php"; ?>
 
 <?php include "../homepage/includes/footer.php"; ?>
