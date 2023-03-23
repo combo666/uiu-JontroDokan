@@ -24,6 +24,9 @@
                     <li class="nav-item">
                         <a class="nav-link " href="#">Project</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Blog</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 action-menu">
                     <form class="search-form">
