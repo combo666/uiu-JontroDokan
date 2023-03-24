@@ -325,12 +325,12 @@ blockquote {
 }
 
 a {
-  color: #0275d8;
+  color: #d8a602;
   text-decoration: none;
 }
 
 a:focus, a:hover {
-  color: #014c8c;
+  color: #8c6c01;
   text-decoration: underline;
 }
 
