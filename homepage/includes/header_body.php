@@ -1,4 +1,8 @@
 <!--Header section-->
+<?php
+    $page = basename($_SERVER['PHP_SELF'],'.php');
+    
+?>
 <header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -13,7 +17,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../../index.php">Home</a>
+                        <a class="nav-link <?= ($page == 'index')? 'active' : '' ?>" aria-current="page" href="../../index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Categories</a>
@@ -25,7 +29,7 @@
                         <a class="nav-link " href="#">Project</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="../../blog/index.php">Blog</a>
+                        <a class="nav-link <?= ($page == 'blog')? 'active' : '' ?>" href="../../blog/blog.php">Blog</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 action-menu">
