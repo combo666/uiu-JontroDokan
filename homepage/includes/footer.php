@@ -31,7 +31,7 @@
             <div class="col-lg-3">
                 <h4>Contact Info</h4>
                 <p>018........</p>
-                <p></p>
+                <p>Address:....................</p>
                 <p>uiu_jd@eshop.com</p>
             </div>
         </div>
