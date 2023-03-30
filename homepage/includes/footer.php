@@ -30,15 +30,15 @@
             </div>
             <div class="col-lg-3">
                 <h4>Contact Info</h4>
-                <p>07577985281</p>
-                <p>509 724 580 - issued in New York (NY) on 03/11/2019, expires 08/11/2023</p>
-                <p>support@eshop.com</p>
+                <p>018........</p>
+                <p></p>
+                <p>uiu_jd@eshop.com</p>
             </div>
         </div>
         <hr>
         <div class="copyright-text mt-3 text-center">
-            <a href="">Copyright © 2021 <span class="text-dark fw-bold">Web</span>
-                <span  class="text-danger fw-bold">Burden</span></a>
+            <a href="">Copyright © 2023 <span class="text-dark fw-bold">Web</span>
+                <span  class="text-danger fw-bold">UIU_JD</span></a>
         </div>
     </div>
 </footer>
