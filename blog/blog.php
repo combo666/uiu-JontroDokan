@@ -2,6 +2,7 @@
 
 <?php include "../homepage/includes/header_body.php"; ?>
 
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">

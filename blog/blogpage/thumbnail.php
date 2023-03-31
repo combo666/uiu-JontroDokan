@@ -1,3 +1,4 @@
+
 <div class="carousel slide container" id="carousel-640745">
                     <ol class="carousel-indicators">
                         <li data-slide-to="0" data-target="#carousel-640745">
@@ -10,7 +11,7 @@
                     <div class="carousel-inner">
                         <div class="carousel-item">
                             <img class="d-block w-100" alt="Carousel Bootstrap First" src="https://static.wixstatic.com/media/aa56b7_a7aa6de362bc43d1b504310b3eaaad7c~mv2.png/v1/fit/w_1000,h_800,al_c,q_90/file.webp">
-                            <div class="carousel-caption">
+                            <div class="carousel-caption ">
                                 <h4>
                                     First Thumbnail label
                                 </h4>

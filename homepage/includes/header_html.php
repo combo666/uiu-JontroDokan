@@ -10,5 +10,6 @@
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../assets/fonts/bootstrap-icons.css">
     <link rel="stylesheet" href="../../assets/sass/main.css">
+    <link rel="stylesheet" href="../../blog/css/style.css">
 </head>
 <body>
