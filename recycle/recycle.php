@@ -9,7 +9,7 @@
 ?>
 
 <div class="button-container">
-    <form action="./recycle_page/form.php" method="post">
+    <form action="form.php" method="post">
         <input type="submit" name="submit-btn"class="recycle-here" value="♻️Recycle Here">
     </form>
 </div>

@@ -1,5 +1,4 @@
 <?php include "../homepage/includes/header_html.php"; ?>
-
 <?php include "../homepage/includes/header_body.php"; ?>
 
 
@@ -38,6 +37,6 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/scripts.js"></script>
 
-<?php include "../homepage/includes/footer.php"; ?>
+<?php include "./homepage/includes/footer.php"; ?>
 
 
