@@ -4,6 +4,7 @@
 }
 
 
+<<<<<<< HEAD
 /* blog page design  */
 
 
@@ -19,3 +20,112 @@
     .card-registration .select-arrow {
     top: 13px;
     }
+=======
+/* recycle page design  */
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.form-container input[type="file"] {
+    margin-bottom: 20px;
+}
+
+.form-container input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}
+
+.recycle-here {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.recycle-here:hover{
+    background-color: #3e8e41;
+}
+
+.recycle-form {
+    display: flex;
+    
+    align-items: center;
+    height: 75vh;
+  }
+
+
+
+  .condition-bar {
+    display: flex;
+    height: 15px;
+    width: 170px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    justify-content: center;
+  }
+  
+  .condition-bar-item {
+    flex: 1;
+    height: 100%;
+    width: 33.33%;
+  }
+  
+  .good {
+    background-color: #4CAF50;
+  }
+  
+  .fair {
+    background-color: #FFC107;
+  }
+  
+  .bad {
+    background-color: #F44336;
+  }
+>>>>>>> f8aa9f06e66ef9bfa875722b5abb55ae0edd1f50

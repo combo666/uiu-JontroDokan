@@ -1,18 +1,107 @@
-<div class="col-md-4">
-    <div class="card">
-        <div class="row container">
-            <img class="card-img-top" alt="Bootstrap Thumbnail First" src="https://static.wixstatic.com/media/59035a_95c00c32a6be4de283ea34dd0b2d90ea~mv2.png/v1/fit/w_1000,h_800,al_c,q_90/file.webp">
-            <div class="card-block">
-                <h5 class="card-title">
-                    First card title
-                </h5>
-                <p class="card-text">
-                    First card title all the details here-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-                </p>
-                <p>
-                    <a class="btn btn-success" href="#">Action</a> <a class="btn" href="#">Action</a>
-                </p>
+
+<!-- Most sell products    -->
+<section class="latest-product">
+    <div class="container">
+        <h2>Products in recycle</h2>
+        <hr>
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <img src="../assets/images/product/f1.png" alt="">
+                        <h2 class="product_name">
+                            <a href="">something</a>
+                        </h2>
+                        <div class="condition-bar ">
+                            <div class="condition-bar-item bad"></div>
+                            <div class="condition-bar-item fair"></div>
+                            <div class="condition-bar-item good"></div>
+                        </div>
+                        <h2 class="price">৳ 200.00</h2>
+                        <div class="btn d-flex justify-content-between align-items-center">
+                            <a href="" class="add-to-cart-btn">
+                                <i class="bi bi-cart4"></i> Add to Cart
+                            </a>
+                            <a href="" class="add-to-favorite text-success">
+                                <i class="bi bi-heart "></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <div class="col-lg-3">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <img src="../assets/images/product/f3.png" alt="">
+                        <h2 class="product_name">
+                            <a href="">something</a>
+                        </h2>
+                        <div class="condition-bar ">
+                            <div class="condition-bar-item bad"></div>
+                            <div class="condition-bar-item fair"></div>
+                            <div class="condition-bar-item good"></div>
+                        </div>
+                        <h2 class="price">৳ 200.00</h2>
+                        <div class="btn d-flex justify-content-between align-items-center">
+                            <a href="" class="add-to-cart-btn">
+                                <i class="bi bi-cart4"></i> Add to Cart
+                            </a>
+                            <a href="" class="add-to-favorite text-success">
+                                <i class="bi bi-heart "></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <img src="../assets/images/product/servo.png" alt="">
+                        <h2 class="product_name">
+                            <a href="">something</a>
+                        </h2>
+                        <div class="condition-bar ">
+                            <div class="condition-bar-item bad"></div>
+                            <div class="condition-bar-item fair"></div>
+                            <div class="condition-bar-item good"></div>
+                        </div>
+                        <h2 class="price">৳ 200.00</h2>
+                        <div class="btn d-flex justify-content-between align-items-center">
+                            <a href="" class="add-to-cart-btn">
+                                <i class="bi bi-cart4"></i> Add to Cart
+                            </a>
+                            <a href="" class="add-to-favorite text-success">
+                                <i class="bi bi-heart "></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <img src="../assets/images/product/sensor.png" alt="">
+                        <h2 class="product_name">
+                            <a href="">something</a>
+                        </h2>
+                        <div class="condition-bar">
+                            <div class="condition-bar-item bad"></div>
+                            <div class="condition-bar-item fair"></div>
+                            <div class="condition-bar-item good"></div>
+                        </div>
+                        <h2 class="price">৳ 200.00</h2>
+                        <div class="btn d-flex justify-content-between align-items-center">
+                            <a href="" class="add-to-cart-btn">
+                                <i class="bi bi-cart4"></i> Add to Cart
+                            </a>
+                            <a href="" class="add-to-favorite text-success">
+                                <i class="bi bi-heart "></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-</div>
+</section>

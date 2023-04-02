@@ -37,7 +37,7 @@
 <?php include "../homepage/includes/header_html.php" ?>
 <?php include "../homepage/includes/header_body.php" ?> 
 
-<div>
+<div class="recycle-form">
     <form class="form-container" action="recycle.php" method="post" enctype="multipart/form-data">
         <label for="image">Select Image:</label>
         <input type="file" name="image" id="image"><br><br>

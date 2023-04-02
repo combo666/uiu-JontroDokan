@@ -2,6 +2,7 @@
 <?php include "../homepage/includes/header_body.php" ?>
 <?php include "./recycle_page/card.php" ?>
 
+
 <?php
     if(isset($_POST['submit-btn'])){
         include "./recycle_page/form.php";
