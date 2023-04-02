@@ -26,7 +26,6 @@
 //     } else {
 //         echo "Error: " . $sql . "<br>" . $conn->error;
 //     }
-
 // } else {
 //     echo "<script>alert('Connection error.')</script>";
 // }
