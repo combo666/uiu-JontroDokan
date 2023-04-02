@@ -4,10 +4,13 @@
     
 ?>
 <header>
+    <div class="page-header__topline">
+        <span class="pt-5 text-light">Welcome: Guest</span>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="../../assets/images/logo.png" alt="">
+                <img src="././assets/images/logo.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -61,7 +64,6 @@
                         <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="log.html">Login</a></li>
                             <li><a class="dropdown-item" href="#">Register</a></li>
-                            <li><a class="dropdown-item" href="admin/admin.html">Admin</a></li>
                         </ul>
                     </li>
                 </ul>

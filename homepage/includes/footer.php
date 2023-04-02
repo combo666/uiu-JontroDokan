@@ -43,13 +43,13 @@
     </div>
 </footer>
 <div class="loading" id="loader">
-    <img src="../../assets/images/preloader.svg" alt="">
+    <img src="././assets/images/preloader.svg" alt="">
 </div>
 <script>
     setTimeout(() => {
         document.getElementById('loader').style.display= "none"
     },1000)
 </script>
-<script src="../../assets/js/bootstrap.bundle.js"></script>
+<script src="././assets/js/bootstrap.bundle.js"></script>
 </body>
 </html>

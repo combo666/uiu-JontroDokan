@@ -7,8 +7,7 @@
                     <div class="row">
                         <div class="col-lg-6 slider-text">
                             <h2 class="text-success">
-                                Order <span class="lighten">Online</span>, Save Your <br>
-                                <span class="lighten">Time</span>
+                                Welcome <span class="lighten">to</span>, UIU-jontroDokan <br>
                             </h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur illo
                                 laborum optio porro quis reiciendis rerum sapiente velit veniam.</p>
@@ -23,8 +22,7 @@
                     <div class="row">
                         <div class="col-lg-6 slider-text">
                             <h2 class="text-success">
-                                Order <span class="lighten">Online</span>, Save Your <br>
-                                <span class="lighten">Time</span>
+                            <span class="lighten">Electronics Items all over!</span>
                             </h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur illo
                                 laborum optio porro quis reiciendis rerum sapiente velit veniam.</p>
@@ -39,8 +37,7 @@
                     <div class="row">
                         <div class="col-lg-6 slider-text">
                             <h2 class="text-success">
-                                Order <span class="lighten">Online</span>, Save Your <br>
-                                <span class="lighten">Time</span>
+                            Welcome <span class="lighten">to</span>, UIU-jontroDokan <br>
                             </h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam consequatur illo
                                 laborum optio porro quis reiciendis rerum sapiente velit veniam.</p>
