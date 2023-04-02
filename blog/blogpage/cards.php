@@ -1,6 +1,6 @@
-<div class="col-md-4">
+<div class="col-md-4 container">
     <div class="card">
-        <div class="row container">
+        <div class="row">
             <img class="card-img-top" alt="Bootstrap Thumbnail First" src="https://static.wixstatic.com/media/59035a_95c00c32a6be4de283ea34dd0b2d90ea~mv2.png/v1/fit/w_1000,h_800,al_c,q_90/file.webp">
             <div class="card-block">
                 <h5 class="card-title">

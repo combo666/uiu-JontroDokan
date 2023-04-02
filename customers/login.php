@@ -1,14 +1,14 @@
 <?php include ".././homepage/includes/header_html.php"?>
 <?php include ".././homepage/includes/header_body.php"?>
 <body>
-    <div class="row">
-        <div class="container">
+    <div class="row container-fluid">
+        <div class="cont">
             <div class="login-form">
-                <section class="vh-100 bg-dark">
+                <section class="vh-100">
                     <div class="container py-5 h-100">
                       <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col col-xl-10">
-                          <div class="card" style="border-radius: 1rem;">
+                          <div class="card border border-3" style="border-radius: 1rem;">
                             <div class="row g-0">
                               <div class="col-md-6 col-lg-5 d-none d-md-block">
                                 <img src="./images/other/pexels-nothing-ahead-13064556.jpg"
@@ -41,7 +41,7 @@
                                     </div>
                   
                                     <a class="small text-muted" href="#!">Forgot password?</a>
-                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="#!"
+                                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="register.php"
                                         style="color: #393f81;">Register here</a></p>
                                   </form>
                   

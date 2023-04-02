@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="reg-form">
-                <section class="h-100 bg-dark">
+                <section class="h-100 bg-dark m-4">
                     <div class="container py-5 h-100">
                       <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col">
@@ -21,18 +21,17 @@
                                   <div class="row">
                                     <div class="col-md-6 mb-4">
                                       <div class="form-outline">
+                                      <label class="form-label" for="form3Example1m">First name</label>
                                         <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                                        <label class="form-label" for="form3Example1m">First name</label>
                                       </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                       <div class="form-outline">
-                                        <input type="text" id="form3Example1n" class="form-control form-control-lg" />
                                         <label class="form-label" for="form3Example1n">Last name</label>
+                                        <input type="text" id="form3Example1n" class="form-control form-control-lg" />
                                       </div>
                                     </div>
                                   </div>
-                  
             
                   
                                   <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
@@ -62,7 +61,7 @@
                                   <div class="row">
                                     <div class="col-md-6 mb-4">
                   
-                                      <select class="select">
+                                      <select class="form-select">
                                         <option value="1">Type</option>
                                         <option value="2">Seller</option>
                                         <option value="3">Customer</option>
@@ -71,18 +70,18 @@
                                     </div>
                                   </div>
                                   <div class="form-outline mb-4">
-                                    <input type="email" id="form3Example97" class="form-control form-control-lg" />
                                     <label class="form-label" for="form3Example97">Email ID</label>
+                                    <input type="email" id="form3Example97" class="form-control form-control-lg" />
                                   </div>
 
                                   <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example90" class="form-control form-control-lg" />
                                     <label class="form-label" for="form3Example90">Password</label>
+                                    <input type="password" id="form3Example90" class="form-control form-control-lg" />
                                   </div>
                   
                                   <div class="form-outline mb-4">
-                                    <input type="password" id="form3Example99" class="form-control form-control-lg" />
                                     <label class="form-label" for="form3Example99">Confirm Password</label>
+                                    <input type="password" id="form3Example99" class="form-control form-control-lg" />
                                   </div>
                   
                                   

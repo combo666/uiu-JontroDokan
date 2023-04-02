@@ -1,5 +1,5 @@
 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-8 container">
                         <div class="media">
                             <img class="mr-3" alt="Bootstrap Media Preview" src="https://www.layoutit.com/img/sports-q-c-64-64-8.jpg">
                             <div class="media-body">

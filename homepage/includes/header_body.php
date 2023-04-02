@@ -8,10 +8,10 @@
         <!-- <div class="text-light d-block">Welcome: Guest</div> -->
         <ul class="nav justify-content-end">
         <li class="nav-item">
-  <a class="nav-link text-light" aria-current="page" href="./customers/login.php">Login</a>
+  <a class="nav-link text-light" aria-current="page" href="../././customers/login.php">Login</a>
   </li>
   <li class="nav-item">
-  <a class="nav-link text-light" aria-current="page" href="./customers/register.php">Register</a>
+  <a class="nav-link text-light" aria-current="page" href="../././customers/register.php">Register</a>
   </li>
 </ul>
     </div>
@@ -29,9 +29,6 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link <?= ($page == 'index')? 'active' : '' ?>" aria-current="page" href=".././index.php">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Categories</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="#">Shop</a>
@@ -73,7 +70,7 @@
                             <li><a class="dropdown-item" href="log.html">Logout</a></li>
                             <li><a class="dropdown-item" href="#">My Orders</a></li>
                             <li><a class="dropdown-item" href="#">My Posts</a></li>
-                            <li><a class="dropdown-item" href="../../recycle/form.php">Add Items For Recycle</a></li>
+                            <li><a class="dropdown-item" href="../././recycle/form.php">Add Items For Recycle</a></li>
                         </ul>
                     </li>
                 </ul>
