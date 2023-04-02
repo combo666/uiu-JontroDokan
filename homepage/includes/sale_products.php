@@ -8,7 +8,7 @@
             <div class="col-lg-3">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body text-center">
-                        <img src="assets/images/product/f1.png" alt="">
+                        <img src="../assets/images/product/f1.png" alt="">
                         <h2 class="product_name">
                             <a href="">something</a>
                         </h2>
@@ -34,7 +34,7 @@
             <div class="col-lg-3">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body text-center">
-                        <img src="assets/images/product/f3.png" alt="">
+                        <img src="../assets/images/product/f3.png" alt="">
                         <h2 class="product_name">
                             <a href="">something</a>
                         </h2>
@@ -60,7 +60,7 @@
             <div class="col-lg-3">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body text-center">
-                        <img src="assets/images/product/servo.png" alt="">
+                        <img src="../assets/images/product/servo.png" alt="">
                         <h2 class="product_name">
                             <a href="">something</a>
                         </h2>
@@ -86,7 +86,7 @@
             <div class="col-lg-3">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body text-center">
-                        <img src="assets/images/product/sensor.png" alt="">
+                        <img src="../assets/images/product/sensor.png" alt="">
                         <h2 class="product_name">
                             <a href="">something</a>
                         </h2>

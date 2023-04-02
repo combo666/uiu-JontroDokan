@@ -73,7 +73,7 @@
                             <li><a class="dropdown-item" href="log.html">Logout</a></li>
                             <li><a class="dropdown-item" href="#">My Orders</a></li>
                             <li><a class="dropdown-item" href="#">My Posts</a></li>
-                            <li><a class="dropdown-item" href="#">Add Items For Recycle</a></li>
+                            <li><a class="dropdown-item" href="../../recycle/form.php">Add Items For Recycle</a></li>
                         </ul>
                     </li>
                 </ul>
