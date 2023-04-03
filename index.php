@@ -52,7 +52,7 @@
                         <a class="nav-link " href="#">Shop</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#">Project</a>
+                        <a class="nav-link " href="#">Laboratory support</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link <?= ($page == 'blog')? 'active' : '' ?>" href="./blog/blog.php">Blog</a>
