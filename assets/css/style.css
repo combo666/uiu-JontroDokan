@@ -19,3 +19,48 @@
     .card-registration .select-arrow {
     top: 13px;
     }
+
+
+/* Form design */
+
+.recycle-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:80vh;
+  }
+  
+  .form-container {
+    max-width: 500px;
+    width: 100%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  input[type="file"], input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }
