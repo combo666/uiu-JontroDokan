@@ -3,11 +3,11 @@
 <!-- Component_details Show -->
 <div calss="container">
     <dic class="row">
-        <div class="col-2">
+        <div class="col-md-4 offset-md-1">
             <img src="..\assets\images\product\f1.png" alt="">
         </div>
     </div>
-    <div class="col-6">
+    <div class="col-md-4 offset-md-1">
            <h1>Arduino Mega</h1>
            <h4>price:890Tk</h4>
             <h3>Product Details</h3>
