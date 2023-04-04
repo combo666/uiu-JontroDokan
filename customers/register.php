@@ -22,13 +22,13 @@
                                     <div class="col-md-6 mb-4">
                                       <div class="form-outline">
                                       <label class="form-label" for="form3Example1m">First name</label>
-                                        <input type="text" id="form3Example1m" class="form-control form-control-lg" />
+                                        <input type="text" id="form3Example1m" class="form-control form-control-lg border" />
                                       </div>
                                     </div>
                                     <div class="col-md-6 mb-4">
                                       <div class="form-outline">
                                         <label class="form-label" for="form3Example1n">Last name</label>
-                                        <input type="text" id="form3Example1n" class="form-control form-control-lg" />
+                                        <input type="text" id="form3Example1n" class="form-control form-control-lg border" />
                                       </div>
                                     </div>
                                   </div>
