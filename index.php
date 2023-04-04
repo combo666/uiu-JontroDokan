@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./blog/css/style.css">
     <link rel="stylesheet" href="./recycle/css/style.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href=".././assets/css/blog-home.css">
 </head>
 <body>
 
