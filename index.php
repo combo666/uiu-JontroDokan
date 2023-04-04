@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="./assets/sass/main.css">
     <link rel="stylesheet" href="./blog/css/style.css">
     <link rel="stylesheet" href="./recycle/css/style.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href=".././assets/css/blog-home.css">
 </head>
 <body>
 
@@ -27,10 +25,10 @@
         <!-- <div class="text-light d-block">Welcome: Guest</div> -->
         <ul class="nav justify-content-end">
   <li class="nav-item">
-  <a class="nav-link text-light" aria-current="page" href="./customers/login.php">Login</a>
+  <a class="nav-link text-dark" aria-current="page" href="./customers/login.php">Login</a>
   </li>
   <li class="nav-item">
-  <a class="nav-link text-light" aria-current="page" href="./customers/register.php">Register</a>
+  <a class="nav-link text-dark" aria-current="page" href="./customers/register.php">Register</a>
   </li>
 </ul>
     </div>
