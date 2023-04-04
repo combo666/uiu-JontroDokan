@@ -1,7 +1,7 @@
 <?php include "../homepage/includes/header_html.php"; ?>
 <?php include "../homepage/includes/header_body.php"; ?>
 <!-- Component_details Show -->
-<div calss="samll-container">
+<div calss="container">
     <dic class="row">
         <div class="col-2">
             <img src="..\assets\images\product\f1.png" alt="">
