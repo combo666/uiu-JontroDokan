@@ -61,10 +61,6 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 action-menu">
-                    <form class="search-form">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success search-btn" type="submit">Search</button>
-                    </form>
                     <li class="nav-item">
                         <a class="nav-link" href="#">
                             <i class="bi bi-heart"></i>
