@@ -53,7 +53,7 @@
             <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
             <div class="card-body">
         
-                <h2 class="card-title h4"><?php echo $post_title ?></h2>
+                <h2 class="card-title h4"><a href=""><?php echo $post_title ?></a></h2>
                 <div class="small text-muted">By: <?php echo $post_author ?>, </div>
                 <span class="small text-muted">published on: <?php echo $post_date ?></span>
                 <p class="card-text"><?php echo mb_strimwidth($post_content, 0, 200, "..."); ?></p>
