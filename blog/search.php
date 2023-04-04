@@ -23,7 +23,7 @@ if(isset($_POST['submit']))
         <header class="py-2 bg-light border-bottom mb-4">
             <div class="container">
                 <div class="text-center my-5">
-                    <h1 class="fw-bolder">Search Results</h1>
+                    <h1 class="fw-bolder">Search Results for "<?php echo $search;?>"</h1>
                 </div>
             </div>
         </header>

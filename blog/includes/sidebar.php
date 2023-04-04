@@ -1,46 +1,53 @@
 <div class="col-lg-4">
 
-                    <!-- Search widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Search</div>
-                        <div class="card-body">
-                        <form action="search.php" method="post">
-                            <div class="input-group">
-                                <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="search" name="search"/>
-                                <button class="btn btn-primary" id="button-search" type="submit" name="submit">Go!</button>
-                            </div>
-                        </form>
-                        </div>
-                    </div>
-
-
-
-
-                    <!-- Categories widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Categories</div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">Web Design</a></li>
-                                        <li><a href="#!">HTML</a></li>
-                                        <li><a href="#!">Freebies</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-sm-6">
-                                    <ul class="list-unstyled mb-0">
-                                        <li><a href="#!">JavaScript</a></li>
-                                        <li><a href="#!">CSS</a></li>
-                                        <li><a href="#!">Tutorials</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Side widget-->
-                    <div class="card mb-4">
-                        <div class="card-header">Side Widget</div>
-                        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
-                    </div>
+    <!-- Search widget-->
+    <div class="card mb-4">
+        <div class="card-header">Search</div>
+        <div class="card-body">
+            <form action="search.php" method="post">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="search" name="search" />
+                    <button class="btn btn-primary" id="button-search" type="submit" name="submit">Go!</button>
                 </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+    <!-- Categories widget-->
+    <div class="card mb-4">
+        <div class="card-header">Categories</div>
+        <div class="card-body">
+            <div class="row">
+                <?php
+                $query = "select * from post_categories";
+
+                $categories_result = mysqli_query($connect, $query);
+
+                while ($row = mysqli_fetch_assoc($categories_result)) {
+                    $cat_title = $row['cat_title'];
+                    $cat_id = $row['cat_id'];
+                ?>
+                    <div class="col-sm-6">
+                        <ul class="list-unstyled mb-0">
+
+                            <li><a href="#!"><?php echo $cat_title ?></a></li>
+                        </ul>
+                    </div>
+
+                <?php
+                }
+
+
+                ?>
+            </div>
+        </div>
+    </div>
+    <!-- Side widget-->
+    <div class="card mb-4">
+        <div class="card-header">Side Widget</div>
+        <div class="card-body">Nothing's here till now!</div>
+    </div>
+</div>
