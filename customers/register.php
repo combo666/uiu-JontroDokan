@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="reg-form">
-                <section class="h-100 bg-dark m-4">
+                <section class="h-100 bg-light m-4">
                     <div class="container py-5 h-100">
                       <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col">
