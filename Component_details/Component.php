@@ -3,16 +3,27 @@
 <!-- Component_details Show -->
 <div calss="container">
     <dic class="row">
-        <div class="col-2">
+        <div class="col-md-4 offset-md-7">
+            <br>
+           <h1>Arduino Mega 2560 CH340</h1>
+           <h5>Reference RBD-1397</h5>
+            <br>
+           <h4>price:890Tk</h4>
+           <br>
+           <button class="btn btn-primary me-md-2" type="button">BUY NOW</button>
+                <a href="" class="add-to-cart-btn">
+                    <i class="bi bi-cart4"></i> Add to Cart
+                </a>
+        </div>
+        <div class="col-md-4 offset-md-1">
             <img src="..\assets\images\product\f1.png" alt="">
         </div>
     </div>
-    <div class="col-6">
-           <h1>Arduino Mega</h1>
-           <h4>price:890Tk</h4>
+    <div class="col-md-4 offset-md-1">
             <h3>Product Details</h3>
             <p>The Arduino Mega 2560 is a microcontroller board based on the ATmega2560. It has 54 digital input/output pins (of which 15 can be used as PWM outputs), 16 analog inputs, 4 UARTs (hardware serial ports), a 16 MHz crystal oscillator, a USB connection, a power jack, an ICSP header, and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started. The Mega 2560 board is compatible with most shields designed for the Uno and the former boards Duemilanove or Diecimila.
                The Mega 2560 is an update to the Arduino Mega, which it replaces.</p>
+
     </div>
 
 </div>
