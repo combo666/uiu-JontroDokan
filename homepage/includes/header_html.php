@@ -11,7 +11,7 @@
     <link rel="stylesheet" href=".././assets/fonts/bootstrap-icons.css">
     <link rel="stylesheet" href=".././assets/sass/main.css">
     <link rel="stylesheet" href=".././blog/css/style.css">
-    <link rel="stylesheet" href=".././recycle/css/style.css">
+    <link rel="stylesheet" href="../../recycle/css/styles.css">
     <link rel="stylesheet" href=".././assets/css/style.css">
     <link rel="stylesheet" href=".././assets/css/new_style.css">
 </head>
