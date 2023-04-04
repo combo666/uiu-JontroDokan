@@ -1,8 +1,0 @@
-
-.carousel-img {
-    transition: transform 0.5s ease;
-  }
-  
-  .carousel-img:hover {
-    transform: scale(1.1);
-  }

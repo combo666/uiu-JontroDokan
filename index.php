@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="./assets/sass/main.css">
     <link rel="stylesheet" href="./blog/css/style.css">
     <link rel="stylesheet" href="./recycle/css/style.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 
@@ -26,10 +25,10 @@
         <!-- <div class="text-light d-block">Welcome: Guest</div> -->
         <ul class="nav justify-content-end">
   <li class="nav-item">
-  <a class="nav-link text-light" aria-current="page" href="./customers/login.php">Login</a>
+  <a class="nav-link text-dark" aria-current="page" href="./customers/login.php">Login</a>
   </li>
   <li class="nav-item">
-  <a class="nav-link text-light" aria-current="page" href="./customers/register.php">Register</a>
+  <a class="nav-link text-dark" aria-current="page" href="./customers/register.php">Register</a>
   </li>
 </ul>
     </div>
@@ -220,9 +219,7 @@
 <!--Footer section-->
 <footer class = "container-fluid">
     <div class="row">
-        <div class="page-header__topline h-10 justify-content-center d-flex align-items-center text-light font-weight-light">
-            <span>Copyright@TeamMayhemMorph, 2023</span>
-        </div>
+    <div class="container header__topline bg-dark"><p class="m-0 text-center text-white">Copyright &copy; TeamMayhemMorph 2023</p></div>
     </div>
 </footer>
 <script src="./assets/js/bootstrap.bundle.js"></script>
