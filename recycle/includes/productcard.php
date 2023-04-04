@@ -10,9 +10,9 @@
                         <img src="../assets/images/product/f3.png" alt="">
                         <h2 class="product_name">
                             <a class="text-decoration-none" href="">something</a>
+                            <br>
+                            <h7>Available Units : 0</h7>
                         </h2>
-                        
-                        <h7>Available Units</h7>
                         <div class="btn d-flex justify-content-between align-items-center">
                             <a href="" class="add-to-cart-btn ">
                                 <i class="bi bi-cart4"></i> Add to Cart
@@ -30,9 +30,10 @@
                         <img src="../assets/images/product/servo.png" alt="">
                         <h2 class="product_name">
                             <a class="text-decoration-none" href="">something</a>
+                            <br>
+                            <h7>Available Units : 0</h7>
                         </h2>
                         
-                        <h7>Available Units</h7>
                         <div class="btn d-flex justify-content-between align-items-center">
                             <a href="" class="add-to-cart-btn">
                                 <i class="bi bi-cart4"></i> Add to Cart
@@ -50,9 +51,11 @@
                         <img src="../assets/images/product/servo.png" alt="">
                         <h2 class="product_name">
                             <a class="text-decoration-none" href="">something</a>
+                            <br>
+                            <h8>Available Units : 0</h8>
                         </h2>
                         
-                        <h7>Available Units</h7>
+                        
                         <div class="btn d-flex justify-content-between align-items-center">
                             <a href="" class="add-to-cart-btn">
                                 <i class="bi bi-cart4"></i> Add to Cart
