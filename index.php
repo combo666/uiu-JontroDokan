@@ -49,7 +49,7 @@
                         <a class="nav-link <?= ($page == 'index')? 'active' : '' ?>" aria-current="page" href="./index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href="#">Shop</a>
+                        <a class="nav-link " href="./Shop/shop.php">Shop</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="#">Laboratory support</a>
