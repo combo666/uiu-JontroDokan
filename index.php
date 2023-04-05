@@ -51,10 +51,10 @@
                     <li class="nav-item">
                         <a class="nav-link " href="./Shop/shop.php">Shop</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link " href="#">Laboratory support</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item"> -->
                         <a class="nav-link <?= ($page == 'blog')? 'active' : '' ?>" href="./blog/blog.php">Blog</a>
                     </li>
                     <li class="nav-item">
@@ -120,7 +120,7 @@
                         </div>
                         <h2 class="price">৳ 200.00</h2>
                         <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="..\Component_details\Component.php" class="add-to-cart-btn">
+                            <a href=".\Component_details\Component.php" class="add-to-cart-btn">
                                 <i class="bi bi-cart4"></i> Add to Cart
                             </a>
                             <a href="" class="add-to-favorite text-success">

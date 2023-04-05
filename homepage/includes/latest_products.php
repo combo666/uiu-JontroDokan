@@ -9,7 +9,7 @@
                     <div class="card-body text-center">
                         <img src="assets/images/product/product27.png" alt="">
                         <h2 class="product_name">
-                            <a href="">Organic Cauliflower (1kg)</a>
+                            <a href="">something</a>
                         </h2>
                         <div class="rating">
                             <i class="bi bi-star-fill text-warning"></i>
