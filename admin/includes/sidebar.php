@@ -1,60 +1,82 @@
-<div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav side-nav">
-                    <li>
-                        <a href="./admin_dashboard.php"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#posts"><i class="fa fa-fw fa-book"></i> Posts <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="posts" class="collapse">
-                            <li>
-                                <a href="#">Create Post</a>
-                            </li>
-                            <li>
-                                <a href="#">My Posts</a>
-                            </li>
-                            <li>
-                                <a href="./create_cat.php">Create Category</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#products"><i class="fa fa-fw fa-shopping-cart"></i> Products <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="products" class="collapse">
-                            <li>
-                                <a href="#">Add Components</a>
-                            </li>
-                            <li>
-                                <a href="#">Components List</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#order"><i class="fa fa-fw fa-hand-o-down"></i> Orders <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="order" class="collapse">
-                            <li>
-                                <a href="#">Component Orders</a>
-                            </li>
-                            <li>
-                                <a href="#">Book Orders</a>
-                            </li>
-                            <li>
-                                <a href="#">Completed Orders</a>
-                            </li>
-                            <li>
-                                <a href="#">Pending Orders</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="javascript:;" data-toggle="collapse" data-target="#seller"><i class="fa fa-fw fa-arrows-v"></i> Seller <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="seller" class="collapse">
-                            <li>
-                                <a href="#">Seller List</a>
-                            </li>
-                            <li>
-                                <a href="#">Seller Seller Request</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+<div id="layoutSidenav_nav">
+    <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+        <div class="sb-sidenav-menu">
+            <div class="nav">
+                <div class="sb-sidenav-menu-heading">Core</div>
+                <a class="nav-link" href="index.php">
+                    <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    Dashboard
+                </a>
+                <div class="sb-sidenav-menu-heading">Blog Module</div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#postModule" aria-expanded="false" aria-controls="postModule">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-feather"></i></div>
+                    Blog
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="postModule" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="my_posts.php">My posts</a>
+                        <a class="nav-link" href="layout-sidenav-light.html">Add a new blog</a>
+                        <a class="nav-link" href="categories.php">Categories</a>
+                    </nav>
+                </div>
+                <!-- <div class="sb-sidenav-menu-heading">Interface</div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    Layouts
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                        <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                    </nav>
+                </div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                    <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                    Pages
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                            Authentication
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="login.html">Login</a>
+                                <a class="nav-link" href="register.html">Register</a>
+                                <a class="nav-link" href="password.html">Forgot Password</a>
+                            </nav>
+                        </div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                            Error
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="401.html">401 Page</a>
+                                <a class="nav-link" href="404.html">404 Page</a>
+                                <a class="nav-link" href="500.html">500 Page</a>
+                            </nav>
+                        </div>
+                    </nav>
+                </div>
+                <div class="sb-sidenav-menu-heading">Addons</div>
+                <a class="nav-link" href="charts.html">
+                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    Charts
+                </a>
+                <a class="nav-link" href="tables.html">
+                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    Tables
+                </a> -->
             </div>
+        </div>
+        <div class="sb-sidenav-footer">
+            <div class="small">Logged in as:</div>
+            Admin
+        </div>
+    </nav>
+</div>
