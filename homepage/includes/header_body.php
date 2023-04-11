@@ -15,10 +15,10 @@
                 <!-- <div class="text-light d-block">Welcome: Guest</div> -->
                 <ul class="nav justify-content-end">
                     <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="../../customers/login.php">Login</a>
+                    <a class="nav-link text-dark" aria-current="page" href=".././customers/login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link text-dark" aria-current="page" href="../../customers/register.php">Register</a>
+                    <a class="nav-link text-dark" aria-current="page" href=".././customers/register.php">Register</a>
                     </li>
                 </ul>
             </div>
