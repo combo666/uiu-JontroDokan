@@ -15,9 +15,22 @@
                 </a>
                 <div class="collapse" id="postModule" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="my_posts.php">My posts</a>
-                        <a class="nav-link" href="layout-sidenav-light.html">Add a new blog</a>
+                        <a class="nav-link" href="my_posts.php">All posts</a>
+                        <a class="nav-link" href="my_posts.php">My drafts</a>
+                        <a class="nav-link" href="add_new_post.php">Add new</a>
                         <a class="nav-link" href="categories.php">Categories</a>
+                    </nav>
+                </div>
+                <div class="sb-sidenav-menu-heading">Shop Module</div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#shopModule" aria-expanded="false" aria-controls="shopModule">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-feather"></i></div>
+                    Shop
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="shopModule" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="my_posts.php">Add sell products</a>
+                        <a class="nav-link" href="my_posts.php">Add rent products</a>
                     </nav>
                 </div>
                 <!-- <div class="sb-sidenav-menu-heading">Interface</div>
