@@ -30,19 +30,13 @@ if(isset($_POST['login_submit'])){
 <?php 
 
 if($login){
-  echo '<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">
-  <strong>Success!</strong> Login successful.
-  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
-    <span aria-hidden=\"true\">&times;</span>
-  </button>
-  </div>';
+  echo "<div class=\"alert alert-danger\" role=\"alert\">
+      category name field cannot be empty or null
+      </div>";
 }if($loginError){
-  echo '<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
-  <strong>Unsuccess!</strong> Could not login.
-  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
-    <span aria-hidden=\"true\">&times;</span>
-  </button>
-  </div>';
+  echo "<div class=\"alert alert-danger\" role=\"alert\">
+  category name field cannot be empty or null
+  </div>";
 }
 ?>
 

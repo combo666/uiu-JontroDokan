@@ -45,19 +45,13 @@ if(isset($_POST['reg_submit'])){
 <?php 
 
 if($showAlart){
-  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-  <strong>Success!</strong> Account is created.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  </div>';
+  echo "<div class=\"alert alert-danger\" role=\"alert\">
+      category name field cannot be empty or null
+      </div>";
 }if($showError){
-  echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>Unsuccess!</strong> Could not create account.
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-  </button>
-  </div>';
+  echo "<div class=\"alert alert-danger\" role=\"alert\">
+      category name field cannot be empty or null
+      </div>";
 }
 ?>
   

@@ -4,6 +4,12 @@
         <div class="container header__topline bg-dark"><p class="m-0 text-center text-white">Copyright &copy; TeamMayhemMorph 2023</p></div>
     </div>
 </footer>
+
+<script>
+    if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+    }
+</script>
 <script src=".././assets/js/jquery.js"></script>
 <script src=".././assets/js/bootstrap.min.js"></script>
 <script src=".././assets/js/bootstrap.bundle.js"></script>
