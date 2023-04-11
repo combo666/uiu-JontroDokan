@@ -1,3 +1,4 @@
+
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -16,6 +17,7 @@
                     <th>Tags</th>
                     <th>Comments</th>
                     <th>Date</th>
+                    <th class="text-center">Actions</th>
                 </tr>
             </thead>
             <tfoot>
@@ -29,6 +31,7 @@
                     <th>Tags</th>
                     <th>Comments</th>
                     <th>Date</th>
+                    <th class="text-center">Actions</th>
                 </tr>
             </tfoot>
             <tbody>
@@ -41,6 +44,7 @@
                 ?>
 
                     <tr>
+                        <td> </td>
                         <td> </td>
                         <td> </td>
                         <td> </td>
@@ -69,15 +73,19 @@
 
                     ?>
                         <tr>
-                            <td><?php echo $post_id ?></td>
-                            <td><?php echo $post_auth ?></td>
-                            <td><?php echo $post_title ?></td>
-                            <td><?php echo $post_cat ?></td>
-                            <td><img class="img-fluid" src="../blog/image/<?php echo $post_img; ?>" alt="no_img"></td>
-                            <td><?php echo $post_stat ?></td>
-                            <td><?php echo $post_tags ?></td>
-                            <td><?php echo $post_comments ?></td>
-                            <td><?php echo $post_date ?></td>
+                            <td><?php echo $post_id; ?></td>
+                            <td><?php echo $post_auth; ?></td>
+                            <td><?php echo $post_title; ?></td>
+                            <td><?php echo $post_cat; ?></td>
+                            <td><img src="../blog/image/<?php echo $post_img; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
+                            <td><?php echo $post_stat; ?></td>
+                            <td><?php echo $post_tags; ?></td>
+                            <td><?php echo $post_comments; ?></td>
+                            <td><?php echo $post_date; ?></td>
+                            <td colspan="2" class="text-center">
+                                <a class="btn btn-sm btn-primary" type="submit" name="post_edit" href="my_posts.php?source=edit_post&p_id=<?php echo $post_id; ?>">Edit</a>
+                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="post_delete" href="my_posts.php?delete=<?php echo $post_id ;?>"> Delete</a>
+                            </td>
                         </tr>
 
 

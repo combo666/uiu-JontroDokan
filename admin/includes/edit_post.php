@@ -38,6 +38,11 @@
 ?>
 
 
+
+<?php 
+
+?>
+
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -73,9 +78,20 @@
                   <div class="form-floating">
                     <select class="form-select" id="cat" name="post_cat" required>
                       <option selected>Select a category</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
+
+<?php
+  $cat_query = "select * from post_categories";
+  $cats = mysqli_query($connect, $cat_query);
+
+
+
+  while($rows = mysqli_fetch_assoc($cats))
+  {
+    ?>
+    <option value="<?php echo $rows['cat_id'];?>"><?php echo $rows['cat_title'];?></option>
+<?php
+  }
+?>
                     </select>
                     <label for="car">Select a category</label>
                   </div>

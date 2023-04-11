@@ -18,7 +18,29 @@
             </div>
         </main> 
         <a href="my_posts.php?source=add_new" class="btn btn-primary btn-sm col-md-1 ms-auto mb-2 me-2">Add New</a>
-    
+
+<!-- deletion  -->
+<?php
+    if(isset($_GET['delete']))
+    {
+        $del_id = $_GET['delete'];
+
+        $del_query = "delete from posts where post_id = {$del_id}";
+        $del_res = mysqli_query($connect, $del_query);
+
+        if($del_query)
+        {
+            echo "<div class=\"alert alert-success\" role=\"alert\">
+                {$del_id} successfully deleted!
+                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                </div>";
+        }
+        else
+        {
+            die("query failed!" . mysqli_error($connect));
+        }
+    }
+?>
         
 <?php
 if (isset($_GET['source'])) {
@@ -28,11 +50,14 @@ if (isset($_GET['source'])) {
 }
 switch ($source) {
     case "add_new":
-        include "add_new_post.php";
+        include "includes/add_new_post.php";
         break;
-    case "200":
-        echo "100";
+    case "drafts":
+        include "includes/all_post_drafts.php";
         break;
+    case "edit_post":
+        include "includes/edit_post.php";
+        break;    
     default:
         include "includes/view_all_posts.php";
         break;
