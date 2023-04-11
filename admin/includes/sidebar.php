@@ -17,7 +17,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="my_posts.php">All posts</a>
                         <a class="nav-link" href="my_posts.php">My drafts</a>
-                        <a class="nav-link" href="add_new_post.php">Add new</a>
+                        <!-- <a class="nav-link" href="add_new_post.php">Add new</a> -->
                         <a class="nav-link" href="categories.php">Categories</a>
                     </nav>
                 </div>

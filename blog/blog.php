@@ -44,13 +44,14 @@
         $post_date = $row['post_date'];
         $post_author = $row['post_author'];
         $post_content = $row['post_content'];
+        $post_image = $row['post_image'];
 ?>
 
 
         <div class="col-md-6">
         <!-- Blog post-->
         <div class="card mb-4">
-            <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" alt="..." /></a>
+            <a href="#!"><img class="card-img-top" src="image/<?php echo $post_image?>" alt="no image" /></a>
             <div class="card-body">
         
                 <h2 class="card-title h4"><a href=""><?php echo mb_strimwidth($post_title, 0, 30, "..."); ?></a></h2>
