@@ -1,5 +1,51 @@
+<?php
+
+include '../database/db_connect.php';
+
+$login = false;
+$loginError = false;
+if(isset($_POST['login_submit'])){
+
+  $emailid = $_POST["email"];
+  $password = $_POST["password"];
+  
+
+  $sql = "SELECT * FROM `user` WHERE email = '$emailid' AND password = '$password' ";
+
+  $result = mysqli_query($connect, $sql);
+  $num = mysqli_num_rows($result);
+  if($num == 1){
+    $login = true;
+  }else{
+    $loginError = true;
+  }
+  
+}
+
+?>
+
 <?php include ".././homepage/includes/header_html.php"?>
 <?php include ".././homepage/includes/header_body.php"?>
+
+<?php 
+
+if($login){
+  echo '<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">
+  <strong>Success!</strong> Login successful.
+  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+    <span aria-hidden=\"true\">&times;</span>
+  </button>
+  </div>';
+}if($loginError){
+  echo '<div class=\"alert alert-danger alert-dismissible fade show\" role=\"alert\">
+  <strong>Unsuccess!</strong> Could not login.
+  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">
+    <span aria-hidden=\"true\">&times;</span>
+  </button>
+  </div>';
+}
+?>
+
 <body>
     <div class="row container-fluid">
         <div class="cont">
@@ -17,7 +63,7 @@
                               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
                   
-                                  <form>
+                                  <form action="#" method="post">
                   
                                     <div class="d-flex align-items-center mb-3 pb-1">
                                       <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
@@ -27,17 +73,17 @@
                                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
                   
                                     <div class="form-outline mb-4">
-                                      <input type="email" id="form2Example17" class="form-control form-control-lg border" />
+                                      <input type="email" id="form2Example17" name="email" class="form-control form-control-lg border" />
                                       <label class="form-label" for="form2Example17">Email address</label>
                                     </div>
                   
                                     <div class="form-outline mb-4">
-                                      <input type="password" id="form2Example27" class="form-control form-control-lg border" />
+                                      <input type="password" id="form2Example27" name="password" class="form-control form-control-lg border" />
                                       <label class="form-label" for="form2Example27">Password</label>
                                     </div>
                   
                                     <div class="pt-1 mb-4">
-                                      <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                                      <button class="btn btn-dark btn-lg btn-block" name="login_submit" type="submit">Login</button>
                                     </div>
                   
                                     <a class="small text-muted" href="#!">Forgot password?</a>
