@@ -58,8 +58,11 @@ if(isset($_POST['reg_submit'])){
 
 if($showAlart){
   echo "<div class=\"alert alert-success\" role=\"alert\">
-      Registration successful!
+      Registration successful! Please Login
       </div>";
+      ?>
+      <meta http-equiv="refresh" content="0.7; url='./login.php'" />
+      <?php
 }if($showError){
   echo "<div class=\"alert alert-danger\" role=\"alert\">
       $showError
