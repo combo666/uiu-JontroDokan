@@ -108,6 +108,22 @@
 <!-- featured posts  -->
 
 
+<?php
+if (isset($_GET['delete_f'])) {
+    $p_id = $_GET['delete_f'];
+    $post_f_q = "update posts set is_featured = NULL where post_id = {$p_id}";
+
+    $res = mysqli_query($connect, $post_f_q);
+    if ($res) {
+        echo "<div class=\"alert alert-success\" role=\"alert\">
+                            removed from featured post
+                            </div>";
+    } else {
+        die('Query error' . mysqli_error($connect));
+    }
+}
+?>
+
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
@@ -148,7 +164,7 @@
 
 
     <div class="card-body">
-        <form action="#" method="post">
+        <form action="my_posts.php" method="post">
             <label for="#postID" class="form-label">Insert existing post id</label>
             <div class="input-group ml-3">
                 <input type="number" class="form-control" placeholder="post id" aria-label="post id" aria-describedby="postID" id="postID" name="post_id">
@@ -177,8 +193,8 @@
                     $p_title = $row['post_title'];
                 ?>
                     <tr>
-                        <th scope="row"><?php echo $p_id?></th>
-                        <td><?php echo $p_title?></td>
+                        <th scope="row"><?php echo $p_id ?></th>
+                        <td><?php echo $p_title ?></td>
                         <td><a class="btn btn-sm btn-danger ms-2 mx-auto" type="submit" name="delete_f" href="my_posts.php?delete_f=<?php echo $p_id; ?>">Remove</a></td>
                     </tr>
 

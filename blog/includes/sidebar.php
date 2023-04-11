@@ -7,7 +7,7 @@
             <form action="search.php" method="post">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="search" name="search" />
-                    <button class="btn btn-primary" id="button-search" type="submit" name="submit">Go!</button>
+                    <button class="btn btn-primary" id="button-search" type="submit" name="submit" >Go!</button>
                 </div>
             </form>
         </div>
@@ -33,7 +33,7 @@
                     <div class="col-sm-6">
                         <ul class="list-unstyled mb-0">
 
-                            <li><a href="#!"><?php echo $cat_title ?></a></li>
+                            <li><a href="categories_search.php?cat_id=<?php echo $cat_id; ?>&cat_title=<?php echo $cat_title; ?>"><?php echo $cat_title ?></a></li>
                         </ul>
                     </div>
 

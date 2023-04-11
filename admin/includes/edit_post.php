@@ -1,44 +1,3 @@
-<?php
-    if(isset($_POST['create_post']))
-    {
-        $post_title = $_POST['post_title'];
-        $post_author = $_POST['post_author'];
-        $post_tags = $_POST['post_tags'];
-        $post_content = $_POST['post_content'];
-
-        $post_cat = $_POST['post_cat'];
-        $post_image = $_FILES['post_image']['name'];
-        $post_image_temp = $_FILES['post_image']['tmp_name'];
-        move_uploaded_file($post_image_temp, "../blog/image/$post_image");
-
-        $post_comment = 0;
-        date_default_timezone_set('Asia/Dhaka');
-        $post_date = date('d-m-y');
-        $post_stat = $_POST['post_stat'];
-
-        $create_post_query = "insert into posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_comment_count, post_status) ";
-        $create_post_query .= "values({$post_cat}, '{$post_title}', '{$post_author}', '{$post_date}', '{$post_image}', '{$post_content}', '{$post_tags}', '{$post_comment}', '{$post_stat}')";
-
-
-        $confirm_posted = mysqli_query($connect, $create_post_query);
-
-        if($confirm_posted)
-        {
-          echo "<div class=\"alert alert-success\" role=\"alert\">
-               post added to {$post_stat}!
-              </div>";
-        }
-        else
-        {
-          die("<div class=\"alert alert-danger\" role=\"alert\">
-          post is failed to add!
-         </div>". mysqli_error($connect));
-        }
-    }
-?>
-
-
-
 <?php 
 
 $post_title = "";
@@ -66,6 +25,64 @@ $post_stat = "";
         $post_image = $row['post_image'];
         $post_stat = $row['post_status'];
     }
+  }
+  if(isset($_POST['update_post']))
+  {
+        $post_title = $_POST['post_title'];
+        $post_author = $_POST['post_author'];
+        $post_tags = $_POST['post_tags'];
+        $post_content = $_POST['post_content'];
+
+        $post_cat = $_POST['post_cat'];
+        $post_image = $_FILES['post_image']['name'];
+
+        if(empty($post_image))
+        {
+          $find_img_q = "select post_image from posts where post_id = {$the_post_id}";
+
+          $find_img = mysqli_query($connect, $find_img_q);
+
+          $row = mysqli_fetch_assoc($find_img);
+
+          $post_image = $row['post_image'];
+        }
+
+      
+        $post_image_temp = $_FILES['post_image']['tmp_name'];
+        move_uploaded_file($post_image_temp, "../blog/image/$post_image");
+
+        date_default_timezone_set('Asia/Dhaka');
+
+        $post_stat = $_POST['post_stat'];
+
+
+        $post_update_q = "update posts set ";
+        $post_update_q .= "post_title = '{$post_title}', ";
+        $post_update_q .= "post_author = '{$post_author}', ";
+        $post_update_q .= "post_tags = '{$post_tags}', ";
+        $post_update_q .= "post_content = '{$post_content}', ";
+        $post_update_q .= "post_category_id = '{$post_cat}', ";
+        $post_update_q .= "post_image = '{$post_image}', ";
+        $post_update_q .= "post_status = '{$post_stat}' ";
+        $post_update_q .= "where post_id = {$the_post_id}";
+
+
+        $update_post = mysqli_query($connect, $post_update_q);
+
+
+        if($update_post)
+        {
+          echo "<div class=\"alert alert-success\" role=\"alert\">
+               post updated!
+              </div>";
+        }
+        else
+        {
+          die("<div class=\"alert alert-danger\" role=\"alert\">
+          post is failed to update!
+         </div>". mysqli_error($connect));
+        }
+
   }
 ?>
 
@@ -104,7 +121,6 @@ $post_stat = "";
                 <div class="col-md mt-4">
                   <div class="form-floating">
                     <select class="form-select" id="cat" name="post_cat" required>
-                      <option selected><?php echo $post_cat; ?></option>
 
 <?php
   $cat_query = "select * from post_categories";
@@ -114,8 +130,12 @@ $post_stat = "";
 
   while($rows = mysqli_fetch_assoc($cats))
   {
-    if($post_cat == $rows['cat_title'])
+    if($post_cat == $rows['cat_id'])
     {
+      ?>
+
+      <option selected value="<?php echo $post_cat; ?>"><?php echo $rows['cat_title']; ?></option>
+      <?php
       continue;
     }
     ?>
@@ -130,14 +150,16 @@ $post_stat = "";
                 <div class="col-md mt-4">
                   <div class="form-floating">
                     <select class="form-select" id="post_stat" name="post_stat" required>
-                      <option selected><?php echo ucfirst($post_stat); ?></option>
 <?php
   if($post_stat == "draft")
   {
     echo "<option value=\"publish\">Publish</option>";
+    echo "<option value=\"draft\" selected>Draft</option>";
+
   }
   else 
   { 
+    echo "<option value=\"publish\" selected>Publish</option>";
     echo "<option value=\"draft\">Draft</option>";
   }
 
@@ -148,7 +170,7 @@ $post_stat = "";
                 </div>
               </div>
               <hr>
-            <button class="btn btn-primary btn-xl mt-5" type="submit" name="create_post">ADD POST</button>
+            <button class="btn btn-primary btn-xl mt-5" type="submit" name="update_post">UPDATE POST</button>
         </form>
     </div>
 </div>

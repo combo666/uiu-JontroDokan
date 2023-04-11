@@ -1,9 +1,10 @@
 <?php
 include('../database/db_connect.php');
-if(isset($_POST['submit']))
+
+if(isset($_GET['cat_id']))
 {
-    $search = $_POST['search'];
-    $query = "select * from posts where post_tags like '%$search%' ";
+    $search = $_GET['cat_id'];
+    $query = "select * from posts where post_category_id = {$search} ";
 
     $search_query = mysqli_query($connect, $query);
 
@@ -13,6 +14,7 @@ if(isset($_POST['submit']))
     }
 
     $count = mysqli_num_rows($search_query);
+    $cat_title = $_GET['cat_title'];
     
 }
 ?>
@@ -22,7 +24,7 @@ if(isset($_POST['submit']))
         <header class="py-2 bg-light border-bottom mb-4">
             <div class="container">
                 <div class="text-center my-5">
-                    <h1 class="fw-bolder">Search Results for "<?php echo $search;?>"</h1>
+                    <h1 class="fw-bolder">Search Results for "<?php echo $cat_title;?>"</h1>
                 </div>
             </div>
         </header>
@@ -46,17 +48,15 @@ if(isset($_POST['submit']))
 
     while($row = mysqli_fetch_assoc($search_query))
     {
-        $post_id = $row['post_id'];
         $post_title = $row['post_title'];
         $post_date = $row['post_date'];
         $post_author = $row['post_author'];
         $post_content = $row['post_content'];
         $post_image = $row['post_image'];
-
 ?>
 
 
-<div class="col-md-10">
+        <div class="col-md-10">
         <!-- Blog post-->
         <div class="card mb-4">
         <a href="post.php?p_id=<?php echo $post_id; ?>"><img class="card-img-top" src="image/<?php echo $post_image; ?>" alt="no image"/></a>
