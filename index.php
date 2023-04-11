@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(isset($_SESSION['uname'])){
+        $uname = $_SESSION['uname'];
+    }
+    
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,17 +30,24 @@
     
 ?>
 <header>
-    <div class="page-header__topline container-fluid row">
-        <!-- <div class="text-light d-block">Welcome: Guest</div> -->
-        <ul class="nav justify-content-end">
-  <li class="nav-item">
-  <a class="nav-link text-dark" aria-current="page" href="./customers/login.php">Login</a>
-  </li>
-  <li class="nav-item">
-  <a class="nav-link text-dark" aria-current="page" href="./customers/register.php">Register</a>
-  </li>
-</ul>
-    </div>
+    <?php
+        if(!isset($_SESSION['uname'])){
+            ?>
+            <div class="page-header__topline container-fluid row">
+                <!-- <div class="text-light d-block">Welcome: Guest</div> -->
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                    <a class="nav-link text-dark" aria-current="page" href="./customers/login.php">Login</a>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link text-dark" aria-current="page" href="./customers/register.php">Register</a>
+                    </li>
+                </ul>
+            </div>
+    <?php
+        }
+    ?>
+    
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <a class="navbar-brand" href="#">
@@ -78,10 +93,22 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="bi bi-person"></i>
+                           <?php
+                                if(isset($_SESSION['uname'])){
+                                    ?>
+                                    <i class="bi bi-person"><?php echo " ".$uname ?></i>
+                                    <?php
+                                }
+                                else{
+                                    ?>
+                                    <i class="bi bi-person"></i>
+                                    <?php
+                                }
+                           ?>
+                            
                         </a>
                         <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="log.html">Logout</a></li>
+                            <li><a class="dropdown-item" href="./log.php">Logout</a></li>
                             <li><a class="dropdown-item" href="#">My Orders</a></li>
                             <li><a class="dropdown-item" href="#">My Posts</a></li>
                             <li><a class="dropdown-item" href="./recycle/form.php">Add Items For Recycle</a></li>
