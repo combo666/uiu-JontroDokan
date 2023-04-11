@@ -1,8 +1,13 @@
+<?php include "../homepage/includes/header_html.php"?>
+<?php include "../homepage/includes/header_body.php"?>
+
 <?php
 include '../database/db_connect.php';
 
 $showAlart = false;
 $showError = false;
+
+
 if(isset($_POST['reg_submit'])){
 
   $firstname = $_POST["firstname"];
@@ -25,7 +30,15 @@ if(isset($_POST['reg_submit'])){
   $password = $_POST["password"];
   $cpassword = $_POST["cpassword"];
   $exists = false;
-  if(($password == $cpassword) && $exists == false){
+
+  $email_exists = "SELECT * FROM `user` WHERE email = '$emailid'";
+  $res = mysqli_query($connect, $email_exists);
+  $num = mysqli_num_rows($res);
+  if($num == 1){
+    $showError = 'Email already exist';
+  }else if( $email_exists == $emailid){
+    $showError = 'Email already exist';
+  }else if(($password == $cpassword) && $exists == false){
     $sql = "INSERT INTO `user`(`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `gender`) VALUES (NULL,'$firstname','$lastname','$emailid','$password','$phone','$gender')";
 
     $result = mysqli_query($connect, $sql);
@@ -38,19 +51,21 @@ if(isset($_POST['reg_submit'])){
 }
 
 ?>
-<?php include "../homepage/includes/header_html.php"?>
-<?php include "../homepage/includes/header_body.php"?>
+
 
 
 <?php 
 
 if($showAlart){
-  echo "<div class=\"alert alert-danger\" role=\"alert\">
-      category name field cannot be empty or null
+  echo "<div class=\"alert alert-success\" role=\"alert\">
+      Registration successful! Please Login
       </div>";
+      ?>
+      <meta http-equiv="refresh" content="0.7; url='./login.php'" />
+      <?php
 }if($showError){
   echo "<div class=\"alert alert-danger\" role=\"alert\">
-      category name field cannot be empty or null
+      $showError
       </div>";
 }
 ?>

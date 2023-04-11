@@ -1,3 +1,6 @@
+<?php include ".././homepage/includes/header_html.php"?>
+<?php include ".././homepage/includes/header_body.php"?>
+
 <?php
 
 include '../database/db_connect.php';
@@ -12,10 +15,18 @@ if(isset($_POST['login_submit'])){
 
   $sql = "SELECT * FROM `user` WHERE email = '$emailid' AND password = '$password' ";
 
+  $res = mysqli_query($connect, $sql);
+  $uname = mysqli_fetch_assoc($res);
+
   $result = mysqli_query($connect, $sql);
   $num = mysqli_num_rows($result);
+
   if($num == 1){
     $login = true;
+
+    $_SESSION['uname'] = $uname["first_name"] ." ".$uname["last_name"];
+    
+
   }else{
     $loginError = true;
   }
@@ -24,18 +35,20 @@ if(isset($_POST['login_submit'])){
 
 ?>
 
-<?php include ".././homepage/includes/header_html.php"?>
-<?php include ".././homepage/includes/header_body.php"?>
+
 
 <?php 
 
 if($login){
-  echo "<div class=\"alert alert-danger\" role=\"alert\">
-      category name field cannot be empty or null
-      </div>";
+  echo "<div class=\"alert alert-success\" role=\"alert\">
+      Login successful.
+      </div> ";
+      ?>
+      <meta http-equiv="refresh" content="0.7; url='../index.php'" />
+      <?php
 }if($loginError){
   echo "<div class=\"alert alert-danger\" role=\"alert\">
-  category name field cannot be empty or null
+  Sorry! Could not login.
   </div>";
 }
 ?>
@@ -77,7 +90,7 @@ if($login){
                                     </div>
                   
                                     <div class="pt-1 mb-4">
-                                      <button class="btn btn-dark btn-lg btn-block" name="login_submit" type="submit">Login</button>
+                                      <button class="btn btn-dark btn-lg btn-block" name="login_submit" type="submit" >Login</button>
                                     </div>
                   
                                     <a class="small text-muted" href="#!">Forgot password?</a>
