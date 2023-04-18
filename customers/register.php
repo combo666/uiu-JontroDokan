@@ -9,11 +9,12 @@ $showError = false;
 
 
 if(isset($_POST['reg_submit'])){
-
+  $gender = null;
   $firstname = $_POST["firstname"];
   $lastname = $_POST["lastname"];
   if(!empty($_POST["gender"])){
     foreach($_POST["gender"] as $value){
+      
       if($value == "option1"){
         $gender = "female";
       }else if($value == "option2"){
@@ -38,7 +39,7 @@ if(isset($_POST['reg_submit'])){
     $showError = 'Email already exist';
   }else if( $email_exists == $emailid){
     $showError = 'Email already exist';
-  }else if(($password == $cpassword) && $exists == false){
+  }else if(($password == $cpassword) && $exists == false && $emailid != null && $firstname != null && $password != null && $gender != null && $phone != null){
     $sql = "INSERT INTO `user`(`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `gender`) VALUES (NULL,'$firstname','$lastname','$emailid','$password','$phone','$gender')";
 
     $result = mysqli_query($connect, $sql);
@@ -46,7 +47,7 @@ if(isset($_POST['reg_submit'])){
       $showAlart = true;
     }
   }else{
-    $showError = true;
+    $showError = "Could not create account. ";
   }
 }
 
