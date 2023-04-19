@@ -28,10 +28,38 @@ include 'config.php';
       <br>
       <h4>Price: <?php echo $select_products['price']; ?>Tk</h4>
       <br>
-      <button class="btn btn-primary me-md-2" type="button">BUY NOW</button>
-      <a href="" class="add-to-cart-btn">
-        <i class="bi bi-cart4"></i> Add to Cart
-      </a>
+      <div class="card md-4">
+           <div class="card-header">Seller info</div>
+                <div class="row">
+                    <div class="col" style="padding-left:20px;">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                        Micro Controller
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                        <label class="form-check-label" for="defaultCheck2">
+                        Motors
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                        <label class="form-check-label" for="defaultCheck3">
+                        Sensors
+                        </label>
+                    </div>
+                    </div>
+                    <div class="col">
+                    <select class="form-select form-select-sm" aria-label=".form-select-lg example">
+                    <option selected>Sort by (Price)</option>
+                    <option value="1">Price: Low >> High</option>
+                    <option value="2">Price: HIgh >> Low</option>
+                    </select>
+                    </div>
+                </div>
+        </div>
   </div>
 </div>
 <?php
