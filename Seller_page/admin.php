@@ -185,6 +185,6 @@ if(isset($message)){
 
 <!-- custom js file link  -->
 <script src="js/script.js"></script>
-
+<?php include "../homepage/includes/footer.php"; ?>
 </body>
 </html>
