@@ -52,6 +52,9 @@
                     <li class="nav-item">
                         <a class = "nav-link <?= ($page == 'recycle')? 'active' : '' ?>" href=".././recycle/recycle.php">Recycle</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href=".././lab_support/index.php">Laboratory support</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 action-menu">
                     <li class="nav-item">
@@ -84,7 +87,7 @@
                            ?>
                         </a>
                         <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="../../log.php">Logout</a></li>
+                            <li><a class="dropdown-item" href="./../log.php">Logout</a></li>
                             <li><a class="dropdown-item" href="#">My Orders</a></li>
                             <li><a class="dropdown-item" href="#">My Posts</a></li>
                             <li><a class="dropdown-item" href="../././recycle/form.php">Add Items For Recycle</a></li>

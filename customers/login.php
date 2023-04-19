@@ -44,7 +44,7 @@ if($login){
       Login successful.
       </div> ";
       ?>
-      <meta http-equiv="refresh" content="0.7; url='../index.php'" />
+      <meta http-equiv="refresh" content="1.2; url='../index.php'" />
       <?php
 }if($loginError){
   echo "<div class=\"alert alert-danger\" role=\"alert\">

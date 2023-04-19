@@ -5,6 +5,7 @@
 
 
 <?php
+    include "../database/db_connect.php";
     if(isset($_POST['submit-btn'])){
         include "./form.php";
     }

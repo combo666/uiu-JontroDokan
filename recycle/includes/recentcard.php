@@ -2,6 +2,7 @@
 <section class="latest-product">
     <div class="container">
         <div class="row container">
+            
             <div class="col-lg-5">
                 <div class="card border-0 shadow-sm">
                     <div class="card-body text-center">
