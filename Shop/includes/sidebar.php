@@ -16,7 +16,7 @@
         <div class="card md-4">
            <div class="card-header">Filter</div>
                 <div class="row">
-                    <div class="col" style="padding-left:10px;">
+                    <div class="col" style="padding-left:20px;">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">

@@ -18,7 +18,7 @@ if (isset($_POST['submit-btn'])) {
 </style>
 
 <div class="container">
-    <div class="row mt-5">
+    <!-- <div class="row mt-5">
         <div class="col-sm-8">
             <div class="card mb-3">
                 <div class="col-md-4 offset-md-8">
@@ -30,8 +30,10 @@ if (isset($_POST['submit-btn'])) {
                 </div>
             </div>
         </div>
+    </div> -->
+    <div style="padding-top: 10px;">
+      <?php include "includes/sidebar.php" ?>
     </div>
-    <?php include "includes/sidebar.php" ?>
     <div class="row">
         <div class="col-lg-8 offset-md-1">
             <div class="card mb-4">
