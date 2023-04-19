@@ -47,7 +47,7 @@ if (isset($_POST['submit-btn'])) {
                     <div class="card mb-4">
                         <div class="card-body container">
                             <h2>Available Products</h2>
-                            <?php include "../recycle/includes/productcard.php" ?>
+                            <?php include "includes/productcards.php" ?>
 
                         </div>
                     </div>
