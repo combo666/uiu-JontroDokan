@@ -111,6 +111,7 @@
                             <li><a class="dropdown-item" href="./log.php">Logout</a></li>
                             <li><a class="dropdown-item" href="#">My Orders</a></li>
                             <li><a class="dropdown-item" href="#">My Posts</a></li>
+                            <li><a class="dropdown-item" href="./Seller_page/admin.php">sell Product</a></li>
                             <li><a class="dropdown-item" href="./recycle/form.php">Add Items For Recycle</a></li>
                         </ul>
                     </li>

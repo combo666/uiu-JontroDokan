@@ -31,25 +31,23 @@ if (isset($_POST['submit-btn'])) {
             </div>
         </div>
     </div>
+    <?php include "includes/sidebar.php" ?>
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-8 offset-md-1">
             <div class="card mb-4">
-
                 <div class="card-body container">
-                    <h2>Featured Products</h2>
-                    <?php include "../recycle/includes/recentcard.php" ?>
-
+                    <h2>Latest Products</h2>
+                    <?php include "../Seller_page/products.php" ?>
                 </div>
             </div>
         </div>
-        <?php include "includes/sidebar.php" ?>
         <div class="container">
             <div class="row">
                 <div class="col-lg-13">
                     <div class="card mb-4">
                         <div class="card-body container">
                             <h2>Available Products</h2>
-                            <?php include "../recycle/includes/productcard.php" ?>
+                            <?php include "includes/productcards.php" ?>
 
                         </div>
                     </div>
