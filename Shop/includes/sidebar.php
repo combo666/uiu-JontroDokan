@@ -1,5 +1,6 @@
-<div class="col-lg-4">
-    <div class="card mb-4">
+<div class="row">
+    <div class="col">  
+     <div class="card mb-4">
         <div class="card-header">Search</div>
             <div class="card-body">
                 <div class="input-group">
@@ -10,8 +11,10 @@
                 </div>
             </div>
         </div>
-        <div class="card mb-4">
-            <div class="card-header">Filter</div>
+    </div>
+    <div class="col">
+        <div class="card md-4">
+           <div class="card-header">Filter</div>
                 <div class="container">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
@@ -32,12 +35,6 @@
                         </label>
                     </div>
                 </div>
-            </div>
         </div>
     </div>
 </div>
-</div>
-
-
-    
-
