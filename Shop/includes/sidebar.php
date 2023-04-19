@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col">  
-     <div class="card mb-4">
+     <div  style="height: 150px;" class="card mb-4">
         <div class="card-header">Search</div>
             <div class="card-body">
                 <div class="input-group">
@@ -15,7 +15,8 @@
     <div class="col">
         <div class="card md-4">
            <div class="card-header">Filter</div>
-                <div class="container">
+                <div class="row">
+                    <div class="col" style="padding-left:10px;">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                         <label class="form-check-label" for="defaultCheck1">
@@ -33,6 +34,14 @@
                         <label class="form-check-label" for="defaultCheck3">
                         Sensors
                         </label>
+                    </div>
+                    </div>
+                    <div class="col">
+                    <select class="form-select form-select-sm" aria-label=".form-select-lg example">
+                    <option selected>Sort by (Price)</option>
+                    <option value="1">Price: Low >> High</option>
+                    <option value="2">Price: HIgh >> Low</option>
+                    </select>
                     </div>
                 </div>
         </div>
