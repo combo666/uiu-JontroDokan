@@ -33,30 +33,17 @@ include 'config.php';
                 <div class="row">
                     <div class="col" style="padding-left:20px;">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                        <label class="form-check-label" for="defaultCheck1">
-                        Micro Controller
-                        </label>
+                       <h4>For sale by Name..</h4>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                        <label class="form-check-label" for="defaultCheck2">
-                        Motors
-                        </label>
+                         <h5>Phone NO. 01753611721</h5>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-                        <label class="form-check-label" for="defaultCheck3">
-                        Sensors
-                        </label>
+                       <h5>Eamil:sdey202074@bscse.uiu.ac.bd</h5>
                     </div>
+                    <div class="form-check">
+                        <h6>Other social media</h6>
                     </div>
-                    <div class="col">
-                    <select class="form-select form-select-sm" aria-label=".form-select-lg example">
-                    <option selected>Sort by (Price)</option>
-                    <option value="1">Price: Low >> High</option>
-                    <option value="2">Price: HIgh >> Low</option>
-                    </select>
                     </div>
                 </div>
         </div>
