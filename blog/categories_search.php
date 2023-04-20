@@ -48,6 +48,7 @@ if(isset($_GET['cat_id']))
 
     while($row = mysqli_fetch_assoc($search_query))
     {
+        $post_id = $row['post_id'];
         $post_title = $row['post_title'];
         $post_date = $row['post_date'];
         $post_author = $row['post_author'];
