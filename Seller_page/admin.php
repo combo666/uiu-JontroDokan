@@ -92,6 +92,15 @@ if(isset($message)){
    <h3>add a new product</h3>
    <input type="text" name="p_name" placeholder="enter the product name" class="box" required>
    <input type="number" name="p_price" min="0" placeholder="enter the product price" class="box" required>
+   <div class="mb-3">
+   <textarea class="form-control" placeholder="Write product details" id="exampleFormControlTextarea1" rows="3"></textarea>
+   </div>
+   <select class="form-select" aria-label="Default select example" >
+  <option selected>Micro processor/Micro controler</option>
+  <option value="1">Sensor</option>
+  <option value="2">Motor</option>
+  <option value="3">other</option>
+  </select>
    <input type="file" name="p_image" accept="image/png, image/jpg, image/jpeg" class="box" required>
    <input type="submit" value="add the product" name="add_product" class="btn">
 </form>
