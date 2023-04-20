@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2023 at 10:11 PM
+-- Generation Time: Apr 20, 2023 at 09:34 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -136,15 +136,24 @@ INSERT INTO `post_categories` (`cat_id`, `cat_title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Table structure for table `products`
 --
 
-CREATE TABLE `product` (
+CREATE TABLE `products` (
   `id` int(11) NOT NULL,
-  `p_name` varchar(255) NOT NULL,
-  `p_image` varchar(255) NOT NULL,
-  `price` int(20) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `price` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `price`, `image`) VALUES
+(5, 'Ultrasonic sensor', '140', 'sensor.png'),
+(6, 'Arduino uno', '780', 'product27.png'),
+(7, 'Servo145G', '110', 'servo.png');
 
 -- --------------------------------------------------------
 
@@ -157,6 +166,13 @@ CREATE TABLE `recycling` (
   `p_name` varchar(255) NOT NULL,
   `p_type` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `recycling`
+--
+
+INSERT INTO `recycling` (`p_id`, `p_name`, `p_type`) VALUES
+(0, 'Arduino UNO', 'Micro Processor');
 
 -- --------------------------------------------------------
 
@@ -212,9 +228,9 @@ ALTER TABLE `post_categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
--- Indexes for table `product`
+-- Indexes for table `products`
 --
-ALTER TABLE `product`
+ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -244,6 +260,12 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `post_categories`
   MODIFY `cat_id` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`
