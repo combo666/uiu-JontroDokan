@@ -34,15 +34,13 @@ if (isset($_POST['submit-btn'])) {
     <div style="padding-top: 10px;">
       <?php include "includes/sidebar.php" ?>
     </div>
-    <div class="row">
-        <div class="col-lg-8 offset-md-1">
-            <div class="card mb-4">
+    <div class="row" style="padding-left:26px; padding-right:26px; padding-bottom:10px">
+            <div class="card md-4">
                 <div class="card-body container">
                     <h2>Latest Products</h2>
                     <?php include "../Seller_page/products.php" ?>
                 </div>
             </div>
-        </div>
         <div class="container">
             <div class="row">
                 <div class="col-lg-13">
