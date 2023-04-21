@@ -5,11 +5,24 @@
 if(isset($_POST['add_product'])){
    $p_name = $_POST['p_name'];
    $p_price = $_POST['p_price'];
+   // $p_ptype=$_POST['flexRadioDefault'];
+   if(!empty($_POST["flexRadioDefault"])){
+      foreach($_POST["flexRadioDefault"] as $value){
+        
+        if($value == "option1"){
+          $p_ptype = "Negotiable";
+        }else{
+          $p_ptype = "Fixed price";
+        }
+        
+      }
+    }
+   $p_description=$_POST['description'];
    $p_image = $_FILES['p_image']['name'];
    $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
    $p_image_folder = 'uploaded_img/'.$p_image;
 
-   $insert_query = mysqli_query($conn, "INSERT INTO `products`(name, price, image) VALUES('$p_name', '$p_price', '$p_image')") or die('query failed');
+   $insert_query = mysqli_query($conn, "INSERT INTO `products`(name, price, image, price_type,Description) VALUES('$p_name', '$p_price', '$p_image','$p_ptype','$p_description')") or die('query failed');
 
    if($insert_query){
       move_uploaded_file($p_image_tmp_name, $p_image_folder);
@@ -93,14 +106,33 @@ if(isset($message)){
    <input type="text" name="p_name" placeholder="enter the product name" class="box" required>
    <input type="number" name="p_price" min="0" placeholder="enter the product price" class="box" required>
    <div class="mb-3">
-   <textarea class="form-control" placeholder="Write product details" id="exampleFormControlTextarea1" rows="3"></textarea>
+   <textarea class="form-control" name="description" placeholder="Write product details" id="exampleFormControlTextarea1" rows="3"></textarea>
    </div>
+   <div class="row">
+      <div class="col">
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault[]" id="flexRadioDefault1" value="option1">
+            <label class="form-check-label" for="flexRadioDefault1">
+              Negotiable
+            </label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault[]" id="flexRadioDefault2" value="option2" checked>
+            <label class="form-check-label" for="flexRadioDefault2">
+               fixed price
+            </label>
+            </div>
+      </div>
+   <div class="col">
    <select class="form-select" aria-label="Default select example" >
   <option selected>Micro processor/Micro controler</option>
   <option value="1">Sensor</option>
   <option value="2">Motor</option>
   <option value="3">other</option>
   </select>
+      </div>
+   </div>
+
    <input type="file" name="p_image" accept="image/png, image/jpg, image/jpeg" class="box" required>
    <input type="submit" value="add the product" name="add_product" class="btn">
 </form>
