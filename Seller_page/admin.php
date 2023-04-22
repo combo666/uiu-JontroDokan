@@ -8,29 +8,30 @@ if(isset($_POST['add_product'])){
    // $p_ptype=$_POST['flexRadioDefault'];
    if(!empty($_POST["flexRadioDefault"])){
       foreach($_POST["flexRadioDefault"] as $value){
-        
         if($value == "option1"){
           $p_ptype = "Negotiable";
         }else{
           $p_ptype = "Fixed price";
         }
-        
       }
-    }
+   }
    $p_description=$_POST['description'];
    $p_image = $_FILES['p_image']['name'];
    $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
    $p_image_folder = 'uploaded_img/'.$p_image;
-
-   $insert_query = mysqli_query($conn, "INSERT INTO `products`(name, price, image, price_type,Description) VALUES('$p_name', '$p_price', '$p_image','$p_ptype','$p_description')") or die('query failed');
-
-   if($insert_query){
+   $current_time= time();
+   
+   $stmt = $conn->prepare("INSERT INTO `products` (name, price, image, price_type, Description, Time_stamp) VALUES (?, ?, ?, ?, ?, ?)");
+   $stmt->bind_param("sssssi", $p_name, $p_price, $p_image, $p_ptype, $p_description, $current_time);
+   
+   if($stmt->execute()){
       move_uploaded_file($p_image_tmp_name, $p_image_folder);
-      $message[] = 'product add succesfully';
+      $message[] = 'product added successfully';
    }else{
       $message[] = 'could not add the product';
    }
-};
+}; 
+
 // delete
 if(isset($_GET['delete'])){
    $delete_id = $_GET['delete'];

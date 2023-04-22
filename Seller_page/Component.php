@@ -12,21 +12,45 @@ include 'config.php';
     $result = mysqli_query($conn, $sql);
     if(mysqli_num_rows($result) > 0) {
       $select_products = mysqli_fetch_assoc($result);
+            // Calculate the time elapsed since the post was made
+            $elapsed_time = time() - $select_products['Time_stamp'];
+            $minutes_elapsed = round($elapsed_time / 60);
+
+            // Calculate the hours elapsed
+            $hours_elapsed = round($elapsed_time / 3600);
+
+            // Calculate the days elapsed
+            $days_elapsed = round($elapsed_time / 86400);
      ?>
 <div class="row">
   <div class="col" style="padding-top: 50px;padding-left:50px;">
   <img style="height:150px;width:350px;" src="../Seller_page/uploaded_img/<?php echo $select_products['image']; ?>" alt="">
   <div style="padding-top: 100px;">
       <h3>Product Details</h3>
-      <p>The Arduino Mega 2560 is a microcontroller board based on the ATmega2560. It has 54 digital input/output pins (of which 15 can be used as PWM outputs), 16 analog inputs, 4 UARTs (hardware serial ports), a 16 MHz crystal oscillator, a USB connection, a power jack, an ICSP header, and a reset button. It contains everything needed to support the microcontroller; simply connect it to a computer with a USB cable or power it with a AC-to-DC adapter or battery to get started. The Mega 2560 board is compatible with most shields designed for the Uno and the former boards Duemilanove or Diecimila.
-        The Mega 2560 is an update to the Arduino Mega, which it replaces.</p>
+      <p><?php echo $select_products ['Description'];?></p>
     </div>
   </div>
   <div class="col" style="padding-left: 30px; margin:20px;">
       <h1><?php echo $select_products['name']; ?></h1>
-      <h5>Reference RBD-1397</h5>
-      <br>
-      <h4>Price: <?php echo $select_products['price']; ?>Tk</h4>
+      <h5 class="text-primary">
+      <?php 
+                if ($minutes_elapsed < 60) {
+                    echo "Posted: ". $minutes_elapsed ." minutes ago";
+                } else if ($hours_elapsed < 24) {
+                    echo "Posted: ". $hours_elapsed . " hours ago";
+                } else {
+                    echo "Posted: ". $days_elapsed . " days ago";
+                }
+      ?>
+      </h5>
+      <div class="row">
+        <div class="col-3">
+        <h4>Price: <?php echo $select_products['price']. " "; ?> Tk</h4>
+        </div>
+        <div class="col-2">
+         <p class="fst-italic text-primary"><?php echo $select_products['price_type'];?></p>
+        </div>
+      </div>
       <br>
       <div class="card md-4">
            <div class="card-header">Seller info</div>
