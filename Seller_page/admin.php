@@ -16,13 +16,22 @@ if(isset($_POST['add_product'])){
       }
    }
    $p_description=$_POST['description'];
+   $p_selectOp=$_POST['catgSelect'];
+   $p_otherOp=$_POST['otherOption'];
    $p_image = $_FILES['p_image']['name'];
    $p_image_tmp_name = $_FILES['p_image']['tmp_name'];
    $p_image_folder = 'uploaded_img/'.$p_image;
    $current_time= time();
    
-   $stmt = $conn->prepare("INSERT INTO `products` (name, price, image, price_type, Description, Time_stamp) VALUES (?, ?, ?, ?, ?, ?)");
-   $stmt->bind_param("sssssi", $p_name, $p_price, $p_image, $p_ptype, $p_description, $current_time);
+   // Check if `$p_otherOp` is empty, if so use `$p_selectOp` as the category value
+   if(empty($p_otherOp)){
+      $category = $p_selectOp;
+   }else{
+      $category = $p_selectOp . ': ' . $p_otherOp;
+   }
+   
+   $stmt = $conn->prepare("INSERT INTO `products` (name, price, image, price_type, Description, Time_stamp, Category) VALUES (?, ?, ?, ?, ?, ?, ?)");
+   $stmt->bind_param("sssssis", $p_name, $p_price, $p_image, $p_ptype, $p_description, $current_time, $category);
    
    if($stmt->execute()){
       move_uploaded_file($p_image_tmp_name, $p_image_folder);
@@ -30,7 +39,7 @@ if(isset($_POST['add_product'])){
    }else{
       $message[] = 'could not add the product';
    }
-}; 
+};  
 
 // delete
 if(isset($_GET['delete'])){
@@ -124,14 +133,25 @@ if(isset($message)){
             </label>
             </div>
       </div>
-   <div class="col">
-   <select class="form-select" aria-label="Default select example" >
-  <option selected>Micro processor/Micro controler</option>
-  <option value="1">Sensor</option>
-  <option value="2">Motor</option>
-  <option value="3">other</option>
-  </select>
+      <div class="col">
+      <select class="form-select" aria-label="Default select example" name="catgSelect" onchange="checkOtherOption(this)">
+         <option selected>Micro processor/Micro controler</option>
+         <option value="1">Sensor</option>
+         <option value="2">Motor</option>
+         <option value="3">other</option>
+      </select>
+      <input type="text" id="otherOption" name="otherOption" style="display:none;" />
       </div>
+      <script>
+         function checkOtherOption(selectObject) {
+         var otherOption = document.getElementById("otherOption");
+         if (selectObject.value == "3") {
+            otherOption.style.display = "inline-block";
+         } else {
+            otherOption.style.display = "none";
+         }
+         }
+      </script>
    </div>
 
    <input type="file" name="p_image" accept="image/png, image/jpg, image/jpeg" class="box" required>
@@ -210,17 +230,6 @@ if(isset($message)){
 </section>
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
