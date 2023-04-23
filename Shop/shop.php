@@ -41,7 +41,14 @@ if (isset($_POST['submit-btn'])) {
                     <?php include "../Seller_page/products.php" ?>
                 </div>
             </div>
-        <div class="container">
+            <!-- All products section -->
+            <div class="card md-4">
+                <div class="card-body container">
+                    <h2>All Products</h2>
+                    <?php include "../Seller_page/AllProducts.php" ?>
+                </div>
+            </div>
+        <!-- <div class="container">
             <div class="row">
                 <div class="col-lg-13">
                     <div class="card mb-4">
@@ -53,7 +60,7 @@ if (isset($_POST['submit-btn'])) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </div>
