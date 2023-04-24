@@ -1,8 +1,8 @@
 <?PHP
     $page = basename($_SERVER['PHP_SELF'],'.php');
     session_start();
-    if(isset($_SESSION['uname'])){
-        $uname = $_SESSION['uname'];
+    if(isset($_SESSION['admin'])){
+        $admin = $_SESSION['admin'];
     }
 ?>
 <?php ob_start(); ?>

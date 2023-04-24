@@ -2,8 +2,8 @@
 
 $page = basename($_SERVER['PHP_SELF'],'.php');
 session_start();
-if(isset($_SESSION['uname'])){
-    $uname = $_SESSION['uname'];
+if(isset($_SESSION['admin'])){
+    $admin = $_SESSION['admin'];
 }
 
 $login = false;
@@ -24,7 +24,7 @@ if($emailid == "admin" && $password == "admin"){
     <meta http-equiv="refresh" content="0.2; url='logedIndex.php'" />
     <?php
     
-    $_SESSION['uname'] = "Admin";
+    $_SESSION['admin'] = "Admin";
     
 
 }else{
