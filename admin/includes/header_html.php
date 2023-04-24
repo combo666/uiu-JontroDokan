@@ -1,3 +1,10 @@
+<?PHP
+    $page = basename($_SERVER['PHP_SELF'],'.php');
+    session_start();
+    if(isset($_SESSION['uname'])){
+        $uname = $_SESSION['uname'];
+    }
+?>
 <?php ob_start(); ?>
 <!DOCTYPE html>
 <html lang="en">

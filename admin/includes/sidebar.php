@@ -3,10 +3,11 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Core</div>
-                <a class="nav-link" href="index.php">
+                <a class="nav-link" href="logedIndex.php">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Dashboard
                 </a>
+
                 <div class="sb-sidenav-menu-heading">Blog Module</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#postModule" aria-expanded="false" aria-controls="postModule">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-feather"></i></div>
@@ -20,6 +21,7 @@
                         <a class="nav-link" href="categories.php">Categories</a>
                     </nav>
                 </div>
+
                 <div class="sb-sidenav-menu-heading">Shop Module</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#shopModule" aria-expanded="false" aria-controls="shopModule">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-feather"></i></div>
@@ -32,13 +34,14 @@
                         <a class="nav-link" href="my_posts.php">Add rent products</a>
                     </nav>
                 </div>
-                <div class="sb-sidenav-menu-heading">Laboratory Support Module</div>
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#shopModule" aria-expanded="false" aria-controls="shopModule">
+
+                <div class="sb-sidenav-menu-heading">Lab Support Module</div>
+                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#LabSupportModule" aria-expanded="false" aria-controls="LabSupportModule">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-feather"></i></div>
                     Laboratory Support 
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="shopModule" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                <div class="collapse" id="LabSupportModule" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="my_posts.php">Add remove products</a>
                     </nav>
