@@ -43,7 +43,7 @@
                 </a>
                 <div class="collapse" id="LabSupportModule" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="my_posts.php">Add remove products</a>
+                        <a class="nav-link" href="labSupport.php">Add remove products</a>
                     </nav>
                 </div>
                 <!-- <div class="sb-sidenav-menu-heading">Interface</div>
