@@ -4,6 +4,7 @@
     if(isset($_SESSION['admin'])){
         $admin = $_SESSION['admin'];
     }
+    
 ?>
 <?php ob_start(); ?>
 <!DOCTYPE html>

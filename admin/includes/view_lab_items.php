@@ -1,4 +1,7 @@
 <?php 
+
+    $item_image = "";
+    $item_image = "";
     
     if (isset($_GET['delete'])) {
         // Perform delete action
@@ -10,14 +13,10 @@
             die("Query failed" . mysqli_error($connect));
             }
       }else if (isset($_GET['update'])) {
-        // Perform delete action
-        $item_id = $_GET['delete'];
-        $sql = "DELETE FROM lab_items WHERE item_id = {$item_id}";
         
-        $del_res = mysqli_query($connect, $sql);
-        if (!$del_res) {
-            die("Query failed" . mysqli_error($connect));
-            }
+        $item_id = $_GET['update'];
+      }else if(isset($_GET['edit_item'])){
+        $item_id = $_GET['item_id'];
       }
 ?>
 <div class="card mb-4">
@@ -79,7 +78,7 @@
                         $item_id = $rows['item_id'];
                         $item_name = $rows['item_name'];
                         $available_units = $rows['available_units'];
-                        $image = $rows['image'];
+                        $image = $rows['item_image'];
                         $tag = $rows['tag'];
                         $item_details = $rows['item_details'];
                         
@@ -89,22 +88,19 @@
                             <td><?php echo $item_id; ?></td>
                             <td><?php echo $item_name; ?></td>
                             <td><?php echo $available_units; ?></td>
-                            <td><img src="../blog/image/<?php echo $image; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
+                            <td><img src="../lab_support/image/<?php echo $image; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
                             <td><?php echo $tag; ?></td>
                             <td><?php echo $item_details; ?></td>
 
                             <td colspan="2" class="text-center">
-                                <a class="btn btn-sm btn-primary" type="submit" name="post_edit" href="../admin/labSupport.php?source=edit_post&p_id=<?php echo $item_id; ?>">Edit</a>
+                                <a class="btn btn-sm btn-primary" type="submit" name="item_edit" href="../admin/labSupport.php?edit_item=edit_item&item_id=<?php echo $item_id; ?>">Edit</a>
 
-                                <a class="btn btn-sm btn-success ms-2" type="submit" name="update" href="../admin/labSupport.php?update=<?php echo $item_id; ?>"> Update</a>
+                                <a class="btn btn-sm btn-success ms-2" type="submit" name="item_update" href="../admin/labSupport.php?update=<?php echo $item_id; ?>"> Update</a>
                                 
-                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="delete" href="../admin/labSupport.php?delete=<?PHP echo $item_id ?>"> Delete</a>
+                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="item_delete" href="../admin/labSupport.php?delete=<?PHP echo $item_id ?>"> Delete</a>
                                 
                             </td>
                         </tr>
-
-
-
                 <?php
                     }
                 }
@@ -112,6 +108,17 @@
 
             </tbody>
         </table>
+        <?php
+        if (isset($_GET['update']) ) {
+            $item_id = $_GET['update'];
+            include "update_lab_item.php";
+        }else if(isset($_GET['edit_item'])){
+            $item_id = $_GET['item_id'];
+            include "edit_lab_item.php";
+
+        }
+            
+        ?>
     </div>
 </div>
 

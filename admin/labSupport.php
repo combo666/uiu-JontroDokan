@@ -3,10 +3,45 @@
 
 <?php include "includes/topbar.php"; ?>
 
+<?php include "../database/db_connect.php"; ?>
+
+<?php
+    $id = -1;
+    if(isset($_POST['lab_post_submit']))
+    {
+        $item_name = $_POST['item_name'];
+        $available_units = $_POST['available_units'];
+        $item_tag = $_POST['lab_tag'];
+        $item_details = $_POST['item_details'];
+
+        $item_image = $_FILES['item_image']['name'];
+        $item_image_temp = $_FILES['item_image']['tmp_name'];
+        move_uploaded_file($item_image_temp, "../lab_support/image/$item_image");
+
+
+        $query = "INSERT INTO `lab_items`(`item_id`, `item_name`, `available_units`, `item_image`, `tag`, `item_details`) VALUES(null,'{$item_name}',{$available_units},'{$item_image}','{$item_tag}','{$item_details}')";
+
+
+        $confirm_posted = mysqli_query($connect, $query);
+
+        if($confirm_posted)
+        {
+          echo "<div class=\"alert alert-success\" role=\"alert\">
+               post added!
+              </div>";
+        }
+        else
+        {
+          die("<div class=\"alert alert-danger\" role=\"alert\">
+          post is failed to add!
+         </div>". mysqli_error($connect));
+        }
+    }
+?>
+
 <div id="layoutSidenav">
 
     <?php include "includes/sidebar.php"; ?>
-    <?php include "../database/db_connect.php"; ?>
 
     <div id="layoutSidenav_content">
     <main>
@@ -18,28 +53,40 @@
                 </ol>
             </div>
         </main> 
-        <a class="btn btn-primary btn-sm col-md-1 ms-auto mb-2 me-2" type="submit" name="add_new" href="labSupport.php?add_new">Add New</a>
-
-        
-        
+        <a class="btn btn-primary btn-sm col-md-1 ms-auto mb-2 me-2" type="submit" name="add_new" href="labSupport.php?add_new=new_item<? ?>">Add New</a>
         
 <?php
 
         include "includes/view_lab_items.php";
+        
+        if(isset($_POST['update_available_units_submit'])){
 
+          $available_units = $_POST['available_units'];
+          try{
+            
+            $sql = "UPDATE lab_items SET available_units={$available_units} WHERE item_id = {$item_id}";
+          
+            $del_res = mysqli_query($connect, $sql);
+          
+          }
+          catch (mysqli_sql_exception $e) { 
+            var_dump($e);
+            exit; 
+         } 
+      }
         
         
 ?>
 
 <div>
-    <form action="#" >
-      <?php
-        if (isset($_GET['add_new'])) {
-          include "../admin/includes/add_new_lab_Item.php";
-        }
+  <?php
+    if (isset($_GET['add_new']) ) {
+      if($_GET['add_new'] = 'new_item' ){
+        include "../admin/includes/add_new_lab_Item.php";
         
-      ?>
-  </form>
+      }
+    }
+  ?>
 </div>
 
 <?php include "includes/footer.php" ?>
