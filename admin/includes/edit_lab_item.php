@@ -54,7 +54,7 @@
                     post is failed to add!
                     </div>". mysqli_error($connect));
                     }
-                    
+                    header("Refresh:0");
                 }
 
 ?>

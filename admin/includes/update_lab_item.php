@@ -5,7 +5,7 @@
         Update Available Units
     </div>
     <div class="card-body">
-        <form action="labSupport.php" method="post" enctype="multipart/form-data">
+        <form action="#" method="post" enctype="multipart/form-data">
             <div class="form-floating mb-3">
                 <input class="form-control" id="lab_post_title" type="text" placeholder="Available Units" name = "available_units" required/>
                 <label for="available_units">Available Units</label>

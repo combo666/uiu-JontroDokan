@@ -111,6 +111,22 @@
         <?php
         if (isset($_GET['update']) ) {
             $item_id = $_GET['update'];
+            if(isset($_POST['update_available_units_submit'])){
+        
+                $available_units = $_POST['available_units'];
+                try{
+                $sql = "UPDATE lab_items SET available_units={$available_units} WHERE item_id = '{$item_id}'";
+                
+                
+                
+                $del_res = mysqli_query($connect, $sql);
+                }
+                catch (mysqli_sql_exception $e) { 
+                var_dump($e);
+                exit; 
+                } 
+                header("Refresh:0");
+            }
             include "update_lab_item.php";
         }else if(isset($_GET['edit_item'])){
             $item_id = $_GET['item_id'];
