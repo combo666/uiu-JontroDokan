@@ -19,7 +19,7 @@
             $post_title = $_POST['post_title'];
             $post_tags = $_POST['post_tags'];
             $post_content = $_POST['post_content'];
-            $post_author = $_SESSION['uname'];
+            $post_author = $_SESSION['uid'];
             $post_cat = $_POST['post_cat'];
             $post_image = $_FILES['post_image']['name'];
             $post_image_temp = $_FILES['post_image']['tmp_name'];

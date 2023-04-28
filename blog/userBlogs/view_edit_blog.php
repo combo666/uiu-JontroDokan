@@ -70,8 +70,8 @@
             </tfoot>
             <tbody>
                 <?php
-                $userName = $_SESSION['uname'];
-                $query = "select * from posts where post_author = '{$userName}'";
+                $user = $_SESSION['uid'];
+                $query = "select * from posts where post_author = '{$user}'";
                 $response = mysqli_query($connect, $query);
 
                 $count_row = mysqli_num_rows($response);
@@ -94,7 +94,7 @@
                 } else {
                     while ($rows = mysqli_fetch_assoc($response)) {
                         $post_id = $rows['post_id'];
-                        $post_auth = $rows['post_author'];
+                        $post_auth = $_SESSION['uname'];
                         $post_title = $rows['post_title'];
                         $post_cat = $rows['post_category_id'];
                         $post_img = $rows['post_image'];
@@ -111,11 +111,11 @@
                         }
                     ?>
                         <tr>
-                            <td><?php echo $post_title; ?></td>
+                            <td><?php echo mb_strimwidth($post_title, 0, 10, "..."); ?></td>
                             <td><?php echo $post_cat; ?></td>
                             <td><img src="../image/<?php echo $post_img; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
                             <td><?php echo $post_stat; ?></td>
-                            <td><?php echo $post_tags; ?></td>
+                            <td><?php echo mb_strimwidth($post_tags, 0, 10, "..."); ?></td>
                             <td><?php echo $post_comments; ?></td>
                             <td><?php echo $post_date; ?></td>
                             <td colspan="2" class="text-center" style="width: 100px !important">

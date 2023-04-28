@@ -10,32 +10,27 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Pending Posts</h1>
+                <h1 class="mt-4">Published and Featured Posts</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item">Blog</li>
-                    <li class="breadcrumb-item active">Pending Posts</li>
+                    <li class="breadcrumb-item active">Published and Featured Posts</li>
                 </ol>
             </div>
-        </main>
-
-        <a href="admin_posts.php?source=rejected_posts" class="btn btn-primary btn-sm col-md-1 ms-auto mb-2 me-2">View Rejected Posts</a>
-
+        </main> 
 
 <!-- deletion  -->
 <?php
-    if(isset($_GET['rejected']))
+    if(isset($_GET['delete']))
     {
-        $del_id = $_GET['rejected'];
+        $del_id = $_GET['delete'];
 
-        $post_update_q = "update posts set ";
-        $post_update_q .= "post_status = 'rejected' ";
-        $post_update_q .= "where post_id = {$del_id}";
-        $del_res = mysqli_query($connect, $post_update_q);
+        $del_query = "delete from posts where post_id = {$del_id}";
+        $del_res = mysqli_query($connect, $del_query);
 
         if($del_res)
         {
-            echo "<div class=\"alert alert-warning\" role=\"alert\">
-                {$del_id} rejected!
+            echo "<div class=\"alert alert-success\" role=\"alert\">
+                {$del_id} successfully deleted!
                 <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
                 </div>";
         }
@@ -81,10 +76,8 @@ switch ($source) {
     case "add_new":
         include "includes/add_new_post.php";
         break;
-    case "rejected_posts":
-        include "includes/view_rejected_posts.php";
     default:
-        include "includes/view_all_posts.php";
+        include "includes/view_published_posts.php";
         break;
 }
 

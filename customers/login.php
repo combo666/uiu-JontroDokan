@@ -29,7 +29,7 @@ if(isset($_POST['login_submit'])){
     $login = true;
 
     $_SESSION['uname'] = $uname["first_name"] ." ".$uname["last_name"];
-    
+    $_SESSION['uid'] = $uname['id'];
 
   }else{
     $loginError = true;

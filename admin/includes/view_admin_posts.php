@@ -1,8 +1,7 @@
-
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Pending posts
+        Admin posts
     </div>
     <div class="card-body">
         <table id="datatablesSimple">
@@ -36,10 +35,7 @@
             </tfoot>
             <tbody>
                 <?php
-                $query = "SELECT * FROM posts
-                INNER JOIN user
-                ON user.id = posts.post_author where post_status='draft'";
-
+                $query = "select * from posts where post_author = 0";
                 $response = mysqli_query($connect, $query);
 
                 $count_row = mysqli_num_rows($response);
@@ -64,7 +60,6 @@
                 } else {
                     while ($rows = mysqli_fetch_assoc($response)) {
                         $post_id = $rows['post_id'];
-                        $post_auth = $rows["first_name"]." ".$rows["last_name"];
                         $post_title = $rows['post_title'];
                         $post_cat = $rows['post_category_id'];
                         $post_img = $rows['post_image'];
@@ -82,7 +77,7 @@
                     ?>
                         <tr>
                             <td><?php echo $post_id; ?></td>
-                            <td><?php echo $post_auth; ?></td>
+                            <td>Admin</td>
                             <td><?php echo $post_title; ?></td>
                             <td><?php echo $post_cat; ?></td>
                             <td><img src="../blog/image/<?php echo $post_img; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
@@ -91,10 +86,12 @@
                             <td><?php echo $post_comments; ?></td>
                             <td><?php echo $post_date; ?></td>
                             <td colspan="2" class="text-center">
-                                <a class="btn btn-sm btn-success" type="submit" name="post_edit" href="my_posts.php?approve=<?php echo $post_id; ?>">Approve</a>
-                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="post_delete" href="my_posts.php?rejected=<?php echo $post_id; ?>"> Reject</a>
+                                <a class="btn btn-sm btn-primary" type="submit" name="post_edit" href="admin_posts.php?source=edit_post&p_id=<?php echo $post_id; ?>">Edit</a>
+                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="post_delete" href="admin_posts.php?delete=<?php echo $post_id; ?>"> Delete</a>
                             </td>
                         </tr>
+
+
 
                 <?php
                     }
@@ -105,7 +102,3 @@
         </table>
     </div>
 </div>
-
-
-
-

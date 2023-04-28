@@ -16,8 +16,9 @@
                 </a>
                 <div class="collapse" id="postModule" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="my_posts.php">All posts</a>
-                        <a class="nav-link" href="my_posts.php?source=add_new">Add new</a>
+                        <a class="nav-link" href="published_posts.php">Published Posts</a>
+                        <a class="nav-link" href="my_posts.php">Pending Posts</a>
+                        <a class="nav-link" href="admin_posts.php">Admin Posts</a>
                         <a class="nav-link" href="categories.php">Categories</a>
                     </nav>
                 </div>

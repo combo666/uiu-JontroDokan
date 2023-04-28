@@ -38,7 +38,7 @@
                 <?php
                 $query = "SELECT * FROM posts
                 INNER JOIN user
-                ON user.id = posts.post_author where post_status='draft'";
+                ON user.id = posts.post_author where post_status='rejected'";
 
                 $response = mysqli_query($connect, $query);
 
@@ -92,7 +92,7 @@
                             <td><?php echo $post_date; ?></td>
                             <td colspan="2" class="text-center">
                                 <a class="btn btn-sm btn-success" type="submit" name="post_edit" href="my_posts.php?approve=<?php echo $post_id; ?>">Approve</a>
-                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="post_delete" href="my_posts.php?rejected=<?php echo $post_id; ?>"> Reject</a>
+                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="post_delete" href="my_posts.php?delete=<?php echo $post_id; ?>"> Reject</a>
                             </td>
                         </tr>
 

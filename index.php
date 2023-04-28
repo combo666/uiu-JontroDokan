@@ -2,6 +2,7 @@
     session_start();
     if(isset($_SESSION['uname'])){
         $uname = $_SESSION['uname'];
+        // echo $_SESSION['uid'];
     }
     
 ?>
