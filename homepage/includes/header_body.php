@@ -2,6 +2,7 @@
 <?php
     $page = basename($_SERVER['PHP_SELF'],'.php');
     session_start();
+    $uname = "";
     if(isset($_SESSION['uname'])){
         $uname = $_SESSION['uname'];
     }
@@ -70,7 +71,7 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="btn dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="btn dropdown-toggle" href="" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
                            <?php
                                 if(isset($_SESSION['uname'])){      
@@ -79,6 +80,7 @@
                                     $li3 = '<li><a class="dropdown-item" href="../././blog/userBlogs/myblogs.php">My Blog</a></li>';
                                     $li4 = '<li><a class="dropdown-item" href="./Seller_page/admin.php">Sell Products</a></li>';
                                     $li5 = '<li><a class="dropdown-item" href="../././recycle/form.php">Add Items For Recycle</a></li>';
+                                    $li6 = '<li><a class="dropdown-item" href="user_products/my_lab_items.php">My Lab Items</a></li>';
                                     ?>
                                     
                                     <?php
@@ -91,6 +93,7 @@
                                     echo $li3;
                                     echo $li4;
                                     echo $li5;
+                                    echo $li6;
                                 }
                                 else{
                                     ?>
