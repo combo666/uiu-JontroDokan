@@ -74,7 +74,7 @@
                 ?>
 
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 d-flex align-items-stretch">
                         <!-- Blog post-->
                         <div class="card mb-4">
                             <a href="post.php?p_id=<?php echo $post_id; ?>"><img class="card-img-top" src="image/<?php echo $post_image ?>" alt="no image"/></a>

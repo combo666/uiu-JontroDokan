@@ -2,6 +2,7 @@
 <?php
     $page = basename($_SERVER['PHP_SELF'],'.php');
     session_start();
+    $uname = "";
     if(isset($_SESSION['uname'])){
         $uname = $_SESSION['uname'];
     }

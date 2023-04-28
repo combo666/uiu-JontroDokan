@@ -2,7 +2,7 @@
 <div class="card mb-4">
     <div class="card-header">
         <i class="fas fa-table me-1"></i>
-        Pending posts
+        Rejected Posts
     </div>
     <div class="card-body">
         <table id="datatablesSimple">
@@ -40,9 +40,9 @@
                 INNER JOIN user
                 ON user.id = posts.post_author where post_status='rejected'";
 
-                $response = mysqli_query($connect, $query);
+                $rej_response = mysqli_query($connect, $query);
 
-                $count_row = mysqli_num_rows($response);
+                $count_row = mysqli_num_rows($rej_response);
                 if ($count_row == 0) {
                 ?>
 
@@ -62,7 +62,7 @@
 
                     <?php
                 } else {
-                    while ($rows = mysqli_fetch_assoc($response)) {
+                    while ($rows = mysqli_fetch_assoc($rej_response)) {
                         $post_id = $rows['post_id'];
                         $post_auth = $rows["first_name"]." ".$rows["last_name"];
                         $post_title = $rows['post_title'];
@@ -92,7 +92,7 @@
                             <td><?php echo $post_date; ?></td>
                             <td colspan="2" class="text-center">
                                 <a class="btn btn-sm btn-success" type="submit" name="post_edit" href="my_posts.php?approve=<?php echo $post_id; ?>">Approve</a>
-                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="post_delete" href="my_posts.php?delete=<?php echo $post_id; ?>"> Reject</a>
+                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="post_delete" href="my_posts.php?delete=<?php echo $post_id; ?>"> Delete</a>
                             </td>
                         </tr>
 

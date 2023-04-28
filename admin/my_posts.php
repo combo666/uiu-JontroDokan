@@ -17,11 +17,48 @@
                 </ol>
             </div>
         </main>
+<?php
+    if(isset($_GET['source']))
+    {
+        if($_GET['source'] == 'rejected_posts')
+        {
+            echo '<a href="my_posts.php?source=admin_posts" class="btn btn-primary btn-sm col-md-1 ms-auto mb-2 me-2">View Pending Posts</a>';
 
-        <a href="admin_posts.php?source=rejected_posts" class="btn btn-primary btn-sm col-md-1 ms-auto mb-2 me-2">View Rejected Posts</a>
+        }
+        else
+    {
+        echo '<a href="my_posts.php?source=rejected_posts" class="btn btn-primary btn-sm col-md-1 ms-auto mb-2 me-2">View Rejected Posts</a>';
+    }
+    }
+    else
+    {
+        echo '<a href="my_posts.php?source=rejected_posts" class="btn btn-primary btn-sm col-md-1 ms-auto mb-2 me-2">View Rejected Posts</a>';
+    }
+?>
 
 
 <!-- deletion  -->
+<?php
+    if(isset($_GET['delete']))
+    {
+        $del_id = $_GET['delete'];
+
+        $del_query = "delete from posts where post_id = {$del_id}";
+        $del_res = mysqli_query($connect, $del_query);
+
+        if($del_query)
+        {
+            echo "<div class=\"alert alert-success\" role=\"alert\">
+                {$del_id} successfully deleted!
+                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                </div>";
+        }
+        else
+        {
+            die("query failed!" . mysqli_error($connect));
+        }
+    }
+?>
 <?php
     if(isset($_GET['rejected']))
     {
@@ -83,6 +120,8 @@ switch ($source) {
         break;
     case "rejected_posts":
         include "includes/view_rejected_posts.php";
+        break;
+
     default:
         include "includes/view_all_posts.php";
         break;

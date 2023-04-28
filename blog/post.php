@@ -11,48 +11,88 @@
 
 <?php include "includes/post_content.php" ?>
 
-            <!-- Comments section-->
-            <section class="mb-5">
-                <div class="card bg-light">
-                    <div class="card-body">
-                        <!-- Comment form-->
-                        <form class="mb-4"><textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!"></textarea></form>
-                        <!-- Comment with nested comments-->
-                        <div class="d-flex mb-4">
-                            <!-- Parent comment-->
-                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                            <div class="ms-3">
-                                <div class="fw-bold">Commenter Name</div>
-                                If you're going to lead a space frontier, it has to be government; it'll never be private enterprise. Because the space frontier is dangerous, and it's expensive, and it has unquantified risks.
-                                <!-- Child comment 1-->
-                                <div class="d-flex mt-4">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        And under those conditions, you cannot establish a capital-market evaluation of that enterprise. You can't get investors.
-                                    </div>
-                                </div>
-                                <!-- Child comment 2-->
-                                <div class="d-flex mt-4">
-                                    <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                                    <div class="ms-3">
-                                        <div class="fw-bold">Commenter Name</div>
-                                        When you put money directly to a problem, it makes a good headline.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Single comment-->
-                        <div class="d-flex">
-                            <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
-                            <div class="ms-3">
-                                <div class="fw-bold">Commenter Name</div>
-                                When I look at the universe and all the ways the universe wants to kill us, I find it hard to reconcile that with statements of beneficence.
-                            </div>
-                        </div>
-                    </div>
+<?php
+if(isset($_SESSION['uid']))
+{
+if (isset($_POST['add_comment'])) {
+    $content = $_POST['content'];
+    // echo "here";
+    $post_id = $_GET['p_id'];
+    // echo $post_id;
+    $usr_id = $_SESSION['uid'];
+
+    $query = "INSERT INTO `post_comments`(`post_id`, `user_id`, `content`) VALUES ({$post_id},{$usr_id},'{$content}')";
+    $add_comm_res = mysqli_query($connect, $query);
+
+    if (!$add_comm_res) {
+        die("error" . mysqli_error($connect));
+    }
+}
+}
+else
+{
+    echo "<div class=\"alert alert-warning\" role=\"alert\">
+               login/register to join the discussion
+              </div>";
+}
+?>
+
+
+<!-- Comments section-->
+<section class="mb-5">
+    <div class="card bg-light">
+        <div class="card-body">
+            <!-- Comment form-->
+            <form class="mb-4" action="#" method="post">
+             <?php if(isset($_SESSION['uid']))
+                {  
+                echo '<textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!" name="content"></textarea>';
+                echo "<button class=\"btn btn-primary mt-2\" type=\"submit\" name=\"add_comment\">Comment</button>";
+            } else
+            {
+                echo '<textarea class="form-control" rows="3" placeholder="Join the discussion and leave a comment!" name="content" disabled></textarea>';
+                echo "<button class=\"btn btn-primary mt-2\" type=\"submit\" name=\"add_comment\" disabled>Comment</button>";
+
+            } 
+            ?>
+            </form>
+
+
+            <?php
+
+            if (isset($_GET['p_id'])) {
+                $p_id = $_GET['p_id'];
+
+                $query = "select * from post_comments inner join user on user.id = user_id where post_id = {$p_id}";
+                $res = mysqli_query($connect, $query);
+
+                while($rows = mysqli_fetch_assoc($res))
+                {
+
+                    $commenter_name = $rows['first_name'] ." ". $rows['last_name'];
+                    $content = $rows['content'];
+
+?>
+
+<!-- Single comment-->
+<div class="d-flex mt-3">
+                <div class="flex-shrink-0"><img class="rounded-circle" src="https://dummyimage.com/50x50/ced4da/6c757d.jpg" alt="..." /></div>
+                <div class="ms-3">
+                    <div class="fw-bold"><?php echo $commenter_name; ?></div>
+                    <?php echo $content; ?>
                 </div>
-            </section>
+            </div>
+
+<?php
+
+}
+
+            }
+            ?>
+           
+        </div>
+    </div>
+</section>
 
         </div>
         <!-- Side widgets-->
