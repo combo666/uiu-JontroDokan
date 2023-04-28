@@ -1,6 +1,5 @@
 
 <section class="latest-product">
-    <div class="container">
         
         <div class="row container">
         <?php
@@ -8,9 +7,8 @@
         $result = mysqli_query($connect , $query);
         ?>
         <section class="latest-product">
-            <div class="container">
                 <div class="row container">
-                    <?php
+                <?php
                     while($row = mysqli_fetch_array($result)){ 
                         $item_id = $row['item_id'];
                         $item_name = $row['item_name'];
@@ -56,10 +54,8 @@
                     }
                     ?>
                 </div>
-            </div>
         </section>
 
 
         </div>
-    </div>
 </section>

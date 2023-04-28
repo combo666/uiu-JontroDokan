@@ -46,6 +46,9 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="labSupport.php">Add remove products</a>
                     </nav>
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="lab_item_order.php">Pending Orders</a>
+                    </nav>
                 </div>
                 <!-- <div class="sb-sidenav-menu-heading">Interface</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

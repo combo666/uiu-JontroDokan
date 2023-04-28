@@ -1,5 +1,6 @@
-<?php include "../homepage/includes/header_body.php";?>
 <?php include "../homepage/includes/header_html.php";?>
+<?php include "../homepage/includes/header_body.php";?>
+
 
 
 <style>
@@ -20,29 +21,46 @@
 <?php include('../database/db_connect.php')?>
 <div class="container">
     <div class="row">
-        <div class="col-lg-9">
-            <div class="card mb-3">
-                <div class="card-body container">
-                    <h1 class="fw-bolder mb-1" >Add to Your Lab Items</h1>
-                    
-
-                    
-                    
+        <div class="col-lg">
+        <h1 class="fw-bolder mb-1" >Add to Your Lab Items</h1>
                                 <div class="row">
                                     <div class="col-lg-9">
                                         <div class="card mb-3">
                                             <div class="card-body container">
 
                     <?php
+                    
 
                     if(isset($_GET["i_id"])){
                         $i_id= $_GET["i_id"];
                         $query = "SELECT * FROM `lab_items` WHERE item_id = {$i_id}"; 
                         $response = mysqli_query($connect, $query);
+                        
                     }
+                    if(isset($_POST["quantity_submit"])){
+                        
+                        $item_quantity = $_POST['quantity'];
+                        if($item_quantity)
+                        {
+                            $query = "INSERT INTO `lab_item_order`(`order_id`, `user_id`, `lab_item_id`, `item_amount` ,  `status`) VALUES('',{$uid},{$i_id},{$item_quantity} , 0)"; 
+                            $res = mysqli_query($connect, $query);
 
+                        
+                            echo "<div class=\"alert alert-success\" role=\"alert\">
+                                Order Placed
+                                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                                </div>";
+                        }
+                        else
+                        {
+                            die("query failed!" . mysqli_error($connect));
+                        }
+                        ?>
+                        <meta http-equiv="refresh" content="2; url='index.php'" />
+                        <?php
 
-
+                        
+                    }
 
                     $count_row = mysqli_num_rows($response);
 
@@ -70,52 +88,57 @@
                                 <section class="mb-5">
                                     <h3 class="fw-bolder mb-1">Details</h3>
                                     <p class="fs-5 mb-4"><?php echo $item_details; ?></p>
-                                    <div class="col-md-6 col-12">
+
+
+                                    <form action="#" method="post"  enctype="multipart/form-data">
+                                        <div class="col-md-6 col-12">
                                             <div class="row">
                                                         <div class="col-12">
                                                         <div class="d-flex justify-content-between">
                                                             <div>
                                                                 <p class="text-dark">Item Amount<p>
-                                                            </div>
+                                                </div>
                                                             <div class="input-group w-auto justify-content-end align-items-center">
                                                                 <input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" id="decr">
-                                                                <input type="number" step="1" max="10" value="1" name="quantity" class="quantity-field border-0 text-center w-25" disabled>
+                                                                <input type="number" step="1" max="10" value="1" name="quantity" class="quantity-field border-0 text-center w-25">
                                                                 <input type="button" value="+" class="button-plus border rounded-circle icon-shape icon-sm lh-0" data-field="quantity" id="incr">
                                                             </div>
                                                         </div>
                                                 </div>
                                             </div>
                                         </div>
+                                    
+                                        
+                                        <?php 
+                                            if($uname){
+                                                ?>
+                                                <button class="btn btn-primary" name="quantity_submit" href="" class="add-to-cart-btn">
+                                                    <i class=""></i> Add
+                                                </button>
+                                                <?php
+                                            }else{
+                                                ?>
+                                                <button class="btn btn-primary" type="submit" name="quantity_submit" href="" class="add-to-cart-btn">
+                                                    <i class=""></i> Add
+                                                </button>
+                                                <?php
+                                            }
+                                            ?>
+                                    </form>
                                 </section>
-
-                              
-
-
-
-
                             </article>
-
-                                                    
-                                            
-
 
                             <?php
                         }
                     }
                         
-                        
                     ?>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                    
-                </div>
-            </div>
         </div>
-            
     </div>
+</div>
+</div>
+</div>
 </div>
 <script> 
 document.getElementById("incr").addEventListener("click",function incrementValue(e) {
@@ -153,6 +176,3 @@ document.getElementById("decr").addEventListener("click",function decrementValue
     });
 </script>
 <?php include "../homepage/includes/footer.php";?>
-
-
-/* lab items css  */
