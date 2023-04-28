@@ -14,15 +14,17 @@
         <div class="col-lg-8">
             <!-- Featured blog post-->
             <?php
-            $userName = $_SESSION['uname'];
-            $find_f_q = "select * from posts where post_author = '{$userName}'";
+            $userID = $_SESSION['uid'];
+            $find_f_q = "SELECT * FROM posts
+            INNER JOIN user
+            ON user.id = posts.post_author where post_author = '{$userID}'";
             $f_posts = mysqli_query($connect, $find_f_q);
 
             while ($row = mysqli_fetch_assoc($f_posts)) {
                 $post_id = $row['post_id'];
                 $post_title = $row['post_title'];
+                $post_author = $row['first_name'] . " " . $row['last_name'];
                 $post_date = $row['post_date'];
-                $post_author = $row['post_author'];
                 $post_content = $row['post_content'];
                 $post_image = $row['post_image'];
 

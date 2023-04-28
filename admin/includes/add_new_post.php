@@ -4,7 +4,7 @@
     if(isset($_POST['create_post']))
     {
         $post_title = $_POST['post_title'];
-        $post_author = $_POST['post_author'];
+        $post_author = 0;
         $post_tags = $_POST['post_tags'];
         $post_content = $_POST['post_content'];
 
@@ -19,9 +19,9 @@
         $post_stat = $_POST['post_stat'];
 
         $create_post_query = "insert into posts(post_category_id, post_title, post_author, post_date, post_image, post_content, post_tags, post_comment_count, post_status) ";
-        $create_post_query .= "values({$post_cat}, '{$post_title}', '{$post_author}', '{$post_date}', '{$post_image}', '{$post_content}', '{$post_tags}', '{$post_comment}', '{$post_stat}')";
+        $create_post_query .= "values({$post_cat}, '{$post_title}', {$post_author}, '{$post_date}', '{$post_image}', '{$post_content}', '{$post_tags}', '{$post_comment}', '{$post_stat}')";
 
-
+        // echo $create_post_query;
         $confirm_posted = mysqli_query($connect, $create_post_query);
 
         if($confirm_posted)
@@ -29,6 +29,7 @@
           echo "<div class=\"alert alert-success\" role=\"alert\">
                post added to {$post_stat}!
               </div>";
+          echo "<meta http-equiv=\"refresh\" content=\"1.2; url='admin_posts.php?source='view_all'\" />";
         }
         else
         {
@@ -52,7 +53,7 @@
                 <label for="post_title">Post Title</label>
             </div>
             <div class="form-floating mb-3">
-                <input class="form-control" id="post_author" type="text" placeholder="Post Author" name="post_author" required/>
+                <input class="form-control" id="post_author" type="text" placeholder="Post Author" value="admin" disabled/>
                 <label for="post_author">Post Author</label>
             </div>
             <div class="form-floating mb-3">

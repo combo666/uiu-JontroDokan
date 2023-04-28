@@ -34,7 +34,7 @@ $post_stat = "";
     while($row = mysqli_fetch_assoc($id_res))
     {
         $post_title = $row['post_title'];
-        $post_author = $row['post_author'];
+        $post_author = $_SESSION['uname'];
         $post_tags = $row['post_tags'];
         $post_content = $row['post_content'];
         $post_cat = $row['post_category_id'];
@@ -45,7 +45,6 @@ $post_stat = "";
   if(isset($_POST['update_post']))
   {
         $post_title = $_POST['post_title'];
-        $post_author = $_SESSION['uname'];
         $post_tags = $_POST['post_tags'];
         $post_content = $_POST['post_content'];
 
@@ -74,7 +73,6 @@ $post_stat = "";
 
         $post_update_q = "update posts set ";
         $post_update_q .= "post_title = '{$post_title}', ";
-        $post_update_q .= "post_author = '{$post_author}', ";
         $post_update_q .= "post_tags = '{$post_tags}', ";
         $post_update_q .= "post_content = '{$post_content}', ";
         $post_update_q .= "post_category_id = '{$post_cat}', ";
