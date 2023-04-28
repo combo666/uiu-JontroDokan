@@ -70,26 +70,38 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="btn dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
                            <?php
-                                if(isset($_SESSION['uname'])){
+                                if(isset($_SESSION['uname'])){      
+                                    $ul = '<ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">';
+                                    $li1 = '<li><a class="dropdown-item" href="./../log.php">Logout</a></li>';
+                                    $li3 = '<li><a class="dropdown-item" href="#">My Blog</a></li>';
+                                    $li4 = '<li><a class="dropdown-item" href="./Seller_page/admin.php">Sell Products</a></li>';
+                                    $li5 = '<li><a class="dropdown-item" href="../././recycle/form.php">Add Items For Recycle</a></li>';
                                     ?>
-                                    <i class="bi bi-person"><?php echo " ".$uname ?></i>
+                                    
                                     <?php
+                                    echo '<i class="bi bi-person">';
+                                    echo " ".$uname;
+                                    echo '</i>';
+                                    echo '</a>';
+                                    echo $ul;
+                                    echo $li1;
+                                    echo $li3;
+                                    echo $li4;
+                                    echo $li5;
                                 }
                                 else{
                                     ?>
-                                    <i class="bi bi-person"></i>
                                     <?php
+                                    $ul = '<ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">';
+                                    echo '<i class="bi bi-person"></i>';
+                                    echo '</a>';
+                                    echo $ul;
                                 }
-                           ?>
-                        </a>
-                        <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="./../log.php">Logout</a></li>
-                            <li><a class="dropdown-item" href="#">My Orders</a></li>
-                            <li><a class="dropdown-item" href="#">My Posts</a></li>
-                            <li><a class="dropdown-item" href="../././recycle/form.php">Add Items For Recycle</a></li>
+                                ?>
+
                         </ul>
                     </li>
                 </ul>
@@ -97,3 +109,11 @@
         </div>
     </nav>
 </header>
+
+
+<!-- <ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="./../log.php">Logout</a></li>
+                            <li><a class="dropdown-item" href="#">My Orders</a></li>
+                            <li><a class="dropdown-item" href="#">My Posts</a></li>
+                            <li><a class="dropdown-item" href="../././recycle/form.php">Add Items For Recycle</a></li>
+                        </ul> -->
