@@ -12,8 +12,12 @@ if(isset($_POST['login_submit'])){
   $emailid = $_POST["email"];
   $password = $_POST["password"];
   
+  $hash = "$2y$10$";
+    $salt = "youknowinknowblahblaHHjkI810";
+    $combine = $hash.$salt;
+    $encrypted_pass = crypt($password, $combine);
 
-  $sql = "SELECT * FROM `user` WHERE email = '$emailid' AND password = '$password' ";
+  $sql = "SELECT * FROM `user` WHERE email = '$emailid' AND password = '$encrypted_pass' ";
 
   $res = mysqli_query($connect, $sql);
   $uname = mysqli_fetch_assoc($res);
@@ -80,12 +84,12 @@ if($login){
                                     <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
                   
                                     <div class="form-outline mb-4">
-                                      <input type="email" id="form2Example17" name="email" class="form-control form-control-lg border" />
+                                      <input type="email" id="form2Example17" name="email" class="form-control form-control-lg border" required/>
                                       <label class="form-label" for="form2Example17">Email address</label>
                                     </div>
                   
                                     <div class="form-outline mb-4">
-                                      <input type="password" id="form2Example27" name="password" class="form-control form-control-lg border" />
+                                      <input type="password" id="form2Example27" name="password" class="form-control form-control-lg border" required/>
                                       <label class="form-label" for="form2Example27">Password</label>
                                     </div>
                   

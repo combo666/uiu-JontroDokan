@@ -46,8 +46,8 @@
         </div>
     </div>
     <!-- Side widget-->
-    <div class="card mb-4">
+    <!-- <div class="card mb-4">
         <div class="card-header">Side Widget</div>
         <div class="card-body">Nothing's here till now!</div>
-    </div>
+    </div> -->
 </div>

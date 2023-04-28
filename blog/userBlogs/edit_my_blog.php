@@ -91,6 +91,7 @@ $post_stat = "";
           echo "<div class=\"alert alert-success\" role=\"alert\">
                post updated!
               </div>";
+          echo "<meta http-equiv=\"refresh\" content=\"1.2; url='view_edit_blog.php\" />";
         }
         else
         {

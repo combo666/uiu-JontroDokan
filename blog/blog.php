@@ -18,7 +18,7 @@
             <!-- Featured blog post-->
 
             <?php
-            $find_f_q = "select * from posts where is_featured = 1";
+            $find_f_q = "select * from posts where is_featured = 1 and post_status = 'publish'";
             $f_posts = mysqli_query($connect, $find_f_q);
 
             while ($row = mysqli_fetch_assoc($f_posts)) {
@@ -57,7 +57,7 @@
                 <!-- queries to read posts from db  -->
                 <?php
 
-                $query = "select * from posts where is_featured is NULL";
+                $query = "select * from posts where is_featured is NULL and post_status = 'publish'";
                 $select_all_posts_query = mysqli_query($connect, $query);
 
                 while ($row = mysqli_fetch_assoc($select_all_posts_query)) {

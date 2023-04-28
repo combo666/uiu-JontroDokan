@@ -75,6 +75,8 @@ $post_stat = "";
           echo "<div class=\"alert alert-success\" role=\"alert\">
                post updated!
               </div>";
+      
+          echo "<meta http-equiv=\"refresh\" content=\"1.2; url='my_posts.php?source='view_all'\" />";
         }
         else
         {

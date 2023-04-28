@@ -40,7 +40,11 @@ if(isset($_POST['reg_submit'])){
   }else if( $email_exists == $emailid){
     $showError = 'Email already exist';
   }else if(($password == $cpassword) && $exists == false && $emailid != null && $firstname != null && $password != null && $gender != null && $phone != null){
-    $sql = "INSERT INTO `user`(`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `gender`) VALUES (NULL,'$firstname','$lastname','$emailid','$password','$phone','$gender')";
+    $hash = "$2y$10$";
+    $salt = "youknowinknowblahblaHHjkI810";
+    $combine = $hash.$salt;
+    $encrypted_pass = crypt($password, $combine);
+    $sql = "INSERT INTO `user`(`id`, `first_name`, `last_name`, `email`, `password`, `phone`, `gender`) VALUES (NULL,'$firstname','$lastname','$emailid','$encrypted_pass','$phone','$gender')";
 
     $result = mysqli_query($connect, $sql);
     if($result){
@@ -96,13 +100,13 @@ if($showAlart){
                                       <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                         <label class="form-label" for="form3Example1m">First name</label>
-                                          <input type="text" id="form3Example1m" name="firstname" class="form-control form-control-lg border" />
+                                          <input type="text" id="form3Example1m" name="firstname" class="form-control form-control-lg border" required/>
                                         </div>
                                       </div>
                                       <div class="col-md-6 mb-4">
                                         <div class="form-outline">
                                           <label class="form-label" for="form3Example1n">Last name</label>
-                                          <input type="text" id="form3Example1n" name="lastname" class="form-control form-control-lg border" />
+                                          <input type="text" id="form3Example1n" name="lastname" class="form-control form-control-lg border" required/>
                                         </div>
                                       </div>
                                     </div>
@@ -139,17 +143,17 @@ if($showAlart){
                           
                                     <div class="form-outline mb-4">
                                       <label class="form-label" for="form3Example97">Email ID</label>
-                                      <input type="email" id="form3Example97" name="emailid" class="form-control form-control-lg" />
+                                      <input type="email" id="form3Example97" name="emailid" class="form-control form-control-lg" required/>
                                     </div>
 
                                     <div class="form-outline mb-4">
                                       <label class="form-label" for="form3Example90">Password</label>
-                                      <input type="password" id="form3Example90" name="password" class="form-control form-control-lg" />
+                                      <input type="password" id="form3Example90" name="password" class="form-control form-control-lg" required/>
                                     </div>
                     
                                     <div class="form-outline mb-4">
                                       <label class="form-label" for="form3Example99">Confirm Password</label>
-                                      <input type="password" id="form3Example99" name="cpassword" class="form-control form-control-lg" />
+                                      <input type="password" id="form3Example99" name="cpassword" class="form-control form-control-lg" required/>
                                     </div>
                     
                                     
