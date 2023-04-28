@@ -34,7 +34,7 @@
                                             <?php 
                                             if($uname){
                                                 ?>
-                                                <a href="" class="add-to-cart-btn">
+                                                <a href="./user_add_lab_item.php?i_id=<?php echo $item_id; ?>" class="add-to-cart-btn">
                                                     <i class=""></i> Add
                                                 </a>
                                                 <?php
