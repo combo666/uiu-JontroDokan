@@ -138,7 +138,7 @@ if($showAlart){
                     
                                     <div class="form-outline mb-4">
                                       <label class="form-label" for="form3Example97">Phone Number</label>
-                                      <input type="number" id="form3Example97" name="phone" class="form-control form-control-lg" />
+                                      <input type="number" id="form3Example97" name="phone" class="form-control form-control-lg" required/>
                                     </div>
                           
                                     <div class="form-outline mb-4">
