@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2023 at 09:34 AM
+-- Generation Time: Apr 28, 2023 at 10:44 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -65,8 +65,21 @@ CREATE TABLE `customers` (
 CREATE TABLE `lab_items` (
   `item_id` int(11) NOT NULL,
   `item_name` varchar(255) NOT NULL,
+  `available_units` int(255) NOT NULL,
+  `item_image` text DEFAULT NULL,
+  `tag` varchar(255) NOT NULL,
   `item_details` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `lab_items`
+--
+
+INSERT INTO `lab_items` (`item_id`, `item_name`, `available_units`, `item_image`, `tag`, `item_details`) VALUES
+(51, 'Uno', 40, 'wallapaper.jpg', 'asdfa', 'asdfasdf'),
+(52, 'Unooo bino tino ikino', 50, 'rango_movie-wallpaper-2560x1440.jpg', 'aasdf', 'asdfasdfasd'),
+(54, 'Unooo bino tino kino', 51, 'Screenshot 2023-04-12 201544.png', 'aasdf', 'sdfasdfasdf'),
+(55, 'Ino Sakura', 1, 'wallpaper.jfif', 'Ino', 'Amar nam Ino Sakura');
 
 -- --------------------------------------------------------
 
@@ -248,6 +261,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `lab_items`
+--
+ALTER TABLE `lab_items`
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `posts`
