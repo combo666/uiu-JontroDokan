@@ -1,4 +1,4 @@
-<?php include "../homepage/includes/header_html.php";?>
+<?php include "./includes/header.php";?>
 <?php include "../homepage/includes/header_body.php";?>
 <?php include('../database/db_connect.php')?>
 
@@ -37,7 +37,7 @@
         My Orders
     </div>
     <div class="card-body">
-        <table id="datatable">
+        <table id="datatablesSimple">
             <thead>
                 <tr>
                     <th>Order ID</th>
@@ -153,4 +153,4 @@
 
 
 
-<?php include "../homepage/includes/footer.php";?>
+<?php include "./includes/footer.php";?>

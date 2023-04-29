@@ -40,6 +40,7 @@
                     if(isset($_POST["quantity_submit"])){
                         
                         $item_quantity = $_POST['quantity'];
+                        $uid = $_SESSION['uid'];
                         if($item_quantity)
                         {
                             $query = "INSERT INTO `lab_item_order`(`order_id`, `user_id`, `lab_item_id`, `item_amount` ,  `status`) VALUES('',{$uid},{$i_id},{$item_quantity} , 0)"; 
