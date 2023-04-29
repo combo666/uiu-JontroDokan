@@ -12,6 +12,8 @@ include 'config.php';
     $result = mysqli_query($conn, $sql);
     if(mysqli_num_rows($result) > 0) {
       $select_products = mysqli_fetch_assoc($result);
+      //category select
+            $s_category=$select_products['Category'];
             // Calculate the time elapsed since the post was made
             $elapsed_time = time() - $select_products['Time_stamp'];
             $minutes_elapsed = round($elapsed_time / 60);
@@ -44,12 +46,12 @@ include 'config.php';
       ?>
       </h5>
       <div class="row">
-        <div class="col-3">
+        <div class="col">
         <h4>Price: <?php echo $select_products['price']. " "; ?> Tk</h4>
+        <p class="fst-italic text-primary"><?php echo $select_products['price_type'];?></p>
         </div>
-        <div class="col-2">
-         <p class="fst-italic text-primary"><?php echo $select_products['price_type'];?></p>
-        </div>
+        <!-- <div class="col-2">
+        </div> -->
       </div>
       <br>
       <div class="card md-4">
@@ -77,27 +79,29 @@ include 'config.php';
       }
     }
   ?>
-
-<section class="latest-product">
+<!-- show Similar catagory products -->
+    <div class="row" style="padding-left:40px; padding-bottom:10px; width:96%">
+            <div class="card md-4">
+                <div class="card-body container">
+                    <h2>Similar products </h2>
+                    <section class="latest-product">
     <div class="container">
-        <h2>Similar products</h2>
-        <hr>
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../assets/images/product/f1.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
+    <div class="row container">
+    <?php     
+      $select_products = mysqli_query($conn, "SELECT * FROM `products` WHERE Category='$s_category' AND id<>$product_id ORDER BY id DESC LIMIT 4");
+      if(mysqli_num_rows($select_products) > 0){
+         while($fetch_product = mysqli_fetch_assoc($select_products)){
+      ?>         
+            <div class="col-lg-3" >
+                <div class="card border-0 shadow-sm" style="width:270px;height:300px;">
+                    <div class="card-body text-center" >
+                      <img style="height:120px;width:170px;" src="../Seller_page/uploaded_img/<?php echo $fetch_product['image']; ?>" alt="">
+                         <h2 class="product_name">
+                            <a class="text-decoration-none" href=""><?php echo $fetch_product['name']; ?></a>
                         </h2>
-                        <div class="condition-bar ">
-                            <div class="condition-bar-item bad"></div>
-                            <div class="condition-bar-item fair"></div>
-                            <div class="condition-bar-item good"></div>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
+                        <h2>Tk <?php echo $fetch_product['price']; ?></h2>    
                         <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
+                            <a href=".././Seller_page/Component.php?p_id=<?php echo $fetch_product['id']; ?>" class="add-to-cart-btn ">
                                 <i class="bi bi-cart4"></i> Add to Cart
                             </a>
                             <a href="" class="add-to-favorite text-success">
@@ -106,81 +110,16 @@ include 'config.php';
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../assets/images/product/f3.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
-                        </h2>
-                        <div class="condition-bar ">
-                            <div class="condition-bar-item bad"></div>
-                            <div class="condition-bar-item fair"></div>
-                            <div class="condition-bar-item good"></div>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
-                            </a>
-                        </div>
-                    </div>
+            </div> 
+                <?php
+         };
+      };
+      ?>
+                 </div>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../assets/images/product/servo.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
-                        </h2>
-                        <div class="condition-bar ">
-                            <div class="condition-bar-item bad"></div>
-                            <div class="condition-bar-item fair"></div>
-                            <div class="condition-bar-item good"></div>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="../assets/images/product/sensor.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
-                        </h2>
-                        <div class="condition-bar">
-                            <div class="condition-bar-item bad"></div>
-                            <div class="condition-bar-item fair"></div>
-                            <div class="condition-bar-item good"></div>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
 </section>
+                </div>
+            </div>
+    </div>
 <?php include "../homepage/includes/footer.php"; ?>

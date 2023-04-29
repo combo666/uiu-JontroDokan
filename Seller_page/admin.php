@@ -136,8 +136,8 @@ if(isset($message)){
       <div class="col">
       <select class="form-select" aria-label="Default select example" name="catgSelect" onchange="checkOtherOption(this)">
          <option selected>Micro processor/Micro controler</option>
-         <option value="1">Sensor</option>
-         <option value="2">Motor</option>
+         <option value="Sensor">Sensor</option>
+         <option value="Motor">Motor</option>
          <option value="3">other</option>
       </select>
       <input type="text" id="otherOption" name="otherOption" style="display:none;" />
