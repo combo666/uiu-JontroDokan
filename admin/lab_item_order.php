@@ -21,10 +21,13 @@
             </div>
         </main> 
         
+        
 <?php
 
     $item_image = "";
     $item_image = "";
+    $res_avv_unit = "";
+    $res_ord_quan = "";
     
     if (isset($_GET['item_delete'])) {
 
@@ -37,6 +40,7 @@
             }
       }else if (isset($_GET['update'])) {
         
+        
         $o_id = $_GET['update'];
         $lab_item_id = $_GET['lab_item_id'];
 
@@ -47,6 +51,18 @@
         SET `available_units` = (SELECT available_units FROM `lab_items` WHERE item_id = $lab_item_id) - (SELECT  `item_amount` FROM `lab_item_order` WHERE lab_item_id = $lab_item_id AND order_id = $o_id)
         WHERE item_id like (SELECT lab_item_id FROM lab_item_order WHERE order_id = $o_id)";
         $del_res = mysqli_query($connect, $sql_i);
+
+        $avv_units ="SELECT * FROM `lab_items` WHERE item_id = $lab_item_id";
+        $res_avv_units = mysqli_fetch_assoc(mysqli_query($connect, $avv_units));
+
+        $ord_quan = "SELECT * FROM `lab_item_order` WHERE order_id = $o_id";
+        $res_ord_quan = mysqli_fetch_assoc(mysqli_query($connect, $ord_quan));
+        
+
+        if( $res_avv_units['available_units'] < $res_ord_quan['item_amount'] ){
+            $sql = "UPDATE `lab_item_order` SET `status`= 2 WHERE lab_item_id = $lab_item_id AND  order_id != $o_id";
+            $del_res = mysqli_query($connect, $sql);
+        }
 
 
       }
@@ -146,16 +162,19 @@
                             <td colspan="2" class="text-center">
 
                             <?php
-                                 if($status == 0){ ?>
-                                    <a class="btn btn-sm btn-success ms-2" type="submit" name="item_update" href="lab_item_order.php?update=<?php echo $order_id; ?>&lab_item_id=<?php echo $lab_item_id; ?>"> Accept</a>
-                                
-                                    <a class="btn btn-sm btn-danger ms-2" type="submit" name="item_delete" href="lab_item_order.php?item_delete=<?php echo $order_id; ?>"> Reject</a>
-                                    <?php
-                                 }else if($status == 2){
-                                    echo "Rejected";
-                                 }else{
-                                    echo "Accepted";
-                                 }
+
+                            
+                            
+                            if($status == 0){ ?>
+                            <a class="btn btn-sm btn-success ms-2" type="submit" name="item_update" href="lab_item_order.php?update=<?php echo $order_id; ?>&lab_item_id=<?php echo $lab_item_id; ?>"> Accept</a>
+                        
+                            <a class="btn btn-sm btn-danger ms-2" type="submit" name="item_delete" href="lab_item_order.php?item_delete=<?php echo $order_id; ?>"> Reject</a>
+                            <?php
+                            }else if($status == 2){
+                            echo "Rejected";
+                            }else if($status == 1){
+                            echo "Accepted";
+                            }
                             ?>
 
 

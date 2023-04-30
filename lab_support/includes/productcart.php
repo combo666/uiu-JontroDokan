@@ -19,14 +19,25 @@
                         <div class="col-md-6 d-flex align-items-stretch">
                         <!-- Blog post-->
                         <div class="card mb-4">
-                            <a href="post.php?p_id=<?php echo $post_id; ?>"><img class="card-img-top" src="image/<?php echo $post_image ?>" alt="no image"/></a>
+                            <a href="post.php?p_id=<?php echo $post_id; ?>"><img class="card-img-top" src="image/<?php echo $item_image; ?>" alt="no image"/></a>
                             <div class="card-body">
 
-                                <h2 class="card-title h4"><a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo mb_strimwidth($post_title, 0, 30, "..."); ?></a></h2>
-                                <div class="small text-muted">By: <?php echo $post_author ?>, </div>
-                                <span class="small text-muted">published on: <?php echo $post_date ?></span>
-                                <p class="card-text"><?php echo mb_strimwidth($post_content, 0, 200, "..."); ?></p>
-                                <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read more →</a>
+                                <h2 class="card-title h4"><a href="lab_post.php?i_id=<?php echo $item_id; ?>"><?php echo mb_strimwidth($item_name, 0, 30, "..."); ?></a></h2>
+                                <div class="small text-muted">By: Admin </div>
+                                <span class="small text-muted">Available Units: <?= $available_units?></span>
+                                <p class="card-text"><?php echo mb_strimwidth($item_details, 0, 200, "..."); ?></p>
+                                <?php 
+                                            if($uname){
+                                                ?>
+                                                <a class="btn btn-primary" href="./user_add_lab_item.php?i_id=<?php echo $item_id; ?>">ADD</a>
+                                                <?php
+                                            }else{
+                                                ?>
+                                                <a class="btn btn-primary" href="../customers/login.php">ADD</a>
+                                                <?php
+                                            }
+                                            ?>
+                                
                             </div>
                         </div>
                     </div>
@@ -37,3 +48,6 @@
 
         </div>
 </section>
+
+
+
