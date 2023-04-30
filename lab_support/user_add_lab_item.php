@@ -66,7 +66,7 @@
                             die("query failed!" . mysqli_error($connect));
                         }
                         ?>
-                        <meta http-equiv="refresh" content="2; url='index.php'" />
+                        <meta http-equiv="refresh" content="2; url='lab_support.php'" />
                         <?php
 
                         
