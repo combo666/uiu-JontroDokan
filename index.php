@@ -15,13 +15,14 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>UIU JontroDokan</title>
-    <link rel="icon" href="./assets/images/favicon.png">
+    <link rel="icon" href="./assets/images/new_logo.png">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/fonts/bootstrap-icons.css">
     <link rel="stylesheet" href="./assets/sass/main.css">
     <link rel="stylesheet" href="./blog/css/style.css">
     <link rel="stylesheet" href="./recycle/css/style.css">
     <link rel="stylesheet" href=".././assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/anotherStyle.css">
 </head>
 <body>
 
@@ -49,10 +50,10 @@
         }
     ?>
     
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="./assets/images/logo.png" alt="">
+                <img src="./assets/images/new_logo.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -60,18 +61,18 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link <?= ($page == 'index')? 'active' : '' ?>" aria-current="page" href="./index.php">Home</a>
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="nav-item <?= ($page == 'index')? 'active' : '' ?>">
+                        <a class="nav-link" aria-current="page" href="./index.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="./Shop/shop.php">Shop</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?= ($page == 'blog')? 'active' : '' ?>" href="./blog/blog.php">Blog</a>
+                    <li class="nav-item <?= ($page == 'blog')? 'active' : '' ?>">
+                        <a class="nav-link " href="./blog/blog.php">Blog</a>
                     </li>
-                    <li class="nav-item">
-                        <a class = "nav-link <?= ($page == 'recycle')? 'active' : '' ?>" href="./recycle/recycle.php">Recycle</a>
+                    <li class="nav-item  <?= ($page == 'recycle')? 'active' : '' ?>">
+                        <a class = "nav-link" href="./recycle/recycle.php">Recycle</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="./lab_support/lab_support.php">Laboratory support</a>
@@ -92,7 +93,7 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="btn dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        <a class="btn btn-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
                            <?php
                                 if(isset($_SESSION['uname'])){      
@@ -137,130 +138,18 @@
     </nav>
 </header>
 
-<?php include "./homepage/includes/slider.php"; ?>
-
-<?php include "./homepage/includes/product_category.php"; ?>
+<?php include "./homepage/includes/herosection.php"; ?>
+<?php include "./homepage/includes/laboratory_support_products.php"; ?>
 
 <?php include "./homepage/includes/latest_products.php"; ?>
+<?php include "./homepage/includes/blog_section.php"; ?>
 
-<section class="latest-product">
-    <div class="container">
-        <h2>Most Sell Products</h2>
-        <hr>
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="assets/images/product/f1.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
-                        </h2>
-                        <div class="rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href=".\Component_details\Component.php" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="assets/images/product/f3.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
-                        </h2>
-                        <div class="rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="assets/images/product/servo.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
-                        </h2>
-                        <div class="rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="assets/images/product/sensor.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
-                        </h2>
-                        <div class="rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-        </div>
-    </div>
-</section>
 
 <!--Footer section-->
 <footer class = "container-fluid">
     <div class="row">
-    <div class="container header__topline bg-dark"><p class="m-0 text-center text-white">Copyright &copy; TeamMayhemMorph 2023</p></div>
+    <div class="container header__topline bg-dark py-5"><p class="m-0 text-center text-white">Copyright &copy; TeamMayhemMorph 2023</p></div>
     </div>
 </footer>
 <script src="./assets/js/bootstrap.bundle.js"></script>
