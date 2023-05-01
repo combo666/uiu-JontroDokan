@@ -10,34 +10,22 @@
         include "./form.php";
     }
 ?>
+<header class="py-5 border-bottom mb-4 hero">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1  class="fw-bolder">Items For Recycle</h1>
+            <p class="lead mb-0">A Way to Save Environment</p>
+        </div>
+    </div>
+</header>
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-8">
-            <div class="card mb-4">
-                
-                <div class="card-body container">
-                    <h2>Recently Added</h2>
-                    <?php include "../recycle/includes/recentcard.php" ?>
+        <div class="col-lg-9">
                     
-                </div>
-            </div>
+                    <?php include "includes/productcard.php" ?>
         </div>
-            <?php include "includes/sidebar.php" ?>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-13">
-                    <div class="card mb-4">
-                        <div class="card-body container">
-                            <h2>Available Products</h2>
-                            <?php include "../recycle/includes/productcard.php" ?>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
+                <?php include "includes/sidebar.php" ?>
     </div>
 </div>
 

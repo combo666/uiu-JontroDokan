@@ -2,10 +2,11 @@
 <?php include "../homepage/includes/header_body.php" ?>
 <?php include "../database/db_connect.php"; ?>
 
-<header class="py-5 bg-light border-bottom mb-4">
+<header class="py-5 border-bottom mb-4 hero">
     <div class="container">
         <div class="text-center my-5">
             <h1  class="fw-bolder">Lab Items</h1>
+            <p class="lead mb-0">Rent For your Own Project</p>
         </div>
     </div>
 </header>

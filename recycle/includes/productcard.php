@@ -1,45 +1,46 @@
 
-<section class="latest-product">
-    <div class="container">
         
-        <div class="row container">
+<div class="row">
         <?php
-                $query = "SELECT * FROM `recycling`";
-                $result = mysqli_query($connect , $query);
+        $query = "SELECT * FROM `recycling`";
+        $result = mysqli_query($connect , $query);
+        ?>
+                <?php
+                    while($row = mysqli_fetch_array($result)){ 
+                        $product_id = $row['p_id'];
+                        $product_name = $row['p_name'];
+                        $product_user_id = $row['user_id'];
+                        $p_image = $row['item_image'];
+                        $product_type = $row['p_type'];
+                        $product_details = $row['p_details'];
+                        
+                        ?>
+                        <div class="col-md-6 d-flex align-items-stretch">
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            <a href="post.php?p_id=<?php echo $post_id; ?>"><img class="card-img-top" src="image/<?php echo $item_image; ?>" alt="no image"/></a>
+                            <div class="card-body">
 
-                while($row = mysqli_fetch_array($result)){ ?>
-                    
-                    <div class="col-lg-3">
-                        <div class="card border-0 shadow-sm">
-                            <div class="card-body text-center">
-                                <img src="../assets/images/product/f3.png" alt="">
-                                <h2 class="product_name">
-                                    <a class="text-decoration-none" href=""><?= $row['p_name'] ?></a>
-                                    <br>
-                                    <?php $queryi="SELECT COUNT(*) AS num FROM `recycling` WHERE p_type = 'Micro Processor'";
-                                        $resulti = mysqli_fetch_array(mysqli_query($connect , $queryi));
-                                        $resulti['num'];?>
-                                <h7>Available Units : <?= $resulti['num']?></h7>
-                                </h2>
+                                <h2 class="card-title h4"><a href="lab_post.php?i_id=<?php echo $item_id; ?>"><?php echo mb_strimwidth($item_name, 0, 30, "..."); ?></a></h2>
+                                <div class="small text-muted">By: Admin </div>
+                                <span class="small text-muted">Available Units: <?= $available_units?></span>
+                                <p class="card-text"><?php echo mb_strimwidth($item_details, 0, 200, "..."); ?></p>
+                                <?php 
+                                if($uname){
+                                    ?>
+                                    <a class="btn btn-primary" href="./user_add_lab_item.php?i_id=<?php echo $item_id; ?>">ADD</a>
+                                    <?php
+                                }else{
+                                    ?>
+                                    <a class="btn btn-primary" href="../customers/login.php">ADD</a>
+                                    <?php
+                                }
+                                ?>
                                 
-                                
-                                <div class="btn d-flex justify-content-between align-items-center">
-                                    <a href="" class="add-to-cart-btn ">
-                                        <i class="bi bi-cart4"></i> Add to Cart
-                                    </a>
-                                     <a href="" class="add-to-favorite text-success">
-                                        <i class="bi bi-heart "></i>
-                                    </a>
-                                </div>
-                             </div>
+                            </div>
                         </div>
                     </div>
-                <?php }
-            ?>
-            
-            
-            
-
+                    <?php 
+                    }
+                    ?>
         </div>
-    </div>
-</section>
