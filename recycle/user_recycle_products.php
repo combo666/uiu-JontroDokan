@@ -12,22 +12,19 @@
             <!-- Featured blog post-->
             <?php
             $userID = $_SESSION['uid'];
-            $find_f_q = "SELECT * FROM posts
-            INNER JOIN user
-            ON user.id = posts.post_author where post_author = '{$userID}'";
-            $f_posts = mysqli_query($connect, $find_f_q);
+            
 
             while ($row = mysqli_fetch_assoc($f_posts)) {
-                $post_id = $row['post_id'];
-                $post_title = $row['post_title'];
-                $post_author = $row['first_name'] . " " . $row['last_name'];
-                $post_date = $row['post_date'];
-                $post_content = $row['post_content'];
-                $post_image = $row['post_image'];
+                $product_id = $row['p_id'];
+                $product_name = $row['p_name'];
+                $product_user_id = $row['user_id'];
+                $p_image = $row['item_image'];
+                $product_type = $row['p_type'];
+                $product_details = $row['p_details'];
 
             ?>
                 <div class="card mb-4">
-                    <a href="post.php?p_id=<?php echo $post_id; ?>"><img class="card-img-top" src="../image/<?php echo $post_image; ?>" alt="no_image" /></a>
+                    <a href="post.php?p_id=<?php echo $product_id; ?>"><img class="card-img-top" src="../image/<?php echo $post_image; ?>" alt="no_image" /></a>
                     <div class="card-body">
                         <h2 class="card-title h4"><a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo mb_strimwidth($post_title, 0, 30, "..."); ?></a></h2>
                         <div class="small text-muted">By: <?php echo $post_author; ?>, </div>
