@@ -26,10 +26,10 @@
             <?php
         }
 ?>
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src=".././assets/images/logo.png" alt="">
+                <img src=".././assets/images/new_logo.png" alt="">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -37,7 +37,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="nav-item">
                         <a class="nav-link <?= ($page == 'index')? 'active' : '' ?>" aria-current="page" href=".././index.php">Home</a>
                     </li>
@@ -47,14 +47,14 @@
                     <!-- <li class="nav-item">
                         <a class="nav-link " href="#">Project</a>
                     </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link <?= ($page == 'blog')? 'active' : '' ?>" href=".././blog/blog.php">Blog</a>
+                    <li class="nav-item <?= ($page == 'blog')? 'active' : '' ?>">
+                        <a class="nav-link" href=".././blog/blog.php">Blog</a>
                     </li>
-                    <li class="nav-item">
-                        <a class = "nav-link <?= ($page == 'recycle')? 'active' : '' ?>" href=".././recycle/recycle.php">Recycle</a>
+                    <li class="nav-item <?= ($page == 'recycle')? 'active' : '' ?>">
+                        <a class = "nav-link " href=".././recycle/recycle.php">Recycle</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?= ($page == 'lab_support')? 'active' : '' ?>" href=".././lab_support/lab_support.php">Laboratory support</a>
+                    <li class="nav-item <?= ($page == 'lab_support')? 'active' : '' ?>">
+                        <a class="nav-link " href=".././lab_support/lab_support.php">Laboratory support</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 action-menu">
@@ -80,7 +80,7 @@
                                     $li1 = '<li><a class="dropdown-item" href="../././lab_support/user_view_lab_item.php">My Lab Items</a></li>'; 
                                     $li3 = '<li><a class="dropdown-item" href="../././blog/userBlogs/myblogs.php">My Blog</a></li>';
                                     $li4 = '<li><a class="dropdown-item" href="./Seller_page/admin.php">Sell Products</a></li>';
-                                    $li5 = '<li><a class="dropdown-item" href="../././recycle/form.php">Add Items For Recycle</a></li>';
+                                    $li5 = '<li><a class="dropdown-item" href="../././recycle/user_recycle_products.php">My Items For Recycle</a></li>';
                                     $li6 ='<li><a class="dropdown-item" href="./../log.php">Logout</a></li>';
                                     ?>
                                     
