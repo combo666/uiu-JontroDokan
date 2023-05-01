@@ -22,7 +22,7 @@
         <div class="card-body">
             <div class="row">
                 <?php
-                $query = "select * from post_categories";
+                $query = "select * from post_categories inner join posts on post_category_id = cat_id limit 10";
 
                 $categories_result = mysqli_query($connect, $query);
 
