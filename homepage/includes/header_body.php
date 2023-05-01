@@ -8,7 +8,7 @@
         $uid = $_SESSION['uid'];
     }
 ?>
-<header>
+<header class="mb-5">
 <?php
         if(!isset($_SESSION['uname'])){
             ?>
@@ -26,7 +26,7 @@
             <?php
         }
 ?>
-    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src=".././assets/images/new_logo.png" alt="">
@@ -41,8 +41,8 @@
                     <li class="nav-item">
                         <a class="nav-link <?= ($page == 'index')? 'active' : '' ?>" aria-current="page" href=".././index.php">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link <?= ($page == 'shop')? 'active' : '' ?>  " href=".././Shop/shop.php">Shop</a>
+                    <li class="nav-item <?= ($page == 'shop')? 'active' : '' ?>  ">
+                        <a class="nav-link " href=".././Shop/shop.php">Shop</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link " href="#">Project</a>
@@ -72,7 +72,7 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="btn dropdown-toggle" href="" id="navbarDropdown" role="button"
+                        <a class="btn btn-dark dropdown-toggle" href="" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
                            <?php
                                 if(isset($_SESSION['uname'])){      

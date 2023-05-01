@@ -16,7 +16,7 @@
                         $item_details = $row['item_details'];
                         
                         ?>
-                        <div class="col-md-6 d-flex align-items-stretch">
+                        <div class="col-md-6 d-flex align-items-stretch justify-items-stretch">
                         <!-- Blog post-->
                         <div class="card mb-4">
                             <a href="post.php?p_id=<?php echo $post_id; ?>"><img class="card-img-top" src="image/<?php echo $item_image; ?>" alt="no image"/></a>

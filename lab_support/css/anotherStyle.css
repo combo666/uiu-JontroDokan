@@ -158,7 +158,7 @@ a {
         .hero .hero-img-wrap:after {
           top: -40px; } }
 
-/* .btn {
+.btn {
   font-weight: 600;
   padding: 12px 30px;
   border-radius: 30px;
@@ -192,7 +192,7 @@ a {
     border-color: rgba(255, 255, 255, 0.3); }
     .btn.btn-white-outline:hover {
       border-color: white;
-      color: #ffffff; } */
+      color: #ffffff; }
 
 .section-title {
   color: #2f2f2f; }
