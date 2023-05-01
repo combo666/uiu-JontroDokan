@@ -12,25 +12,28 @@
             <!-- Featured blog post-->
             <?php
             $userID = $_SESSION['uid'];
+            $query = "SELECT * FROM `recycling` WHERE user_id = $uid";
+            $result = mysqli_query($connect , $query);
             
 
-            while ($row = mysqli_fetch_assoc($f_posts)) {
+            while ($row = mysqli_fetch_assoc($result)) {
                 $product_id = $row['p_id'];
                 $product_name = $row['p_name'];
                 $product_user_id = $row['user_id'];
-                $p_image = $row['item_image'];
+                $product_image = $row['p_image'];
                 $product_type = $row['p_type'];
                 $product_details = $row['p_details'];
+                
+                date_default_timezone_set('Asia/Dhaka');
+                $post_date = date('d-m-y');
 
             ?>
                 <div class="card mb-4">
-                    <a href="post.php?p_id=<?php echo $product_id; ?>"><img class="card-img-top" src="../image/<?php echo $post_image; ?>" alt="no_image" /></a>
+                    <a href="post.php?p_id=<?php echo $product_id; ?>"><img class="card-img-top" src="image/<?php echo $product_image; ?>" alt="no_image" /></a>
                     <div class="card-body">
-                        <h2 class="card-title h4"><a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo mb_strimwidth($post_title, 0, 30, "..."); ?></a></h2>
-                        <div class="small text-muted">By: <?php echo $post_author; ?>, </div>
-                        <span class="small text-muted">published on: <?php echo $post_date; ?></span>
-                        <p class="card-text"><?php echo mb_strimwidth($post_content, 0, 200, "..."); ?></p>
-                        <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read more →</a>
+                        <h2 class="card-title h4"><a href="post.php?p_id=<?php echo $product_id; ?>"><?php echo mb_strimwidth($product_name, 0, 30, "..."); ?></a></h2>
+                        <div class="small text-muted">By: You </div>
+                        <span class="small text-muted">published on: <?php echo $post_date; ?></span><br>
                     </div>
                 </div>
 

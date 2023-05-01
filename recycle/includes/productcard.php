@@ -10,37 +10,43 @@
                         $product_id = $row['p_id'];
                         $product_name = $row['p_name'];
                         $product_user_id = $row['user_id'];
-                        $p_image = $row['item_image'];
+                        $product_image = $row['p_image'];
                         $product_type = $row['p_type'];
                         $product_details = $row['p_details'];
-                        
-                        ?>
-                        <div class="col-md-6 d-flex align-items-stretch">
-                        <!-- Blog post-->
-                        <div class="card mb-4">
-                            <a href="productcard.php?p_id=<?php echo $product_id; ?>"><img class="card-img-top" src="image/<?php echo $product_image; ?>" alt="no image"/></a>
-                            <div class="card-body">
+                        $status = $row['status'];
 
-                                <h2 class="card-title h4"><a href="lab_post.php?i_id=<?php echo $item_id; ?>"><?php echo mb_strimwidth($item_name, 0, 30, "..."); ?></a></h2>
-                                <div class="small text-muted">By: Admin </div>
-                                <span class="small text-muted">Available Units: <?= $available_units?></span>
-                                <p class="card-text"><?php echo mb_strimwidth($item_details, 0, 200, "..."); ?></p>
-                                <?php 
-                                if($uname){
-                                    ?>
-                                    <a class="btn btn-primary" href="./user_add_lab_item.php?i_id=<?php echo $item_id; ?>">ADD</a>
-                                    <?php
-                                }else{
-                                    ?>
-                                    <a class="btn btn-primary" href="../customers/login.php">ADD</a>
-                                    <?php
-                                }
-                                ?>
-                                
+                        $q_u_name = "SELECT * FROM user WHERE id = $product_user_id";
+                        $q_res = mysqli_query($connect, $q_u_name);
+
+                        while($row = mysqli_fetch_assoc($q_res)){
+                            $user_name = $row['first_name']." ".$row['last_name'];
+                        }
+
+
+
+                        if($status != 1){
+                            ?>
+                            <div class="col-md-6 d-flex align-items-stretch">
+                            <!-- Blog post-->
+                                <div class="card mb-4">
+                                    <a href="productcard.php?p_id=<?php echo $product_id; ?>"><img class="card-img-top" src="image/<?php echo $product_image; ?>" alt="no image"/></a>
+                                    <div class="card-body">
+
+                                        <h2 class="card-title h4"><a href="user_recycle_item_details.php?i_id=<?php echo $product_id; ?>"><?php echo mb_strimwidth($product_name, 0, 30, "..."); ?></a></h2>
+                                        <div class="small text-muted">By: <?php echo $user_name; ?> </div>
+                                        <div class="small text-muted">Type: <?php echo $product_type; ?> </div>
+                                        <span class="small text-muted">Available Units: 1</span>
+                                        <p class="card-text"><?php echo mb_strimwidth($product_details, 0, 200, "..."); ?></p>
+                                        
+                                        
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <?php 
+                        <?php 
+
+                        }
+                        
+                        
                     }
                     ?>
         </div>
