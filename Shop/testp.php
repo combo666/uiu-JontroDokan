@@ -11,7 +11,6 @@ include "../homepage/includes/header_body.php";
 
     }
 </style>
-
 <div class="container">
     <div style="padding-top: 10px;">
     <div class="row">

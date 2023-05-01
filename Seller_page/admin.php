@@ -1,10 +1,12 @@
 <?php
-
+// if (session_status() == PHP_SESSION_NONE) {
+//    session_start();
+// }
 @include 'config.php';
-
 if(isset($_POST['add_product'])){
    $p_name = $_POST['p_name'];
    $p_price = $_POST['p_price'];
+   //$usr_id= $_SESSION['uid'];
    // $p_ptype=$_POST['flexRadioDefault'];
    if(!empty($_POST["flexRadioDefault"])){
       foreach($_POST["flexRadioDefault"] as $value){
@@ -30,7 +32,7 @@ if(isset($_POST['add_product'])){
       $category = $p_selectOp . ': ' . $p_otherOp;
    }
    
-   $stmt = $conn->prepare("INSERT INTO `products` (name, price, image, price_type, Description, Time_stamp, Category) VALUES (?, ?, ?, ?, ?, ?, ?)");
+   $stmt = $conn->prepare("INSERT INTO `products` (name, price, image, price_type, Description, Time_stamp, Category) VALUES ( ?, ?, ?, ?, ?, ?,?)");
    $stmt->bind_param("sssssis", $p_name, $p_price, $p_image, $p_ptype, $p_description, $current_time, $category);
    
    if($stmt->execute()){

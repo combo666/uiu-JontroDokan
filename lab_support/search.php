@@ -20,7 +20,7 @@ if(isset($_POST['submit']))
 <?php include('../homepage/includes/header_html.php') ?> 
 <?php include('../homepage/includes/header_body.php')?>
         <!-- Page header with logo and tagline-->
-        <header class="py-2 bg-light border-bottom mb-4">
+        <header class="py-2 border-bottom mb-4 hero">
             <div class="container">
                 <div class="text-center my-5">
                     <h1 class="fw-bolder">Search Results for "<?php echo $search;?>"</h1>
