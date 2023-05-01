@@ -25,7 +25,13 @@
 ?>
 
 
-
+<header class="py-5 border-bottom mb-4 hero " style="margin-top: 100px!important;">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">My Lab Orders</h1>
+        </div>
+    </div>
+</header>
 <div class="container">
     <div class="row">
         <!-- Blog entries-->

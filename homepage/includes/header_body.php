@@ -77,7 +77,7 @@
                            <?php
                                 if(isset($_SESSION['uname'])){      
                                     $ul = '<ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">';
-                                    $li1 = '<li><a class="dropdown-item" href="../././lab_support/user_view_lab_item.php">My Lab Items</a></li>'; 
+                                    $li1 = '<li><a class="dropdown-item" href="../././lab_support/user_view_lab_item.php">My Lab Orders</a></li>'; 
                                     $li3 = '<li><a class="dropdown-item" href="../././blog/userBlogs/myblogs.php">My Blog</a></li>';
                                     $li4 = '<li><a class="dropdown-item" href="../././Seller_page/admin.php">Sell Products</a></li>';
                                     $li5 = '<li><a class="dropdown-item" href="../././recycle/user_recycle_products.php">My Items For Recycle</a></li>';
