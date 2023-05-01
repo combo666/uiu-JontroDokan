@@ -88,7 +88,6 @@
             </thead>
             <tfoot>
                 <tr>
-                <th>Id</th>
                 <th>Order Id</th>
                 <th>Product Name</th>
                 <th>Product ID</th>
@@ -108,9 +107,6 @@
                 ?>
 
                     <tr>
-                        <td> </td>
-                        <td> </td>
-                        <td> </td>
                         <td> </td>
                         <td> </td>
                         <td> </td>
