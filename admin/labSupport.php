@@ -19,7 +19,7 @@
         move_uploaded_file($item_image_temp, "../lab_support/image/$item_image");
 
 
-        $query = "INSERT INTO `lab_items`(`item_id`, `item_name`, `available_units`, `item_image`, `tag`, `item_details`) VALUES(null,'{$item_name}',{$available_units},'{$item_image}','{$item_tag}','{$item_details}')";
+        $query = "INSERT INTO `lab_items`(`item_id`, `item_name`, `unit_history`, `available_units`, `item_image`, `tag`, `item_details`) VALUES(null,'{$item_name}',{$available_units},{$available_units},'{$item_image}','{$item_tag}','{$item_details}')";
 
 
         $confirm_posted = mysqli_query($connect, $query);
@@ -53,7 +53,7 @@
                 </ol>
             </div>
         </main> 
-        <a class="btn btn-primary btn-sm col-md-1 ms-auto mb-2 me-2" type="submit" name="add_new" href="labSupport.php?add_new=new_item<? ?>">Add New</a>
+        <a class="btn btn-primary btn-sm col-md-1 ms-auto mb-2 me-2" type="submit" name="add_new" href="labSupport.php?add_new=new_item<? ?>">+Add New</a>
         
 <?php
 

@@ -15,13 +15,14 @@ if (isset($_POST["submit"])) {
     $r_date = date('d-m-y');
 
     
-    
+    $r_amount = $_POST['recycle_amount'];
+
     $r_image = $_FILES["recycle_image"]["name"];
     $post_image_temp = $_FILES['recycle_image']['tmp_name'];
     move_uploaded_file($post_image_temp, "image/$r_image");
 
     
-    $sql = "INSERT INTO `recycling`(`p_id`, `user_id`, `p_name`, `p_image`, `p_type`, `p_date`, `status`, `p_details`) VALUES('', {$uid},'{$r_name}','{$r_image}','{$r_type}','{$r_date}', 0 ,'{$r_details}')";
+    $sql = "INSERT INTO `recycling`(`p_id`, `user_id`, `p_name`, `p_image`, `p_type`, `p_date`, `product_amount`, `status`, `p_details`) VALUES('', {$uid},'{$r_name}','{$r_image}','{$r_type}','{$r_date}', {$r_amount} , 0 ,'{$r_details}')";
 
 
     $conn = mysqli_query($connect, $sql);
@@ -60,9 +61,9 @@ if (isset($_POST["submit"])) {
 
 <div class="recycle-form">
     <form class="form-container" action="#" method="post" enctype="multipart/form-data">
-        <label for="image">Select Image:</label>
+        <label for="image">Select Image :</label>
         <input type="file" name="recycle_image" id="image"><br>
-        <label for="title">Name:</label>
+        <label for="title">Name :</label>
         <input type="text" name="recycle_title" id="title"><br>
         
 
@@ -73,10 +74,12 @@ if (isset($_POST["submit"])) {
         <option value="Sensor">Sensor</option>
         <option value="Parts">Parts</option>
         <option value="Others">Others</option>
-        
         </select><br>
 
-        <label for="description">Description:</label>
+        <label for="amount">Amount :</label>
+        <input type="text" name="recycle_amount" id="recycle_amount"><br>
+
+        <label for="description">Description :</label>
         <textarea name="description" id="recycle_details"></textarea><br><br>
 
         <button class="btn btn-success" name="submit" href="" class="add-to-cart-btn">

@@ -14,6 +14,7 @@
                         $product_type = $row['p_type'];
                         $product_details = $row['p_details'];
                         $status = $row['status'];
+                        $available_units = $row['product_amount'];
 
                         $q_u_name = "SELECT * FROM user WHERE id = $product_user_id";
                         $q_res = mysqli_query($connect, $q_u_name);
@@ -35,7 +36,7 @@
                                         <h2 class="card-title h4"><a href="user_recycle_item_details.php?i_id=<?php echo $product_id; ?>"><?php echo mb_strimwidth($product_name, 0, 30, "..."); ?></a></h2>
                                         <div class="small text-muted">By: <?php echo $user_name; ?> </div>
                                         <div class="small text-muted">Type: <?php echo $product_type; ?> </div>
-                                        <span class="small text-muted">Available Units: 1</span>
+                                        <span class="small text-muted">Available Units: <?php echo $available_units ?></span>
                                         <p class="card-text"><?php echo mb_strimwidth($product_details, 0, 200, "..."); ?></p>
                                         
                                         

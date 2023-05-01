@@ -35,6 +35,7 @@
                 <tr>
                     <th>Id</th>
                     <th>Product Name</th>
+                    <th>Net Units</th>
                     <th>Available Units</th>
                     <th>Image</th>
                     <th>Tags</th>
@@ -47,6 +48,7 @@
                 <th>Id</th>
                     <th>Product Name</th>
                     <th>Available Units</th>
+                    <th>Net Units</th>
                     <th>Image</th>
                     <th>Tags</th>
                     <th>Details</th>
@@ -70,6 +72,7 @@
                         <td> </td>
                         <td> </td>
                         <td> </td>
+                        <td> </td>
                     </tr>
 
 
@@ -78,6 +81,7 @@
                     while ($rows = mysqli_fetch_assoc($response)) {
                         $item_id = $rows['item_id'];
                         $item_name = $rows['item_name'];
+                        $net_units = $rows['unit_history'];
                         $available_units = $rows['available_units'];
                         $image = $rows['item_image'];
                         $tag = $rows['tag'];
@@ -88,6 +92,7 @@
                         <tr>
                             <td><?php echo $item_id; ?></td>
                             <td><?php echo $item_name; ?></td>
+                            <td><?php echo $net_units; ?></td>
                             <td><?php echo $available_units; ?></td>
                             <td><img src="../lab_support/image/<?php echo $image; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
                             <td><?php echo $tag; ?></td>
