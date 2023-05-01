@@ -24,11 +24,10 @@
 ?>
 
 
-
-<header class="py-5 bg-light border-bottom mb-4">
+<header class="py-5 border-bottom mb-4 hero " style="margin-top: 100px!important;">
     <div class="container">
         <div class="text-center my-5">
-            <h1 class="fw-bolder">My Blogs</h1>
+            <h1 class="fw-bolder">Edit/Delete Posts</h1>
         </div>
     </div>
 </header>

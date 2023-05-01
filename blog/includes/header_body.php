@@ -25,7 +25,7 @@
             <?php
         }
 ?>
-    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="../.././assets/images/new_logo.png" alt="">
@@ -37,23 +37,23 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link <?= ($page == 'index')? 'active' : '' ?>" aria-current="page" href="../.././index.php">Home</a>
+                    <li class="nav-item <?= ($page == 'index')? 'active' : '' ?>">
+                        <a class="nav-link" aria-current="page" href="../.././index.php">Home</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item <?= ($page == 'Shop')? 'active' : '' ?>">
                         <a class="nav-link " href="../.././Shop/shop.php">Shop</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link " href="#">Project</a>
                     </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link <?= ($page == 'blog')? 'active' : '' ?>" href="../.././blog/blog.php">Blog</a>
+                    <li class="nav-item <?= ($page == 'blog')? 'active' : '' ?>">
+                        <a class="nav-link" href="../.././blog/blog.php">Blog</a>
                     </li>
-                    <li class="nav-item">
-                        <a class = "nav-link <?= ($page == 'recycle')? 'active' : '' ?>" href="../.././recycle/recycle.php">Recycle</a>
+                    <li class="nav-item <?= ($page == 'recycle')? 'active' : '' ?>">
+                        <a class = "nav-link " href="../.././recycle/recycle.php">Recycle</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="../.././lab_support/index.php">Laboratory support</a>
+                    <li class="nav-item <?= ($page == 'recycle')? 'active' : '' ?>">
+                        <a class="nav-link " href="../.././lab_support/lab_support.php">Laboratory support</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 action-menu">

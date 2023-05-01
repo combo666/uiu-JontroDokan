@@ -6,7 +6,7 @@
 
 
 <!-- Page content-->
-<div class="container mt-5">
+<div class="container mt-5" style="margin-top: 150px!important;">
     <div class="row">
         <!-- Blog entries-->
         <div class="col-lg-8">

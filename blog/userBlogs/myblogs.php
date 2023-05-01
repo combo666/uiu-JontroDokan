@@ -1,7 +1,7 @@
 <?php include('../includes/header_html.php') ?>
 <?php include('../includes/header_body.php') ?>
 <?php include('../../database/db_connect.php') ?>
-<header class="py-5 bg-light border-bottom mb-4">
+<header class="py-5 border-bottom mb-4 hero " style="margin-top: 100px!important;">
     <div class="container">
         <div class="text-center my-5">
             <h1 class="fw-bolder">My Blogs</h1>

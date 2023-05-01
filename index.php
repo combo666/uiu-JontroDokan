@@ -35,9 +35,9 @@
     <?php
         if(!isset($_SESSION['uname'])){
             ?>
-            <div class="page-header__topline container-fluid row">
+            <div class="page-header__topline container-fluid row fixed-top">
                 <!-- <div class="text-light d-block">Welcome: Guest</div> -->
-                <ul class="nav justify-content-end">
+                <ul class="nav justify-content-end fixed-top">
                     <li class="nav-item">
                     <a class="nav-link text-dark" aria-current="page" href="./customers/login.php">Login</a>
                     </li>
@@ -127,6 +127,8 @@
                                     echo '<i class="bi bi-person"></i>';
                                     echo '</a>';
                                     echo $ul;
+                                    echo '<li><a class="nav-link text-dark" aria-current="page" href="./customers/login.php">Login</a></li>';
+                                    echo '<li><a class="nav-link text-dark" aria-current="page" href="./customers/register.php">Register</a></li>';
                                 }
                                 ?>
 

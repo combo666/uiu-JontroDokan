@@ -1,7 +1,7 @@
 <!--Footer section-->
 <footer class = "container-fluid">
     <div class="row">
-        <div class="container header__topline bg-dark"><p class="m-0 text-center text-white">Copyright &copy; TeamMayhemMorph 2023</p></div>
+        <div class="container header__topline bg-dark py-5"><p class="m-0 text-center text-white">Copyright &copy; TeamMayhemMorph 2023</p></div>
     </div>
 </footer>
 

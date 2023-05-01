@@ -41,7 +41,11 @@ if(isset($_POST['login_submit'])){
 
 
 
-<?php 
+
+
+<body>
+    <div class="row container-fluid" style="margin-top:110px!important">
+    <?php 
 
 if($login){
   echo "<div class=\"alert alert-success\" role=\"alert\">
@@ -56,9 +60,6 @@ if($login){
   </div>";
 }
 ?>
-
-<body>
-    <div class="row container-fluid">
         <div class="cont">
             <div class="login-form">
                 <section class="vh-100">

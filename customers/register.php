@@ -59,7 +59,10 @@ if(isset($_POST['reg_submit'])){
 
 
 
-<?php 
+  
+
+    <div class="container" style="margin-top:110px!important">
+    <?php 
 
 if($showAlart){
   echo "<div class=\"alert alert-success\" role=\"alert\">
@@ -74,9 +77,6 @@ if($showAlart){
       </div>";
 }
 ?>
-  
-
-    <div class="container">
         <div class="row">
             <div class="reg-form">
                 <section class="h-100 bg-light m-4">

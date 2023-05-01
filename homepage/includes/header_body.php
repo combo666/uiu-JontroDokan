@@ -12,9 +12,9 @@
 <?php
         if(!isset($_SESSION['uname'])){
             ?>
-            <div class="page-header__topline container-fluid row">
+            <div class="page-header__topline container-fluid row fixed-top">
                 <!-- <div class="text-light d-block">Welcome: Guest</div> -->
-                <ul class="nav justify-content-end">
+                <ul class="nav justify-content-end fixed-top">
                     <li class="nav-item">
                     <a class="nav-link text-dark" aria-current="page" href=".././customers/login.php">Login</a>
                     </li>
@@ -79,7 +79,7 @@
                                     $ul = '<ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">';
                                     $li1 = '<li><a class="dropdown-item" href="../././lab_support/user_view_lab_item.php">My Lab Items</a></li>'; 
                                     $li3 = '<li><a class="dropdown-item" href="../././blog/userBlogs/myblogs.php">My Blog</a></li>';
-                                    $li4 = '<li><a class="dropdown-item" href="./Seller_page/admin.php">Sell Products</a></li>';
+                                    $li4 = '<li><a class="dropdown-item" href="../././Seller_page/admin.php">Sell Products</a></li>';
                                     $li5 = '<li><a class="dropdown-item" href="../././recycle/user_recycle_products.php">My Items For Recycle</a></li>';
                                     $li6 ='<li><a class="dropdown-item" href="./../log.php">Logout</a></li>';
                                     ?>
@@ -106,6 +106,8 @@
                                     echo '<i class="bi bi-person"></i>';
                                     echo '</a>';
                                     echo $ul;
+                                    echo '<li><a class="nav-link text-dark" aria-current="page" href="../././customers/login.php">Login</a></li>';
+                                    echo '<li><a class="nav-link text-dark" aria-current="page" href="../././customers/register.php">Register</a></li>';
                                 }
                                 ?>
 
