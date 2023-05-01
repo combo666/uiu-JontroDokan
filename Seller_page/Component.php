@@ -24,6 +24,13 @@ include 'config.php';
             // Calculate the days elapsed
             $days_elapsed = round($elapsed_time / 86400);
      ?>
+     <header class="py-5 border-bottom mb-4 hero " style="margin-top: 100px!important;">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">Details</h1>
+        </div>
+    </div>
+</header>
 <div class="row">
   <div class="col" style="padding-top: 50px;padding-left:50px;">
   <img style="height:150px;width:350px;" src="../Seller_page/uploaded_img/<?php echo $select_products['image']; ?>" alt="">

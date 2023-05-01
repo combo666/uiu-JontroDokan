@@ -11,7 +11,14 @@ include "../homepage/includes/header_body.php";
 
     }
 </style>
-
+<header class="py-5 border-bottom mb-4 hero " style="margin-top: 100px!important;">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">Shop</h1>
+            <p class="lead mb-0">A collection of other user's posted items</p>
+        </div>
+    </div>
+</header>
 <div class="container">
     <div style="padding-top: 10px;">
     <div class="row">
