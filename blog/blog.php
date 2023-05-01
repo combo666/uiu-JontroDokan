@@ -3,7 +3,7 @@
 <?php include('../database/db_connect.php') ?>
 <!-- Page header with logo and tagline-->
 
-<header class="py-5 border-bottom mb-4 hero ">
+<header class="py-5 border-bottom mb-4 hero " style="margin-top: 100px!important;">
     <div class="container">
         <div class="text-center my-5">
             <h1 class="fw-bolder">Welcome to UIU Blog!</h1>

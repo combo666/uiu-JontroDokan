@@ -50,7 +50,7 @@
         }
     ?>
     
-    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <img src="./assets/images/new_logo.png" alt="">
