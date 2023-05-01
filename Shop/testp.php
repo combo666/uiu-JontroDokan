@@ -54,7 +54,7 @@ include "../homepage/includes/header_body.php";
                             <option value="price_desc">Price: High to Low</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Filter</button>
+                    <button type="submit" class="btn btn-primary" >Filter</button>
                   
                 </div>
             </form>
@@ -66,7 +66,60 @@ include "../homepage/includes/header_body.php";
             <div class="card md-4">
                 <div class="card-body container">
                     <h2>Latest Products</h2>
-                    <?php include "../Seller_page/products.php" ?>
+                    <section class="latest-product">
+                            <div class="container">
+                            <div class="row container">
+                            <?php
+            $where_clause = '';
+            if (isset($_GET['category'])) {
+                $categories = $_GET['category'];
+                $where_clause = "WHERE category IN ('" . implode("','", $categories) . "')";
+            }
+
+            $order_by_clause = '';
+            if (isset($_GET['sort-by'])) {
+                $sort_by = $_GET['sort-by'];
+                if ($sort_by === 'price_asc') {
+                    $order_by_clause = 'ORDER BY price ASC';
+                } else if ($sort_by === 'price_desc') {
+                    $order_by_clause = 'ORDER BY price DESC';
+                }
+            }
+
+            // $select_products = mysqli_query($conn, "SELECT * FROM `products` $where_clause $order_by_clause");
+            $select_products = mysqli_query($conn, "SELECT * FROM `products` $where_clause UNION SELECT * FROM (SELECT * FROM `products` ORDER BY id DESC LIMIT 4) as last_four $order_by_clause");
+            // $select_products = mysqli_query($conn, "SELECT * FROM `products` $where_clause $order_by_clause ORDER BY id DESC LIMIT 4");
+
+            if(mysqli_num_rows($select_products) > 0){
+                while($fetch_product = mysqli_fetch_assoc($select_products)){
+            ?>        
+                                    <div class="col-lg-3" >
+                                        <div class="card border-0 shadow-sm" style="width:270px;height:300px;">
+                                            <div class="card-body text-center" >
+                                            <img style="height:120px;width:170px;" src="../Seller_page/uploaded_img/<?php echo $fetch_product['image']; ?>" alt="">
+                                                <h2 class="product_name">
+                                                    <a class="text-decoration-none" href=""><?php echo $fetch_product['name']; ?></a>
+                                                </h2>
+                                                <h2>Tk <?php echo $fetch_product['price']; ?></h2>    
+                                                <div class="btn d-flex justify-content-between align-items-center">
+                                                    <a href=".././Seller_page/Component.php?p_id=<?php echo $fetch_product['id']; ?>" class="add-to-cart-btn ">
+                                                        <i class="bi bi-cart4"></i> Add to Cart
+                                                    </a>
+                                                    <a href="" class="add-to-favorite text-success">
+                                                        <i class="bi bi-heart "></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                        <?php
+                                };
+                            };
+                            ?>
+                                        </div>
+                                        </div>
+                                    </div>
+                    </section>
                 </div>
             </div>
             <!-- All products section -->
