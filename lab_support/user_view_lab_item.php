@@ -13,7 +13,7 @@
         if($del_query)
         {
             echo "<div class=\"alert alert-success\" role=\"alert\">
-                Order No {$del_id} successfully deleted!
+                Order No {$del_id} successfully Canceled!
                 <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
                 </div>";
         }
@@ -29,7 +29,6 @@
 <div class="container">
     <div class="row">
         <!-- Blog entries-->
-        <div class="col-lg-8">
             <!-- Featured blog post-->
             <div class="card mb-4">
     <div class="card-header">
@@ -111,7 +110,7 @@
                                 ?>
                                 <td colspan="2" class="text-center" style="width: 100px !important"> 
                                 <?php echo " Pending"; ?>
-                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="order_delete" href="user_view_lab_item.php?delete_req=<?php echo $order_id; ?>"> Delete</a>
+                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="order_delete" href="user_view_lab_item.php?delete_req=<?php echo $order_id; ?>"> Cancel</a>
                                 </td>
                                 <?php
                             }else if($status == 2){
@@ -145,7 +144,6 @@
 
 
 
-        </div>
         <!-- Side widgets-->
 
     </div>

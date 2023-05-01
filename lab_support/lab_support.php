@@ -8,7 +8,7 @@
                     <h2>Lab Items</h2>
                     <?php include "includes/productcart.php" ?>
         </div>
-            <?php include "includes/sidebar.php" ?>
+                <?php include "includes/sidebar.php" ?>
     </div>
 </div>
 

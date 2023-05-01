@@ -41,8 +41,17 @@
                         
                         $item_quantity = $_POST['quantity'];
                         $uid = $_SESSION['uid'];
-                        if($item_quantity)
+                        $q = "SELECT available_units FROM `lab_items` WHERE item_id = $i_id";
+                        $r = mysqli_fetch_assoc(mysqli_query($connect ,$q));
+                        $rr = $r['available_units'];
+                        if($item_quantity > $rr){
+                            echo "<div class=\"alert alert-danger\" role=\"alert\">
+                                Sorry! Insufficient Quantity Order can not be Placed.
+                                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button>
+                                </div>";
+                        }else if($item_quantity <= $r)
                         {
+
                             $query = "INSERT INTO `lab_item_order`(`order_id`, `user_id`, `lab_item_id`, `item_amount` ,  `status`) VALUES('',{$uid},{$i_id},{$item_quantity} , 0)"; 
                             $res = mysqli_query($connect, $query);
 
@@ -57,7 +66,7 @@
                             die("query failed!" . mysqli_error($connect));
                         }
                         ?>
-                        <meta http-equiv="refresh" content="2; url='index.php'" />
+                        <meta http-equiv="refresh" content="2; url='lab_support.php'" />
                         <?php
 
                         

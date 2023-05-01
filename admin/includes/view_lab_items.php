@@ -6,7 +6,11 @@
     if (isset($_GET['delete'])) {
         // Perform delete action
         $item_id = $_GET['delete'];
-        $sql = "DELETE FROM lab_items WHERE item_id = {$item_id}";
+
+        $sql = "DELETE FROM `lab_item_order` WHERE `lab_item_id` = {$item_id}";
+        $del_res = mysqli_query($connect, $sql);
+
+        $sql = "DELETE FROM `lab_items` WHERE `item_id` = {$item_id}";
         
         $del_res = mysqli_query($connect, $sql);
         if (!$del_res) {

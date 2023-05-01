@@ -42,7 +42,7 @@
                         <a class="nav-link <?= ($page == 'index')? 'active' : '' ?>" aria-current="page" href=".././index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href=".././Shop/shop.php">Shop</a>
+                        <a class="nav-link <?= ($page == 'shop')? 'active' : '' ?>  " href=".././Shop/shop.php">Shop</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link " href="#">Project</a>
@@ -54,7 +54,7 @@
                         <a class = "nav-link <?= ($page == 'recycle')? 'active' : '' ?>" href=".././recycle/recycle.php">Recycle</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " href=".././lab_support/index.php">Laboratory support</a>
+                        <a class="nav-link <?= ($page == 'lab_support')? 'active' : '' ?>" href=".././lab_support/lab_support.php">Laboratory support</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 action-menu">
@@ -77,11 +77,11 @@
                            <?php
                                 if(isset($_SESSION['uname'])){      
                                     $ul = '<ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">';
-                                    $li1 = '<li><a class="dropdown-item" href="./../log.php">Logout</a></li>';
+                                    $li1 = '<li><a class="dropdown-item" href="../././lab_support/user_view_lab_item.php">My Lab Items</a></li>'; 
                                     $li3 = '<li><a class="dropdown-item" href="../././blog/userBlogs/myblogs.php">My Blog</a></li>';
                                     $li4 = '<li><a class="dropdown-item" href="./Seller_page/admin.php">Sell Products</a></li>';
                                     $li5 = '<li><a class="dropdown-item" href="../././recycle/form.php">Add Items For Recycle</a></li>';
-                                    $li6 = '<li><a class="dropdown-item" href="../././lab_support/user_view_lab_item.php">My Lab Items</a></li>';
+                                    $li6 ='<li><a class="dropdown-item" href="./../log.php">Logout</a></li>';
                                     ?>
                                     
                                     <?php
@@ -94,6 +94,9 @@
                                     echo $li3;
                                     echo $li4;
                                     echo $li5;
+                                    ?>
+                                    <hr>
+                                    <?php
                                     echo $li6;
                                 }
                                 else{

@@ -1,4 +1,5 @@
 <div class="col-lg-3">
+    <h2>Search</h2>
     <div class="card mb-2">
         <div class="card-header">Search</div>
             <div class="card-body">
