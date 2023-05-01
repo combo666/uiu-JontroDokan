@@ -1,5 +1,4 @@
 
-<section>
         
         <div class="row">
         <?php
@@ -47,7 +46,5 @@
 
 
         </div>
-</section>
-
 
 
