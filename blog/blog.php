@@ -2,7 +2,8 @@
 <?php include('../homepage/includes/header_body.php') ?>
 <?php include('../database/db_connect.php') ?>
 <!-- Page header with logo and tagline-->
-<header class="py-5 bg-light border-bottom mb-4">
+
+<header class="py-5 border-bottom mb-4 hero">
     <div class="container">
         <div class="text-center my-5">
             <h1 class="fw-bolder">Welcome to UIU Blog!</h1>
@@ -39,8 +40,10 @@
                         <div class="small text-muted">By: <?php echo $post_author; ?>, </div>
                         <span class="small text-muted">published on: <?php echo $post_date; ?></span>
                         <p class="card-text"><?php echo mb_strimwidth($post_content, 0, 200, "..."); ?></p>
-                        <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read more →</a>
                     </div>
+                    <div class="card-footer">
+                    <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read more →</a>
+            </div>
                 </div>
 
             <?php

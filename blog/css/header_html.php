@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>UIU JontroDokan</title>
         <!-- Favicon-->
-        <link rel="icon" href=".././assets/images/favicon.png">
+        <link rel="icon" href="../.././assets/images/favicon.png">
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/anotherStyle.css" rel="stylesheet" />
-    <link rel="stylesheet" href=".././assets/fonts/bootstrap-icons.css">
-    <link rel="stylesheet" href=".././assets/sass/main.css">
-    <link rel="stylesheet" href=".././recycle/css/style.css">
+        <!-- <link href="../css/styles.css" rel="stylesheet" /> -->
+        <link href="../css/pageStyle.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../.././assets/fonts/bootstrap-icons.css">
+    <link rel="stylesheet" href="../.././assets/sass/main.css">
+    <link rel="stylesheet" href="../.././recycle/css/style.css">
     <!-- <link rel="stylesheet" href=".././assets/css/style.css"> -->
     </head>
 <body>

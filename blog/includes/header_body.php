@@ -71,7 +71,7 @@
                         </a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="btn dropdown-toggle" href="#" id="dropdownMenuClickableInside" role="button"
+                    <a class="btn btn-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">
                            <?php
                                 if(isset($_SESSION['uname'])){      
