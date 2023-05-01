@@ -22,6 +22,18 @@ if (isset($_POST['add_comment'])) {
     $usr_id = $_SESSION['uid'];
 
     $query = "INSERT INTO `post_comments`(`post_id`, `user_id`, `content`) VALUES ({$post_id},{$usr_id},'{$content}')";
+
+    $find_comm_count = "select post_comment_count from posts where post_id = {$post_id}";
+    $comm_count_res = mysqli_query($connect, $find_comm_count);
+
+    $find_comm_count = mysqli_fetch_assoc($comm_count_res)['post_comment_count'];
+    $find_comm_count += 1;
+
+    $post_update_q = "update posts set ";
+    $post_update_q .= "post_comment_count = '{$find_comm_count}' ";
+    $post_update_q .= "where post_id = {$post_id}";
+
+    $post_u_q = mysqli_query($connect, $post_update_q);
     $add_comm_res = mysqli_query($connect, $query);
 
     if (!$add_comm_res) {

@@ -19,5 +19,6 @@
     <link rel="stylesheet" href=".././assets/css/anotherStyle.css">
     <link rel="stylesheet" href=".././blog/css/style.css">
     <link rel="stylesheet" href=".././recycle/css/style.css">
+    <link rel="stylesheet" href=".././Seller_page/css/style.css">
 </head>
 <body>

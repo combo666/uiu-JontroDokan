@@ -2,7 +2,8 @@
 if (isset($_GET['p_id'])) {
     $p_id = $_GET['p_id'];
 
-    $post_inf_q = "select * from posts where post_id = {$p_id}";
+    $post_inf_q = "select * from posts INNER JOIN user
+    ON user.id = posts.post_author where post_id = {$p_id}";
 
     $post_inf = mysqli_query($connect, $post_inf_q);
 
@@ -10,7 +11,11 @@ if (isset($_GET['p_id'])) {
         $post_id = $row['post_id'];
         $post_title = $row['post_title'];
         $post_date = $row['post_date'];
-        $post_author = $row['post_author'];
+        $post_author = $row['first_name'] . " " . $row['last_name'];
+        if($row['post_author'] == 0)
+        {
+            $post_author = 'admin';
+        }
         $post_content = $row['post_content'];
         $post_image = $row['post_image'];
         $post_tags = $row['post_tags'];

@@ -42,8 +42,8 @@
                         <p class="card-text"><?php echo mb_strimwidth($post_content, 0, 200, "..."); ?></p>
                     </div>
                     <div class="card-footer">
-                    <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read more →</a>
-            </div>
+                        <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read more →</a>
+                    </div>
                 </div>
 
             <?php
@@ -72,20 +72,25 @@
                     $post_title = $row['post_title'];
                     $post_date = $row['post_date'];
                     $post_author = $row['first_name'] . " " . $row['last_name'];
+                    if ($row['post_author'] == 0) {
+                        $post_author = 'admin';
+                    }
                     $post_content = $row['post_content'];
                     $post_image = $row['post_image'];
+                    $post_comment_count = $row['post_comment_count'];
                 ?>
 
 
                     <div class="col-md-6 d-flex align-items-stretch">
                         <!-- Blog post-->
                         <div class="card mb-4">
-                            <a href="post.php?p_id=<?php echo $post_id; ?>"><img class="card-img-top" src="image/<?php echo $post_image ?>" alt="no image"/></a>
+                            <a href="post.php?p_id=<?php echo $post_id; ?>"><img class="card-img-top" src="image/<?php echo $post_image ?>" alt="no image" /></a>
                             <div class="card-body">
 
                                 <h2 class="card-title h4"><a href="post.php?p_id=<?php echo $post_id; ?>"><?php echo mb_strimwidth($post_title, 0, 30, "..."); ?></a></h2>
                                 <div class="small text-muted">By: <?php echo $post_author ?>, </div>
                                 <span class="small text-muted">published on: <?php echo $post_date ?></span>
+                                <span class="small text-muted">..... <?php echo $post_comment_count; ?> comments</span>
                                 <p class="card-text"><?php echo mb_strimwidth($post_content, 0, 200, "..."); ?></p>
                                 <a class="btn btn-primary" href="post.php?p_id=<?php echo $post_id; ?>">Read more →</a>
                             </div>

@@ -44,7 +44,6 @@ section{
    margin-bottom: 2rem;
 }
 
-.btn,
 .option-btn,
 .delete-btn{
    display: block;
@@ -59,7 +58,7 @@ section{
    margin-top: 1rem;
 }
 
-.btn:hover,
+
 .option-btn:hover,
 .delete-btn:hover{
    background-color: var(--black);

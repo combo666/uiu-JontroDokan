@@ -4,7 +4,8 @@ include('../database/db_connect.php');
 if(isset($_GET['cat_id']))
 {
     $search = $_GET['cat_id'];
-    $query = "select * from posts where post_category_id = {$search} ";
+    $query = "select * from posts INNER JOIN user
+    ON user.id = posts.post_author where post_category_id = {$search} ";
 
     $search_query = mysqli_query($connect, $query);
 
@@ -21,10 +22,10 @@ if(isset($_GET['cat_id']))
 <?php include('includes/header.php') ?>
 <?php include('../homepage/includes/header_body.php')?>
         <!-- Page header with logo and tagline-->
-        <header class="py-2 bg-light border-bottom mb-4">
+        <header class="py-5 border-bottom mb-4 hero " style="margin-top: 100px!important;">
             <div class="container">
                 <div class="text-center my-5">
-                    <h1 class="fw-bolder">Search Results for "<?php echo $cat_title;?>"</h1>
+                    <p class="lead mb-0">Search Results for "<?php echo $cat_title;?>"</p>
                 </div>
             </div>
         </header>
@@ -51,7 +52,11 @@ if(isset($_GET['cat_id']))
         $post_id = $row['post_id'];
         $post_title = $row['post_title'];
         $post_date = $row['post_date'];
-        $post_author = $row['post_author'];
+        $post_author = $row['first_name'] . " " . $row['last_name'];
+        if($row['post_author'] == 0)
+        {
+            $post_author = 'admin';
+        }
         $post_content = $row['post_content'];
         $post_image = $row['post_image'];
 ?>
