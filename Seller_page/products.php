@@ -20,7 +20,7 @@
                         <h2>Tk <?php echo $fetch_product['price']; ?></h2>    
                         <div class="btn d-flex justify-content-between align-items-center">
                             <a href=".././Seller_page/Component.php?p_id=<?php echo $fetch_product['id']; ?>" class="add-to-cart-btn ">
-                                <i class="bi bi-cart4"></i> Add to Cart
+                                <i class="bi bi-cart4"></i> Approach to buy
                             </a>
                             <a href="" class="add-to-favorite text-success">
                                 <i class="bi bi-heart "></i>
