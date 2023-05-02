@@ -58,19 +58,6 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 action-menu">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-heart"></i>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-cart4 position-relative">
-                                <span style="font-size: 12px"
-                                      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1 </span>
-                            </i>
-                        </a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="btn btn-dark dropdown-toggle" href="" id="navbarDropdown" role="button"
                            data-bs-toggle="dropdown" aria-expanded="false">

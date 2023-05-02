@@ -1,5 +1,4 @@
 <!-- Start Blog Section -->
-<?php include('./database/db_connect.php') ?>
 <div class="blog-section">
 			<div class="container">
 				<div class="row mb-5">

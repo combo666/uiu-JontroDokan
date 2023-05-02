@@ -3,12 +3,11 @@
 <?php include('../database/db_connect.php')?>
 
 
-<div class="container">
+<div class="container" style="margin-top: 150px!important;">
             <div class="row">
                 <div class="col-lg-9">
                     <div class="card mb-3">
                         <div class="card-body container">
-                        <h2>Your Lab Items</h2>
 
 <?php
 

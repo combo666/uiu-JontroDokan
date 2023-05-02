@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>UIU JontroDokan</title>
         <!-- Favicon-->
-        <link rel="icon" href=".././assets/images/favicon.png">
+        <link rel="icon" href=".././assets/images/new_logo.png">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <link href="css/anotherStyle.css" rel="stylesheet" />
