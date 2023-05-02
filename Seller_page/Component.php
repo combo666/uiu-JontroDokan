@@ -1,9 +1,10 @@
-<?php
-include 'config.php';
-?>
+
 
 <?php include "../homepage/includes/header_html.php"; ?>
 <?php include "../homepage/includes/header_body.php"; ?>
+<?php
+include 'config.php';
+?>
 <!-- Component_details Show -->
 <?php  
    if(isset($_GET['p_id'])) {
@@ -27,15 +28,15 @@ include 'config.php';
      <header class="py-5 border-bottom mb-4 hero " style="margin-top: 100px!important;">
     <div class="container">
         <div class="text-center my-5">
-            <h1 class="fw-bolder">Details</h1>
+            <h1 class="fw-bolder">Product Details</h1>
         </div>
     </div>
 </header>
-<div class="row">
-  <div class="col" style="padding-top: 50px;padding-left:50px;">
-  <img style="height:150px;width:350px;" src="../Seller_page/uploaded_img/<?php echo $select_products['image']; ?>" alt="">
+
+<div class="container">
+  <div class="col" >
+  <img class="img-fluid" src="../Seller_page/uploaded_img/<?php echo $select_products['image']; ?>" alt="">
   <div style="padding-top: 100px;">
-      <h3>Product Details</h3>
       <p><?php echo $select_products ['Description'];?></p>
     </div>
   </div>
@@ -61,21 +62,25 @@ include 'config.php';
         </div> -->
       </div>
       <br>
-      <div class="card md-4">
+<?php 
+$sql = "SELECT * FROM `user` WHERE id={$select_products['user_id']}";
+$result = mysqli_query($conn, $sql);
+
+$user_info = mysqli_fetch_assoc($result);
+
+?>
+      <div class="card">
            <div class="card-header">Seller info</div>
                 <div class="row">
-                    <div class="col" style="padding-left:20px;">
-                    <div class="form-check">
-                       <h4>For sale by Name..</h4>
+                    <div class="p-5">
+                    <div>
+                       <h4>For sale by <?php echo $user_info['first_name']. " " . $user_info['last_name']; ?></h4>
                     </div>
-                    <div class="form-check">
-                         <h5>Phone NO. 01753611721</h5>
+                    <div>
+                         <h5>Phone No. <?php echo $user_info['phone']; ?></h5>
                     </div>
-                    <div class="form-check">
-                       <h5>Eamil:sdey202074@bscse.uiu.ac.bd</h5>
-                    </div>
-                    <div class="form-check">
-                        <h6>Other social media</h6>
+                    <div>
+                       <p>Email: <?php echo $user_info['email']; ?></p>
                     </div>
                     </div>
                 </div>
@@ -100,19 +105,15 @@ include 'config.php';
          while($fetch_product = mysqli_fetch_assoc($select_products)){
       ?>         
             <div class="col-lg-3" >
-                <div class="card border-0 shadow-sm" style="width:270px;height:300px;">
+                <div class="card border-0" style="width:270px;height:300px;">
                     <div class="card-body text-center" >
                       <img style="height:120px;width:170px;" src="../Seller_page/uploaded_img/<?php echo $fetch_product['image']; ?>" alt="">
                          <h2 class="product_name">
                             <a class="text-decoration-none" href=""><?php echo $fetch_product['name']; ?></a>
                         </h2>
                         <h2>Tk <?php echo $fetch_product['price']; ?></h2>    
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href=".././Seller_page/Component.php?p_id=<?php echo $fetch_product['id']; ?>" class="add-to-cart-btn ">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
+                        <div class="btn">
+                            <a href=".././Seller_page/Component.php?p_id=<?php echo $fetch_product['id']; ?>" class="btn btn-secondary ">Approach to buy
                             </a>
                         </div>
                     </div>

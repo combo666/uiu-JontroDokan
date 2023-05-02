@@ -3,112 +3,36 @@
     <div class="container">
         <h2>Latest Products</h2>
         <hr>
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="assets/images/product/product27.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
+        <section class="latest-product">
+    <div class="container">
+    <div class="row container">
+    <?php     
+      $select_products = mysqli_query($connect, "SELECT * FROM `products` ORDER BY id DESC LIMIT 4");
+      if(mysqli_num_rows($select_products) > 0){
+         while($fetch_product = mysqli_fetch_assoc($select_products)){
+      ?>         
+            <div class="col-lg-3" >
+                <div class="card border-0 shadow-sm" style="width:270px;height:300px;">
+                    <div class="card-body text-center" >
+                      <img style="height:120px;width:170px;" src="./Seller_page/uploaded_img/<?php echo $fetch_product['image']; ?>" alt="">
+                         <h2 class="product_name">
+                            <a class="text-decoration-none" href=""><?php echo $fetch_product['name']; ?></a>
                         </h2>
-                        <div class="rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
+                        <h2>Tk <?php echo $fetch_product['price']; ?></h2>    
+                        <div class="btn">
+                            <a href=".././Seller_page/Component.php?p_id=<?php echo $fetch_product['id']; ?>" class="btn btn-secondary"> Approach to buy
                             </a>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="assets/images/product/servo.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
-                        </h2>
-                        <div class="rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
-                            </a>
-                        </div>
-                    </div>
+            </div> 
+                <?php
+         };
+      };
+      ?>
+                 </div>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="assets/images/product/sensor.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
-                        </h2>
-                        <div class="rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <img src="assets/images/product/f3.png" alt="">
-                        <h2 class="product_name">
-                            <a href="">something</a>
-                        </h2>
-                        <div class="rating">
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                            <i class="bi bi-star-fill text-warning"></i>
-                        </div>
-                        <h2 class="price">৳ 200.00</h2>
-                        <div class="btn d-flex justify-content-between align-items-center">
-                            <a href="" class="add-to-cart-btn">
-                                <i class="bi bi-cart4"></i> Add to Cart
-                            </a>
-                            <a href="" class="add-to-favorite text-success">
-                                <i class="bi bi-heart "></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+</section>
     </div>
 </section>
