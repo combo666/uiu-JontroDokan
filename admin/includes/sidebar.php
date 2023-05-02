@@ -23,7 +23,7 @@
                     </nav>
                 </div>
 
-                <div class="sb-sidenav-menu-heading">Shop Module</div>
+                <!-- <div class="sb-sidenav-menu-heading">Shop Module</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#shopModule" aria-expanded="false" aria-controls="shopModule">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-feather"></i></div>
                     Shop
@@ -34,7 +34,7 @@
                         <a class="nav-link" href="my_posts.php">Add Product</a>
                         <a class="nav-link" href="my_posts.php">Add rent products</a>
                     </nav>
-                </div>
+                </div> -->
 
                 <div class="sb-sidenav-menu-heading">Lab Support Module</div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#LabSupportModule" aria-expanded="false" aria-controls="LabSupportModule">
