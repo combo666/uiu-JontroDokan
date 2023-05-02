@@ -1,5 +1,5 @@
 <!-- Start Product Section -->
-<div class="product-section">
+<div class="product-section" id="prod_sec">
 			<div class="container">
 				<div class="row">
 
@@ -11,7 +11,7 @@
 					</div> 
 					<!-- End Column 1 -->
 					<?php
-        $query = "SELECT * FROM `lab_items`";
+        $query = "SELECT * FROM `lab_items` order by item_id limit 4";
         $result = mysqli_query($connect , $query);
         ?>
                 <?php

@@ -77,7 +77,7 @@ if(isset($_POST['submit']))
                                     </h2>
                                     <div class="btn d-flex justify-content-between align-items-center">
                                         <a href="" class="add-to-cart-btn">
-                                            <i class=""></i> Add
+                                            Approach to buy
                                         </a>
                                     </div>
                                 </div>

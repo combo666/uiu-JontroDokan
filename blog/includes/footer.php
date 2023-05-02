@@ -1,5 +1,5 @@
         <!-- Footer-->
-        <footer class="bg-dark">
+        <footer class="bg-dark py-5">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; TeamMayhemMorph 2023</p></div>
         </footer>
         <!-- Bootstrap core JS-->
