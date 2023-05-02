@@ -19,10 +19,15 @@
 }
 </style>
 <?php include('../database/db_connect.php')?>
+<header class="py-5 border-bottom mb-4 hero " style="margin-top: 100px!important;">
+    <div class="container">
+        <div class="text-center my-5">
+            <h1 class="fw-bolder">Add to Your Lab Items</h1>
+        </div>
+    </div>
+</header>
 <div class="container">
-    <div class="row">
         <div class="col-lg">
-        <h1 class="fw-bolder mb-1" >Add to Your Lab Items</h1>
                                 <div class="row">
                                     <div class="col-lg-9">
                                         <div class="card mb-3">
@@ -152,8 +157,7 @@
     </div>
 </div>
 </div>
-</div>
-</div>
+                </div>
 <script> 
 document.getElementById("incr").addEventListener("click",function incrementValue(e) {
         e.preventDefault();
