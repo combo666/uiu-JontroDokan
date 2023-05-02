@@ -14,7 +14,7 @@
     <div class="container">
         <div class="text-center my-5">
             <h1  class="fw-bolder">Items For Recycle</h1>
-            <p class="lead mb-0">A Way to Save Environment</p>
+            <p class="lead mb-0">♻️A Way to Save Environment♻️</p>
         </div>
     </div>
 </header>

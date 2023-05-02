@@ -95,7 +95,7 @@
                     <th>Product ID</th>
                     <th>Product Name</th>
                     <th>Renter ID</th>
-                    <th>Renter Name</th>
+                    <th>Renter Info</th>
                     <th>Item Quantity</th>
                     <th>Issue Date</th>
                     <th>Image</th>
@@ -109,7 +109,7 @@
                 <th>Product ID</th>
                 <th>Product Name</th>
                 <th>Renter ID</th>
-                <th>Renter Name</th>
+                <th>Renter Info</th>
                 <th>Item Quantity</th>
                 <th>Issue Date</th>
                 <th>Image</th>
@@ -167,6 +167,15 @@
                             $user_name = $roww['first_name']." ".$roww['last_name'];
                             $user_id = $roww['id'];
                         }
+
+                        $q_u_name = "SELECT * FROM user WHERE id = $user_id";
+                        $q_res = mysqli_query($connect, $q_u_name);
+
+                        while($row = mysqli_fetch_assoc($q_res)){
+                            $user_name = $row['first_name']." ".$row['last_name'];
+                            $user_phone = $row['phone'];
+                            $user_email = $row['email'];
+                        }
                     
 
                     ?>
@@ -175,7 +184,7 @@
                             <td><?php echo $lab_item_id ?></td>
                             <td><?php echo $item_name; ?></td>
                             <td><?php echo $user_id; ?></td>
-                            <td><?php echo $user_name; ?></td>
+                            <td><?php echo $user_name; ?><br><?php echo "Contact : " .$user_phone; ?><br><?php echo "E-mail : " .$user_email; ?></td></td>
                             <td><?php echo $item_amount; ?></td>
                             <td><?php echo $issue_date; ?></td>
                             <td><img src="../lab_support/image/<?php echo $image; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
@@ -203,10 +212,9 @@
                             }else if($status == 2){
                             echo "Rejected";
                             }else if($status == 1){
-                            echo "Accepted";
 
                             ?>
-                            <a class="btn btn-sm btn-success ms-2 " type="submit" name="item_return" href="lab_item_order.php?item_return=<?php echo $order_id; ?>&lab_item_id=<?php echo $lab_item_id; ?>"> Return</a>
+                            <a class="btn btn-sm btn-success ms-2 " type="submit" name="item_return" href="lab_item_order.php?item_return=<?php echo $order_id; ?>&lab_item_id=<?php echo $lab_item_id; ?>"> Rebound</a>
                             <?php
                             
                             }else if($status = 4){

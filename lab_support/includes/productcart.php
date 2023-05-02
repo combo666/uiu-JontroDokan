@@ -21,7 +21,7 @@
                             <a href="post.php?p_id=<?php echo $item_id; ?>"><img class="card-img-top" src="image/<?php echo $item_image; ?>" alt="no image"/></a>
                             <div class="card-body">
 
-                                <h2 class="card-title h4"><a href="lab_post.php?i_id=<?php echo $item_id; ?>"><?php echo mb_strimwidth($item_name, 0, 30, "..."); ?></a></h2>
+                                <h2 class="card-title h4"><a href="./user_add_lab_item.php?i_id=<?php echo $item_id; ?>"><?php echo mb_strimwidth($item_name, 0, 30, "..."); ?></a></h2>
                                 <div class="small text-muted">By: Admin </div>
                                 <span class="small text-muted">Available Units: <?= $available_units?></span>
                                 <p class="card-text"><?php echo mb_strimwidth($item_details, 0, 200, "..."); ?></p>

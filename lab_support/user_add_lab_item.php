@@ -96,7 +96,7 @@
                         <!-- Post header-->
                                 <header class="mb-4">
                                     <!-- Post title-->
-                                    <h2 class="fw-bolder mb-1"><?php echo $item_name; ?></h2>
+                                    <h2 class="fw-bolder mb-1 "><?php echo $item_name; ?></h2>
                                     <!-- Post meta content-->
                                     <!-- Post categories-->
                                     <a class="badge bg-secondary text-decoration-none link-light" href="#!">#<?php echo $item_tag; ?></a>
@@ -107,6 +107,7 @@
                                 <section class="mb-5">
                                     <h3 class="fw-bolder mb-1">Details</h3>
                                     <p class="fs-5 mb-4"><?php echo $item_details; ?></p>
+                                    <p class="fs-5 mb-4">Available Units :<?php echo $available_units; ?></p>
 
 
                                     <form action="#" method="post"  enctype="multipart/form-data">
