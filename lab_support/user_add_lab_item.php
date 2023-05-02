@@ -44,6 +44,8 @@
                         $q = "SELECT available_units FROM `lab_items` WHERE item_id = $i_id";
                         $r = mysqli_fetch_assoc(mysqli_query($connect ,$q));
                         $rr = $r['available_units'];
+                        date_default_timezone_set('Asia/Dhaka');
+                        $post_date = date('d-m-y');
                         if($item_quantity > $rr){
                             echo "<div class=\"alert alert-danger\" role=\"alert\">
                                 Sorry! Insufficient Quantity Order can not be Placed.
@@ -52,7 +54,7 @@
                         }else if($item_quantity <= $r)
                         {
 
-                            $query = "INSERT INTO `lab_item_order`(`order_id`, `user_id`, `lab_item_id`, `item_amount` ,  `status`) VALUES('',{$uid},{$i_id},{$item_quantity} , 0)"; 
+                            $query = "INSERT INTO `lab_item_order`(`order_id`, `user_id`, `lab_item_id`, `item_amount` , `status`, `issue_date`) VALUES('',{$uid},{$i_id},{$item_quantity} , 0,'{$post_date}')"; 
                             $res = mysqli_query($connect, $query);
 
                         
@@ -82,6 +84,8 @@
                             $item_image = $rows['item_image'];
                             $item_tag = $rows['tag'];
                             $item_details = $rows['item_details'];
+
+
                             ?>
                             <article>
                         <!-- Post header-->

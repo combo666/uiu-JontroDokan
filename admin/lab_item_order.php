@@ -65,6 +65,20 @@
         }
 
 
+      }else if(isset($_GET['item_return'])){
+
+        $o_id = $_GET['item_return'];
+        $lab_item_id = $_GET['lab_item_id'];
+
+        $sql_i = "UPDATE `lab_items` 
+        SET `available_units` = (SELECT available_units FROM `lab_items` WHERE item_id = $lab_item_id) + (SELECT  `item_amount` FROM `lab_item_order` WHERE lab_item_id = $lab_item_id AND order_id = $o_id)
+        WHERE item_id like (SELECT lab_item_id FROM lab_item_order WHERE order_id = $o_id)";
+
+        $del_res = mysqli_query($connect, $sql_i);
+
+        $sql = "UPDATE `lab_item_order` SET `status`= 4 WHERE order_id = $o_id";
+        $del_res = mysqli_query($connect, $sql);
+
       }
 ?>
 <div class="card mb-4">
@@ -78,9 +92,12 @@
             <thead>
                 <tr>
                     <th>Order Id</th>
-                    <th>Product Name</th>
                     <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Renter ID</th>
+                    <th>Renter Name</th>
                     <th>Item Quantity</th>
+                    <th>Issue Date</th>
                     <th>Image</th>
                     <th>Status</th>
                     <th class="text-center">Actions</th>
@@ -89,9 +106,12 @@
             <tfoot>
                 <tr>
                 <th>Order Id</th>
-                <th>Product Name</th>
                 <th>Product ID</th>
+                <th>Product Name</th>
+                <th>Renter ID</th>
+                <th>Renter Name</th>
                 <th>Item Quantity</th>
+                <th>Issue Date</th>
                 <th>Image</th>
                 <th>Status</th>
                 <th class="text-center">Actions</th>
@@ -107,6 +127,9 @@
                 ?>
 
                     <tr>
+                        <td> </td>
+                        <td> </td>
+                        <td> </td>
                         <td> </td>
                         <td> </td>
                         <td> </td>
@@ -134,16 +157,27 @@
 
                         
                         $item_amount = $rows['item_amount'];
-                        
                         $status = $rows['status'];
+                        $issue_date = $rows['issue_date'];
+
+                        $sql_i = "SELECT * FROM `user` WHERE id = (SELECT user_id FROM `lab_item_order` WHERE order_id = $order_id)";
+                        $res_i = mysqli_query($connect, $sql_i);
+
+                        while($roww = mysqli_fetch_assoc($res_i)){
+                            $user_name = $roww['first_name']." ".$roww['last_name'];
+                            $user_id = $roww['id'];
+                        }
                     
 
                     ?>
                         <tr>
                             <td><?php echo $order_id; ?></td>
-                            <td><?php echo $item_name; ?></td>
                             <td><?php echo $lab_item_id ?></td>
+                            <td><?php echo $item_name; ?></td>
+                            <td><?php echo $user_id; ?></td>
+                            <td><?php echo $user_name; ?></td>
                             <td><?php echo $item_amount; ?></td>
+                            <td><?php echo $issue_date; ?></td>
                             <td><img src="../lab_support/image/<?php echo $image; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
                             <td><?php if($status == 0){
                                             echo "Request Pending";
@@ -170,6 +204,13 @@
                             echo "Rejected";
                             }else if($status == 1){
                             echo "Accepted";
+
+                            ?>
+                            <a class="btn btn-sm btn-success ms-2 " type="submit" name="item_return" href="lab_item_order.php?item_return=<?php echo $order_id; ?>&lab_item_id=<?php echo $lab_item_id; ?>"> Return</a>
+                            <?php
+                            
+                            }else if($status = 4){
+                                echo "Returned";
                             }
                             ?>
 
