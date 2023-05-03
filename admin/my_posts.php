@@ -121,7 +121,9 @@ switch ($source) {
     case "rejected_posts":
         include "includes/view_rejected_posts.php";
         break;
-
+    case "view":
+        include "includes/post_view.php";
+        break; 
     default:
         include "includes/view_all_posts.php";
         break;

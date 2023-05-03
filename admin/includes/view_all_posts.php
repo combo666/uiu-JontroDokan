@@ -15,8 +15,7 @@
                     <th>Image</th>
                     <th>Status</th>
                     <th>Tags</th>
-                    <th>Comments</th>
-                    <th>Date</th>
+                    <th>Issued Date</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -29,8 +28,7 @@
                     <th>Image</th>
                     <th>Status</th>
                     <th>Tags</th>
-                    <th>Comments</th>
-                    <th>Date</th>
+                    <th>Issued Date</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </tfoot>
@@ -47,7 +45,6 @@
                 ?>
 
                     <tr>
-                        <td> </td>
                         <td> </td>
                         <td> </td>
                         <td> </td>
@@ -88,11 +85,11 @@
                             <td><img src="../blog/image/<?php echo $post_img; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
                             <td><?php echo $post_stat; ?></td>
                             <td><?php echo $post_tags; ?></td>
-                            <td><?php echo $post_comments; ?></td>
                             <td><?php echo $post_date; ?></td>
                             <td colspan="2" class="text-center">
                                 <a class="btn btn-sm btn-success" type="submit" name="post_edit" href="my_posts.php?approve=<?php echo $post_id; ?>">Approve</a>
-                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="post_delete" href="my_posts.php?rejected=<?php echo $post_id; ?>"> Reject</a>
+                                <a class="btn btn-sm btn-danger ms-1" type="submit" name="post_delete" href="my_posts.php?rejected=<?php echo $post_id; ?>"> Reject</a>
+                                <a class="btn btn-sm btn-primary ms-1" type="submit" name="post_view" href="my_posts.php?source=view&p_id=<?php echo $post_id; ?>"><i class="bi bi-eye"></i>View</a>
                             </td>
                         </tr>
 
