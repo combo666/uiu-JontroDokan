@@ -69,7 +69,7 @@ if($login){
                           <div class="card border border-3" style="border-radius: 1rem;">
                             <div class="row g-0">
                               <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="./images/other/pexels-nothing-ahead-13064556.jpg"
+                                <img src="https://e0.pxfuel.com/wallpapers/452/952/desktop-wallpaper-sage-green-iphone-green-minimalist-in-2022-minimalist-iphone-green-abstract-iphone-green-minimalist-aesthetic.jpg"
                                   alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
                               </div>
                               <div class="col-md-6 col-lg-7 d-flex align-items-center">

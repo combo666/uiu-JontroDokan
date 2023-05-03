@@ -78,7 +78,7 @@ $count_row_recycle = mysqli_fetch_assoc($recycle)['amount'];
                                 </div>
                             </div>
 <?php
-$query4 = "SELECT SUM(unit_history-available_units) as sums FROM `lab_items`";
+$query4 = "SELECT SUM(item_amount) as sums FROM `lab_item_order` WHERE `status` = 1";
 
 $to_recieve = mysqli_query($connect, $query4);
 $count_row_waiting = mysqli_fetch_assoc($to_recieve)['sums'];

@@ -1,6 +1,7 @@
 <?php
 include('../database/db_connect.php');
 $count = "";
+$search = " ";
 if(isset($_POST['submit']))
 {
     $search = $_POST['search'];
@@ -40,9 +41,13 @@ if(isset($_POST['submit']))
 <!-- queries to read posts from db  -->
 <?php
 
-    if($count == 0)
+    if($count == 0 )
     {
         echo "<h1> No Search Results Were found!</h1>";
+    }if($search == " "){
+        ?>
+        <meta http-equiv="refresh" content="0; url='lab_support.php'" />
+        <?php
     }
 
 ?>
@@ -62,24 +67,33 @@ if(isset($_POST['submit']))
                         
                         
                         ?>
-                        <div class="col-lg-5">
-                            <div class="card border-0 shadow-sm">
-                                <div class="card-body text-center">
-                                    <img src="image/<?php echo $item_image; ?>" alt="no_image">
-                                    <h2 class="product_name">
-                                        <h2 class="card-title h4"><a><?php echo mb_strimwidth($item_name, 0, 30, "..."); ?></a></h2>
-                                            <a class="text-decoration-none" href=""><?= $item_name ?></a>
-                                            <br>
-                                        <h7>Available Units : <?= $available_units?></h7>
-                                    </h2>
-                                    <div class="btn d-flex justify-content-between align-items-center">
-                                        <a href="" class="add-to-cart-btn">
-                                            <i class=""></i> Add
-                                        </a>
-                                    </div>
-                                </div>
+                        
+
+                        <div class="col-md-6 d-flex align-items-stretch justify-items-stretch">
+                        <!-- Blog post-->
+                        <div class="card mb-4">
+                            <a href="post.php?p_id=<?php echo $item_id; ?>"><img class="card-img-top" src="image/<?php echo $item_image; ?>" alt="no image"/></a>
+                            <div class="card-body">
+
+                                <h2 class="card-title h4"><a href="./user_add_lab_item.php?i_id=<?php echo $item_id; ?>"><?php echo mb_strimwidth($item_name, 0, 30, "..."); ?></a></h2>
+                                <div class="small text-muted">By: Admin </div>
+                                <span class="small text-muted">Available Units: <?= $available_units?></span>
+                                <p class="card-text"><?php echo mb_strimwidth($item_details, 0, 200, "..."); ?></p>
+                                <?php 
+                                            if($uname){
+                                                ?>
+                                                <a class="btn btn-primary" href="./user_add_lab_item.php?i_id=<?php echo $item_id; ?>">ADD</a>
+                                                <?php
+                                            }else{
+                                                ?>
+                                                <a class="btn btn-primary" href="../customers/login.php">ADD</a>
+                                                <?php
+                                            }
+                                            ?>
+                                
                             </div>
                         </div>
+                    </div>
                     <?php }
                     ?>
                 </div>
