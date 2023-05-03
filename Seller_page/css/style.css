@@ -18,7 +18,6 @@
    box-sizing: border-box;
    outline: none; border:none;
    text-decoration: none;
-   text-transform: capitalize;
 }
 
 html{
@@ -39,7 +38,6 @@ section{
 .heading{
    text-align: center;
    font-size: 3.5rem;
-   text-transform: uppercase;
    color:var(--black);
    margin-bottom: 2rem;
 }
@@ -179,12 +177,10 @@ section{
    font-size: 2.5rem;
    margin-bottom: 1rem;
    color:var(--black);
-   text-transform: uppercase;
    text-align: center;
 }
 
 .add-product-form .box{
-   text-transform: none;
    padding:1.2rem 1.4rem;
    font-size: 1.2rem;
    color:var(--black);
@@ -258,7 +254,6 @@ section{
    font-size: 1.7rem;
    color:var(--black);
    padding:1.2rem 1.4rem;
-   text-transform: none;
 }
 
 .products .box-container{
@@ -381,7 +376,6 @@ section{
    border-radius: .5rem;
    margin:1rem 0;
    padding:1.2rem 1.4rem;
-   text-transform: none;
    border:var(--border);
 }
 
@@ -491,7 +485,6 @@ section{
 .order-message-container .message-container .customer-details p span{
    color:var(--blue);
    padding:0 .5rem;
-   text-transform: none;
 }
 
 

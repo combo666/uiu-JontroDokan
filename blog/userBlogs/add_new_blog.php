@@ -75,7 +75,7 @@
                         <label for="post_tags">Post Tags</label>
                     </div>
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="Write your contents here.." name="post_content" id="contents" style="height: 300px" required></textarea>
+                        <textarea class="form-control" placeholder="Write your contents here.." name="post_content" id="contents" style="height: 300px" required rows="30" cols="90"></textarea>
                         <label for="contents">Content</label>
                     </div>
 
@@ -134,7 +134,6 @@
 
 
 <?php include('../includes/userfooter.php') ?>
-
 
 
 

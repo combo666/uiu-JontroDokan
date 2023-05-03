@@ -20,7 +20,7 @@
                         </h2>
                         <h2>Tk <?php echo $fetch_product['price']; ?></h2>    
                         <div class="btn">
-                            <a href=".././Seller_page/Component.php?p_id=<?php echo $fetch_product['id']; ?>" class="btn btn-secondary"> Approach to buy
+                            <a href="Seller_page/Component.php?p_id=<?php echo $fetch_product['id']; ?>" class="btn btn-secondary"> Approach to buy
                             </a>
                         </div>
                     </div>

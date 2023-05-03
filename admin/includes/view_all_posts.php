@@ -80,7 +80,7 @@
                         <tr>
                             <td><?php echo $post_id; ?></td>
                             <td><?php echo $post_auth; ?></td>
-                            <td><?php echo $post_title; ?></td>
+                            <td><?php echo mb_strimwidth($post_title, 0, 50, "..."); ?></td>
                             <td><?php echo $post_cat; ?></td>
                             <td><img src="../blog/image/<?php echo $post_img; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
                             <td><?php echo $post_stat; ?></td>

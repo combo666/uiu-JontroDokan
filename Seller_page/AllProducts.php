@@ -10,7 +10,7 @@
       if(mysqli_num_rows($select_products) > 0){
          while($fetch_product = mysqli_fetch_assoc($select_products)){
       ?>         
-            <div class="col-lg-3" >
+            <div class="col-lg-3 mb-4" >
                 <div class="card border-0 shadow-sm" style="width:270px;height:300px;">
                     <div class="card-body text-center" >
                       <img style="height:120px;width:170px;" src="../Seller_page/uploaded_img/<?php echo $fetch_product['image']; ?>" alt="">

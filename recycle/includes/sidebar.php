@@ -25,18 +25,17 @@
         <div class="card-body">
             <div class="row">
                 <?php
-                $query = "select * from recycling";
+                $query = "SELECT DISTINCT p_type FROM `recycling`";
 
                 $res = mysqli_query($connect, $query);
 
                 while ($row = mysqli_fetch_assoc($res)) {
                     $r_type = $row['p_type'];
-                    $r_id = $row['p_id'];
                 ?>
                     <div class="col-sm-6">
                         <ul class="list-unstyled mb-0">
 
-                            <li><a href="categories_search.php?cat_id=<?php echo $r_id; ?>&cat_title=<?php echo $r_type; ?>"><?php echo $r_type ?></a></li>
+                            <li><a href="categories_search.php?cat_title=<?php echo $r_type; ?>"><?php echo $r_type ?></a></li>
                         </ul>
                     </div>
 

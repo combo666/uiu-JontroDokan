@@ -30,7 +30,7 @@
                             <div class="col-md-6 d-flex align-items-stretch">
                             <!-- Blog post-->
                                 <div class="card mb-4">
-                                    <a href="productcard.php?p_id=<?php echo $product_id; ?>"><img class="card-img-top" src="image/<?php echo $product_image; ?>" alt="no image"/></a>
+                                    <a href="user_recycle_item_details.php?i_id=<?php echo $product_id; ?>"><img class="card-img-top" src="image/<?php echo $product_image; ?>" alt="no image"/></a>
                                     <div class="card-body">
 
                                         <h2 class="card-title h4"><a href="user_recycle_item_details.php?i_id=<?php echo $product_id; ?>"><?php echo mb_strimwidth($product_name, 0, 30, "..."); ?></a></h2>

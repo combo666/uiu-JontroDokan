@@ -11,7 +11,7 @@
 					</div> 
 					<!-- End Column 1 -->
 					<?php
-        $query = "SELECT * FROM `lab_items` order by item_id limit 4";
+        $query = "SELECT * FROM `lab_items` order by item_id limit 3";
         $result = mysqli_query($connect , $query);
         ?>
                 <?php

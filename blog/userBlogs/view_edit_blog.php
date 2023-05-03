@@ -119,10 +119,11 @@
                             <td><?php echo $post_date; ?></td>
                             <td colspan="2" class="text-center" style="width: 100px !important">
                                 <a class="btn btn-sm btn-primary" type="submit" name="post_edit" href="edit_my_blog.php?p_id=<?php echo $post_id; ?>&post_stat=<?php echo $post_stat; ?>">Edit</a>
-                                <a class="btn btn-sm btn-danger ms-2" type="submit" name="post_delete" href="view_edit_blog.php?delete_mp=<?php echo $post_id; ?>"> Delete</a>
+                                <a class="btn btn-sm btn-danger ms-1" type="submit" name="post_delete" href="view_edit_blog.php?delete_mp=<?php echo $post_id; ?>"> Delete</a>
+                                <a class="btn btn-sm btn-dark ms-1" type="submit" name="my_post_view" href="post.php?p_id=<?php echo $post_id; ?>">View</a>
                             </td>
                         </tr>
-
+                        
 
 
                 <?php

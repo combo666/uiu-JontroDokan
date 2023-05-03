@@ -83,7 +83,7 @@
                         <tr>
                             <td><?php echo $post_id; ?></td>
                             <td><?php echo $post_auth; ?></td>
-                            <td><?php echo $post_title; ?></td>
+                            <td><?php echo mb_strimwidth($post_title, 0, 50, "..."); ?></td>
                             <td><?php echo $post_cat; ?></td>
                             <td><img src="../blog/image/<?php echo $post_img; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
                             <td><?php echo $post_stat . "ed"; ?></td>
@@ -169,7 +169,7 @@ if (isset($_GET['delete_f'])) {
 
 
     <div class="card-body">
-        <form action="my_posts.php" method="post">
+        <form action="published_posts.php" method="post">
             <label for="#postID" class="form-label">Insert existing post id</label>
             <div class="input-group ml-3">
                 <input type="number" class="form-control" placeholder="post id" aria-label="post id" aria-describedby="postID" id="postID" name="post_id">
@@ -199,8 +199,8 @@ if (isset($_GET['delete_f'])) {
                 ?>
                     <tr>
                         <th scope="row"><?php echo $p_id ?></th>
-                        <td><?php echo $p_title ?></td>
-                        <td><a class="btn btn-sm btn-danger ms-2 mx-auto" type="submit" name="delete_f" href="my_posts.php?delete_f=<?php echo $p_id; ?>">Remove</a></td>
+                        <td><?php echo mb_strimwidth($p_title, 0, 50, "..."); ?></td>
+                        <td><a class="btn btn-sm btn-danger ms-2 mx-auto" type="submit" name="delete_f" href="published_posts.php?delete_f=<?php echo $p_id; ?>">Remove</a></td>
                     </tr>
 
                 <?php

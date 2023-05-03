@@ -88,6 +88,7 @@
                                 if(isset($_SESSION['uname'])){      
                                     $ul = '<ul class="dropdown-menu border-0 shadow-lg" aria-labelledby="navbarDropdown">';
                                     $li1 = '<li><a class="dropdown-item" href="./lab_support/user_view_lab_item.php">My Lab Orders</a></li>'; 
+                                    $li2 = '<li><a class="dropdown-item" href="./customers/editForm.php">Edit My Profile</a></li>'; 
                                     $li3 = '<li><a class="dropdown-item" href="./blog/userBlogs/myblogs.php">My Blog</a></li>';
                                     $li4 = '<li><a class="dropdown-item" href="./Seller_page/admin.php">Sell Products</a></li>';
                                     $li5 = '<li><a class="dropdown-item" href="./recycle/form.php">Add Items For Recycle</a></li>';
@@ -101,6 +102,7 @@
                                     echo '</a>';
                                     echo $ul;
                                     echo $li1;
+                                    echo $li2;
                                     echo $li3;
                                     echo $li4;
                                     echo $li5;

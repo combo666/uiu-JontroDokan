@@ -1,10 +1,10 @@
 <?php
 include('../database/db_connect.php');
 
-if(isset($_GET['cat_id']))
+if(isset($_GET['cat_title']))
 {
-    $search = $_GET['cat_id'];
-    $query = "select * from recycling where p_id = {$search} ";
+    $search = $_GET['cat_title'];
+    $query = "select * from recycling where p_type like '%$search%' ";
 
     $search_query = mysqli_query($connect, $query);
 

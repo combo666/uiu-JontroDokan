@@ -43,7 +43,7 @@
                         $query = "SELECT * FROM `recycling` WHERE p_id = {$i_id}"; 
                         $response = mysqli_query($connect, $query);
                         
-                    }
+                    
                     if(isset($_POST["quantity_submit"])){
                         
                         $item_quantity = $_POST['quantity'];
@@ -81,6 +81,7 @@
                             $product_image = $row['p_image'];
                             $product_type = $row['p_type'];
                             $product_details = $row['p_details'];
+                            $product_amount = $row['product_amount'];
                             date_default_timezone_set('Asia/Dhaka');
                             $post_date = date('d-m-y');
                             ?>
@@ -111,7 +112,7 @@
                                                 </div>
                                                             <div class="input-group w-auto justify-content-end align-items-center">
                                                                 
-                                                                <input type="number" value="1" name="quantity" class="border-1 text-center fw-bolder" disabled>
+                                                                <input type="number" value="<?php echo $product_amount;?>" name="quantity" class="border-1 text-center fw-bolder" disabled>
                                                                 
                                                             </div>
                                                         </div>
@@ -125,7 +126,7 @@
                             <?php
                         }
                     }
-                        
+                }
                     ?>
                                     </div>
         </div>

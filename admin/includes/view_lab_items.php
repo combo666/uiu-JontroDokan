@@ -39,7 +39,6 @@
                     <th>Available Units</th>
                     <th>Image</th>
                     <th>Tags</th>
-                    <th>Details</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </thead>
@@ -51,7 +50,6 @@
                     <th>Net Units</th>
                     <th>Image</th>
                     <th>Tags</th>
-                    <th>Details</th>
                     <th class="text-center">Actions</th>
                 </tr>
             </tfoot>
@@ -65,7 +63,6 @@
                 ?>
 
                     <tr>
-                        <td> </td>
                         <td> </td>
                         <td> </td>
                         <td> </td>
@@ -96,7 +93,6 @@
                             <td><?php echo $available_units; ?></td>
                             <td><img src="../lab_support/image/<?php echo $image; ?>" alt="no_img" style="height: 50px; width:50px;"></td>
                             <td><?php echo $tag; ?></td>
-                            <td><?php echo $item_details; ?></td>
 
                             <td colspan="2" class="text-center">
                                 <a class="btn btn-sm btn-primary" type="submit" name="item_edit" href="../admin/labSupport.php?edit_item=edit_item&item_id=<?php echo $item_id; ?>">Edit</a>

@@ -1,4 +1,21 @@
-<?php include "../homepage/includes/header_html.php"?>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>UIU JontroDokan</title>
+    <link rel="icon" href=".././assets/images/new_logo.png">
+    <link rel="stylesheet" href=".././assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href=".././assets/fonts/bootstrap-icons.css">
+    <link rel="stylesheet" href=".././assets/sass/main.css">
+    <link rel="stylesheet" href=".././assets/css/style.css">
+    <link rel="stylesheet" href=".././assets/css/anotherStyle.css">
+    <link rel="stylesheet" href=".././blog/css/style.css">
+    <link rel="stylesheet" href=".././recycle/css/style.css">
+</head>
+<body>
 <?php include "../homepage/includes/header_body.php"?>
 
 <?php
@@ -143,7 +160,7 @@ if($showAlart){
                           
                                     <div class="form-outline mb-4">
                                       <label class="form-label" for="form3Example97">Email ID</label>
-                                      <input type="email" id="form3Example97" name="emailid" class="form-control form-control-lg" required/>
+                                      <input type="email" name="emailid" class="form-control form-control-lg" required/>
                                     </div>
 
                                     <div class="form-outline mb-4">
