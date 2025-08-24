@@ -7,6 +7,7 @@
 //    session_start();
 // }
 @include 'config.php';
+require_once __DIR__ . '/security.php';
 if (isset($_POST['add_product'])) {
    $user_id = $_SESSION['uid'];
    $p_name = $_POST['p_name'];
@@ -48,18 +49,21 @@ if (isset($_POST['add_product'])) {
    }
 };
 
-// delete
+// delete (use prepared statement and safe int)
 if (isset($_GET['delete'])) {
-   $delete_id = $_GET['delete'];
-   $delete_query = mysqli_query($conn, "DELETE FROM `products` WHERE id = $delete_id ") or die('query failed');
-   if ($delete_query) {
+   $delete_id = safe_int($_GET['delete']);
+   $stmt = $conn->prepare("DELETE FROM `products` WHERE id = ?");
+   $stmt->bind_param('i', $delete_id);
+   $res = $stmt->execute();
+   if ($res) {
       header('location:admin.php');
       $message[] = 'product has been deleted';
    } else {
       header('location:admin.php');
       $message[] = 'product could not be deleted';
-   };
-};
+   }
+   $stmt->close();
+}
 
 if (isset($_POST['update_product'])) {
    $update_p_id = $_POST['update_p_id'];
@@ -67,19 +71,31 @@ if (isset($_POST['update_product'])) {
    $update_p_price = $_POST['update_p_price'];
    $update_p_image = $_FILES['update_p_image']['name'];
    $update_p_image_tmp_name = $_FILES['update_p_image']['tmp_name'];
-   if(empty($update_p_image))
-        {
-          $find_img_q = "select image from products where id = {$update_p_id}";
+   if (empty($update_p_image)) {
+      $find_img_q = "select image from products where id = ?";
+      $stmtf = $conn->prepare($find_img_q);
+      $stmtf->bind_param('i', $update_p_id);
+      $stmtf->execute();
+      $resf = $stmtf->get_result();
+      $row = $resf->fetch_assoc();
+      $update_p_image = $row['image'] ?? '';
+      $stmtf->close();
+   } else {
+      list($ok, $safeFilename, $err) = validate_image_upload($_FILES['update_p_image']);
+      if ($ok) {
+         $update_p_image = $safeFilename;
+         move_uploaded_file($update_p_image_tmp_name, __DIR__ . "/uploaded_img/" . $update_p_image);
+      } else {
+         $message[] = 'Update image error: ' . $err;
+         $update_p_image = '';
+      }
+   }
 
-          $find_img = mysqli_query($conn, $find_img_q);
-
-          $row = mysqli_fetch_assoc($find_img);
-
-          $update_p_image = $row['image'];
-        }
-      move_uploaded_file($update_p_image_tmp_name, "uploaded_img/$update_p_image");
-
-   $update_query = mysqli_query($conn, "UPDATE `products` SET name = '$update_p_name', price = '$update_p_price', image = '$update_p_image' WHERE id = '$update_p_id'");
+   // update with prepared statement
+   $update_stmt = $conn->prepare("UPDATE `products` SET name = ?, price = ?, image = ? WHERE id = ?");
+   $update_stmt->bind_param('sssi', $update_p_name, $update_p_price, $update_p_image, $update_p_id);
+   $update_stmt->execute();
+   $update_stmt->close();
    echo "<meta http-equiv=\"refresh\" content=\"1.2; url='admin.php\" />";
 }
 

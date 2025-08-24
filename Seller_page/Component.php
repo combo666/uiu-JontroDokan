@@ -7,12 +7,15 @@ include 'config.php';
 ?>
 <!-- Component_details Show -->
 <?php  
-   if(isset($_GET['p_id'])) {
-    $product_id = $_GET['p_id'];
-    $sql = "SELECT * FROM `products` WHERE id=$product_id";
-    $result = mysqli_query($conn, $sql);
-    if(mysqli_num_rows($result) > 0) {
-      $select_products = mysqli_fetch_assoc($result);
+     require_once __DIR__ . '/security.php';
+     if(isset($_GET['p_id'])) {
+        $product_id = safe_int($_GET['p_id']);
+        $stmt = $conn->prepare("SELECT * FROM `products` WHERE id = ?");
+        $stmt->bind_param('i', $product_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if($result && $result->num_rows > 0) {
+            $select_products = $result->fetch_assoc();
       //category select
             $s_category=$select_products['Category'];
             // Calculate the time elapsed since the post was made
@@ -62,11 +65,14 @@ include 'config.php';
         </div> -->
       </div>
       <br>
-<?php 
-$sql = "SELECT * FROM `user` WHERE id={$select_products['user_id']}";
-$result = mysqli_query($conn, $sql);
 
-$user_info = mysqli_fetch_assoc($result);
+<?php 
+$stmt2 = $conn->prepare("SELECT * FROM `user` WHERE id = ?");
+$stmt2->bind_param('i', $select_products['user_id']);
+$stmt2->execute();
+$res2 = $stmt2->get_result();
+$user_info = $res2->fetch_assoc();
+$stmt2->close();
 
 ?>
       <div class="card">
